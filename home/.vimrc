@@ -1,7 +1,7 @@
 set nocompatible  " Use Vim settings, rather then Vi settings
 
 " Vundle
-source ~/dotfiles/vim/vundle.vim
+source ~/.vim/vundle.vim
 
 set nobackup
 set nowritebackup
@@ -208,7 +208,7 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
-source ~/dotfiles/vim/plugins.vim
+source ~/.vim/plugins.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT EXPANSION

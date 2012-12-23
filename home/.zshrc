@@ -27,8 +27,10 @@ ARCH_FLAGS="-arch x86_64"
 # see /etc/paths and zshenv
 
 # Editor config
-alias vi='/usr/bin/mvim -v -N'
-alias vim=vi
+if which mvim;
+  alias vi='/usr/bin/mvim -v -N'
+  alias vim=vi
+fi
 export EDITOR=vim
 set -o vi
 set stty -ixon
@@ -40,5 +42,5 @@ if type compdef >/dev/null; then
    compdef hub=git
 fi
 
-### Added by the Heroku Toolbelt
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
