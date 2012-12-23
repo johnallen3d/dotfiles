@@ -1,0 +1,10 @@
+# ignore vim temp files
+*~
+*.swp
+*.swo
+
+# ignore common system files
+.DS_Store
+
+# always ignore tag files
+tags
