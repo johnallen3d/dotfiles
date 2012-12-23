@@ -19,27 +19,27 @@ ARCH_FLAGS="-arch x86_64"
 # Path config
 # see /etc/paths and zshenv
 
-if [[ -e $HOME/.rbenvrc ]]; then
+if [[ -r $HOME/.rbenvrc ]]; then
   source $HOME/.rbenvrc
 fi
 
-if [[ -e $HOME/.app_vars ]]; then
+if [[ -r $HOME/.app_vars ]]; then
   source $HOME/.app_vars
 fi
 
-if [[ -e $HOME/.app_vars ]]; then
+if [[ -r $HOME/.app_vars ]]; then
   source $HOME/.app_vars
 fi
 
-if [[ -e $HOME/.custom_aliases ]]; then
+if [[ -r $HOME/.custom_aliases ]]; then
   source $HOME/.custom_aliases
 fi
 
-if [[ -e $HOME/.custom_variables ]]; then
+if [[ -r $HOME/.custom_variables ]]; then
   source $HOME/.custom_variables
 fi
 
-if [[ -e $HOME/.custom_functions ]]; then
+if [[ -r $HOME/.custom_functions ]]; then
   source $HOME/.custom_functions
 fi
 
@@ -67,7 +67,7 @@ fi
 #   then
 #     echo "Starting $1..."
 #     cd $app_dir
-#     bundle exec unicorn -c config/unicorn.rb -E development -D
+#     bundle exec unicorn -c config/unicorn.rb -r development -D
 #     echo "Started."
 #   else
 #     echo "No such app"
@@ -123,10 +123,11 @@ fi
 # }
 
 # Editor config
-if [[ -e /usr/bin/mvim ]]; then
-  alias vi='/usr/bin/mvim -v -N'
-  alias vim=vi
-fi
+# if [[ -r /usr/bin/mvim ]]
+# then
+#   alias vi='/usr/bin/mvim -v -N'
+#   alias vim=vi
+# fi
 export EDITOR=vim
 set -o vi
 set stty -ixon
