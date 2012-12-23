@@ -9,12 +9,14 @@ export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=79000000
 
-alias vi="mvim -v"
-alias vim="mvim -v"
+# Editor config
+if [[ -r /usr/bin/mvim ]]; then
+  alias vi='/usr/bin/mvim -v -N'
+  alias vim=vi
+fi
+
+export EDITOR=vi
+set -o vi
 
 # devbox helpers
-# export MDB_CREATOR=mdb_creator
-# export MDB_CREATOR_PASSWORD=oBqa9Xd8hBdzKXtxvyWvSKDpdnIPVqnZ
-# export MDB_HOST=localhost
-# export MDB_PORT=5432
 export DEV_BOX=$HOME/development/technekes/dev_ops/vagrant/dev_box

@@ -121,15 +121,6 @@ fi
 #     echo ${d/_app/}
 #   done
 # }
-
-# Editor config
-# if [[ -r /usr/bin/mvim ]]
-# then
-#   alias vi='/usr/bin/mvim -v -N'
-#   alias vim=vi
-# fi
-export EDITOR=vim
-set -o vi
 set stty -ixon
 alias tmux="TERM=screen-256color-bce tmux"
 
