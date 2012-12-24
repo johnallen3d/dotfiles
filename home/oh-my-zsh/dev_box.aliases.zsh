@@ -1,5 +1,5 @@
 function start_app {
-  if [ "$1" == '' ]
+  if [[ "$1" == '' ]]
   then
     echo "Please provide an app name"
     list_apps
@@ -9,13 +9,13 @@ function start_app {
   app_dir=/var/apps/$1_app
   x=`pwd`
 
-  if [ -x $app_dir/script/start.sh ]
+  if [[ -x $app_dir/script/start.sh ]]
   then
     echo "Starting $1..."
     cd $app_dir
     script/start.sh
     echo "Started."
-  elif [ -d $app_dir ]
+  elif [[ -d $app_dir ]]
   then
     echo "Starting $1..."
     cd $app_dir
@@ -30,7 +30,7 @@ function start_app {
 }
 
 function stop_app {
-  if [ "$1" == '' ]
+  if [[ "$1" == '' ]]
   then
     echo "Please provide an app name"
     list_apps
@@ -40,13 +40,13 @@ function stop_app {
   app_dir=/var/apps/$1_app
   x=`pwd`
 
-  if [ -x $app_dir/script/stop.sh ]
+  if [[ -x $app_dir/script/stop.sh ]]
   then
     echo "Stopping $1..."
     cd $app_dir
     script/stop.sh
     echo "Stopped."
-  elif [ -d $app_dir ]
+  elif [[ -d $app_dir ]]
   then
     echo "Stopping $1..."
     cd $app_dir
