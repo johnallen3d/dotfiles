@@ -10,6 +10,12 @@ alias hpsp='heroku ps --remote prod'
 alias ssqa='ssh deploy@tk-qa'
 alias ssp='ssh deploy@tk-prod'
 
+# Github/hub config
+alias git=hub
+if type compdef >/dev/null; then
+   compdef hub=git
+fi
+
 # devbox
 alias vup="cd $DEV_BOX;vagrant up;"
 alias vhalt="cd $DEV_BOX; vagrant halt;"

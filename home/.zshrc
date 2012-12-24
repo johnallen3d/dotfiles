@@ -49,12 +49,6 @@ alias gems="cd /var/gems"
 set stty -ixon
 alias tmux="TERM=screen-256color-bce tmux"
 
-# Github/hub config
-alias git=hub
-if type compdef >/dev/null; then
-   compdef hub=git
-fi
-
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
