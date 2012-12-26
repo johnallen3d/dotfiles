@@ -16,6 +16,10 @@ if type compdef >/dev/null; then
    compdef hub=git
 fi
 
+# app shortcuts
+alias sam="cd ~/development/web/rails/samgreen"
+alias tix="cd ~/development/web/rails/futuretix"
+
 # devbox
 alias vup="cd $DEV_BOX;vagrant up;"
 alias vhalt="cd $DEV_BOX; vagrant halt;"
