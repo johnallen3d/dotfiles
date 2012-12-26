@@ -1,3 +1,8 @@
+# always use mvim
+alias vi='mvim -v'
+alias vim='mvim -v'
+alias mvim='mvim -v'
+
 # heroku
 alias hlogqa='heroku logs --tail --remote qa'
 alias hlogp='heroku logs --tail --remote prod'

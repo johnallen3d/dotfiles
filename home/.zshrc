@@ -27,10 +27,6 @@ if [[ -r $HOME/.app_vars ]]; then
   source $HOME/.app_vars
 fi
 
-if [[ -r $HOME/.app_vars ]]; then
-  source $HOME/.app_vars
-fi
-
 if [[ -r $HOME/.custom_aliases ]]; then
   source $HOME/.custom_aliases
 fi
