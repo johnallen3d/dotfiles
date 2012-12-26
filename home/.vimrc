@@ -214,3 +214,4 @@ source ~/.vim/plugins.vim
 " TEXT EXPANSION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap clog console.log? 
+imap <C-L> <SPACE>=><SPACE>
