@@ -17,9 +17,20 @@ let g:slime_target = "tmux"
 set completefunc=syntaxcomplete#Complete
 
 " " tabular-vim
-" if exists(":Tabularize")
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-" endif
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+" " Vimux
+let g:VimuxUseNearestPane = 1
+
+map <silent> <Leader>rl :wa<CR> :VimuxRunLastCommand<CR>
+map <silent> <Leader>vi :wa<CR> :VimuxInspectRunner<CR>
+map <silent> <Leader>vk :wa<CR> :VimuxInterruptRunner<CR>
+map <silent> <Leader>vx :wa<CR> :VimuxClosePanes<CR>
+map <silent> <Leader>vp :VimuxPromptCommand<CR>
+vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
+nmap <silent> <Leader>vs vip<Leader>vs<CR>
