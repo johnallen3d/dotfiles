@@ -21,6 +21,7 @@ Bundle 'mrtazz/simplenote.vim'
 Bundle 'swaroopch/vim-markdown-preview'
 Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'klen/vim-taglist-plus'
+Bundle 'benmills/vimux'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
