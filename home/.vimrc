@@ -33,10 +33,10 @@ syntax enable
 
 " colors
 set t_Co=256
-" set background=dark
-colorscheme molokai
+set background=dark
+" colorscheme molokai
 " colorscheme monokai
-" colorscheme solarized
+colorscheme solarized
 
 " Softtabs, 2 spaces
 set tabstop=2
