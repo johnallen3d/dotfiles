@@ -37,9 +37,9 @@ function run_command_on_devbox() {
 }
 
 function restart_app() {
-  run_command_on_devbox "restart_app $1"
+  run_command_on_devbox "stop_app $1; start_app $1"
 }
 
 function bundle_app() {
-  run_command_on_devbox "cd /var/apps/$1_app; bundle; restart_app $1"
+  run_command_on_devbox "cd /var/apps/$1_app; bundle; stop_app $1; start_app $1"
 }
