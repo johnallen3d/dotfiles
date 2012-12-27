@@ -1,7 +1,12 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="mikeh"
+if [[ `uname` == 'Linux' ]]; then
+  echo 'detected linux, change theme'
+  ZSH_THEME='agnoster'
+else # should be 'Darwin' for OS X
+  ZSH_THEME="mikeh"
+fi
 
 # plugins=(git rbenv bundler brew gem git-flow-completion textmate vi-mode)
 plugins=(git brew gem git-flow-completion vi-mode)
