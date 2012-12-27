@@ -19,7 +19,7 @@ function start_app {
   then
     echo "Starting $1..."
     cd $app_dir
-    bundle exec unicorn -c config/unicorn.rb -r development -D
+    bundle exec unicorn -c config/unicorn.rb -e development -D
     echo "Started."
   else
     echo "No such app"
