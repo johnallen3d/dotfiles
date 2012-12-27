@@ -33,13 +33,13 @@ alias apps="cd $DEV_BOX/apps"
 alias gems="cd $DEV_BOX/gems"
 
 function run_command_on_devbox() {
-  ssh -p 2222 -i ~/.vagrant.d/insecure_private_key vagrant@localhost "source ~/.bash_profile; $1"
+  ssh -p 2222 -i ~/.vagrant.d/insecure_private_key vagrant@localhost "source ~/.zshrc; $1"
 }
 
 function restart_app() {
-  run_command_on_devbox "stop_app $1; start_app $1"
+  run_command_on_devbox "restart_app $1"
 }
 
 function bundle_app() {
-  run_command_on_devbox "cd /var/apps/$1_app; bundle; stop_app $1; start_app $1"
+  run_command_on_devbox "cd /var/apps/$1_app; bundle; restart_app $1"
 }
