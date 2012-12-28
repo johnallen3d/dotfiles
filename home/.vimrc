@@ -81,6 +81,7 @@ let mapleader = ","
 
 " No Help, please
 nmap <F1> <Esc>
+imap <F1> <Esc>
 
 " Pane navigation
 nmap <C-J> <C-W><C-J>

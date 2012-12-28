@@ -28,7 +28,8 @@ endif
 let g:VimuxUseNearestPane = 1
 
 " map <silent> <Leader>rl :wa <CR> :VimuxRunLastCommand<CR>
-map <silent> <Leader>rl :VimuxRunLastCommand<CR>
+map <silent> <Leader>r :call RunVimTmuxCommand("clear && zeus rspec spec")<CR>
+map <silent> <Leader>l :VimuxRunLastCommand<CR>
 map <silent> <Leader>vp :VimuxPromptCommand<CR>
 vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
 nmap <silent> <Leader>vs vip<Leader>vs<CR>
