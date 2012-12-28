@@ -22,6 +22,7 @@ Bundle 'swaroopch/vim-markdown-preview'
 Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'klen/vim-taglist-plus'
 Bundle 'benmills/vimux'
+Bundle 'pgr0ss/vimux-ruby-test'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
