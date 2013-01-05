@@ -2,7 +2,6 @@
 ZSH=$HOME/.oh-my-zsh
 
 if [[ `uname` == 'Linux' ]]; then
-  echo 'detected linux, change theme'
   ZSH_THEME='agnoster'
 else # should be 'Darwin' for OS X
   ZSH_THEME="mikeh"
