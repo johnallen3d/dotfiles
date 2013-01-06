@@ -11,12 +11,18 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 
 # Editor config
 if [[ -r /usr/bin/mvim ]]; then
+  # always use mvim
   alias vi='/usr/bin/mvim -v -N'
   alias vim=vi
+  alias mvim=vi
 fi
 
 export EDITOR=vi
 set -o vi
+set editing-mode vi
 
 # devbox helpers
 export DEV_BOX=$HOME/development/technekes/dev_ops/vagrant/dev_box
+
+# Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

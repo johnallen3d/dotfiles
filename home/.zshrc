@@ -8,7 +8,8 @@ else # should be 'Darwin' for OS X
 fi
 
 # plugins=(git rbenv bundler brew gem git-flow-completion textmate vi-mode)
-plugins=(git brew gem git-flow-completion vi-mode)
+# plugins=(git brew gem git-flow-completion vi-mode)
+plugins=(git brew gem git-flow-completion)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -42,13 +43,3 @@ fi
 if [[ -r $HOME/.custom_functions ]]; then
   source $HOME/.custom_functions
 fi
-
-alias apps="cd /var/apps"
-alias gems="cd /var/gems"
-
-set stty -ixon
-alias tmux="TERM=screen-256color-bce tmux"
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-

@@ -1,3 +1,10 @@
+# dev paths
+alias apps="cd /var/apps"
+alias gems="cd /var/gems"
+
+# application settings
+alias tmux="TERM=screen-256color-bce tmux"
+
 # rails
 alias rfs='RACK_ENV=development foreman start'
 alias rake='bundle exec rake'
@@ -15,10 +22,6 @@ alias rss='bundle exec rspec spec'
 if [[ `uname` == 'Linux' ]]; then
   alias call_center='cd call_center_app'
 else # should be 'Darwin' for OS X
-  # always use mvim
-  alias vi='mvim -v'
-  alias vim='mvim -v'
-  alias mvim='mvim -v'
 
   # heroku
   alias hlogqa='heroku logs --tail --remote qa'
