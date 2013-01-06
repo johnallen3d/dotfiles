@@ -18,8 +18,8 @@ if [[ -r /usr/bin/mvim ]]; then
 fi
 
 export EDITOR=vi
-set -o vi
-set editing-mode vi
+# set -o vi
+# set editing-mode vi
 
 # devbox helpers
 export DEV_BOX=$HOME/development/technekes/dev_ops/vagrant/dev_box

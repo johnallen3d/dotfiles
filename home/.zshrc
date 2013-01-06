@@ -8,8 +8,7 @@ else # should be 'Darwin' for OS X
 fi
 
 # plugins=(git rbenv bundler brew gem git-flow-completion textmate vi-mode)
-# plugins=(git brew gem git-flow-completion vi-mode)
-plugins=(git brew gem git-flow-completion)
+plugins=(git brew gem git-flow-completion vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
