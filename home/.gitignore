@@ -8,3 +8,7 @@
 
 # always ignore tag files
 tags
+
+# igrnore zeus config
+custom_plan.rb
+zeus.json
