@@ -1,7 +1,6 @@
 # ignore vim temp files
 *~
-*.swp
-*.swo
+.*.sw?
 
 # ignore common system files
 .DS_Store
@@ -12,3 +11,13 @@ tags
 # igrnore zeus config
 custom_plan.rb
 zeus.json
+
+# Pow and Powder config
+/.pow*
+
+# RVM and rbenv
+/.rvmrc
+/.rbenv-version
+
+# Bundler binstubs
+/bin/
