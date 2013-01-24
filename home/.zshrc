@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 if [[ `uname` == 'Linux' ]]; then
   ZSH_THEME='agnoster'
 else # should be 'Darwin' for OS X
-  ZSH_THEME="terminalparty"
+  ZSH_THEME="terminalparty-custom"
 fi
 
 # plugins=(git rbenv bundler brew gem git-flow-completion textmate vi-mode)
