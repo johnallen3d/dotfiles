@@ -16,3 +16,4 @@
 --type-set=coffeescript=.coffee
 --type-set=cucumber=feature
 --type-set=css=sass
+--type-set=puppet=.pp
