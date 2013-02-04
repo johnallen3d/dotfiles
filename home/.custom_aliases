@@ -18,6 +18,7 @@ alias zr='zeus rake'
 
 # tmux
 alias ta='tmux attach -t'
+alias tn='tmux new-session -s'
 
 # testing
 alias rss='bundle exec rspec spec'
