@@ -23,6 +23,7 @@ Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'klen/vim-taglist-plus'
 Bundle 'benmills/vimux'
 Bundle 'pgr0ss/vimux-ruby-test'
+Bundle 'Valloric/YouCompleteMe'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
