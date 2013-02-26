@@ -1,6 +1,6 @@
 [user]
-	name = John Allen
-	email = john@threedogconsulting.com
+  name = John Allen
+  email = john@threedogconsulting.com
 [merge]
   tool = p4merge
   keepBackup = false
@@ -18,13 +18,6 @@
   user = johnallen3d
 [alias]
   lol = log --pretty=oneline --graph
-  # Fancy logging.
-  #   h = head
-  #   hp = head with patch
-  #   r = recent commits, only current branch
-  #   ra = recent commits, all reachable refs
-  #   l = all commits, only current branch
-  #   la = all commits, all reachable refs
   head = !git l -1
   h = !git head
   hp = "!. ~/.githelpers && show_git_head"
@@ -33,4 +26,6 @@
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
 [heroku]
-	account = nekes
+  account = nekes
+[pull]
+  rebase = true
