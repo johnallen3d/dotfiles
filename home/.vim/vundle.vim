@@ -24,6 +24,7 @@ Bundle 'klen/vim-taglist-plus'
 Bundle 'benmills/vimux'
 Bundle 'pgr0ss/vimux-ruby-test'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'airblade/vim-gitgutter'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
