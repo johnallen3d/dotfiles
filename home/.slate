@@ -1,4 +1,9 @@
 # Config
+config defaultToCurrentScreen true
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
 config windowHintsFontSize 100
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
@@ -13,7 +18,7 @@ alias ssy screenSizeY
 
 # Position aliases
 alias centered                  ${sox}+${ssx}/8;${soy}+${ssy}/8 ${ssx}/8*6;${ssy}/8*6
-alias fullpadded                ${sox}+20;${soy}+20 ${ssx}-40;${ssy}-40
+alias fullpadded                ${sox}+40;${soy}+40 ${ssx}-80;${ssy}-80
 alias fullscreen                ${sox};${soy} ${ssx};${ssy}
 alias leftHalf                  ${sox};${soy} ${ssx}/2;${ssy}
 alias bottomHalf                ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
@@ -26,6 +31,9 @@ alias bottomRightQuarter        ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/
 config defaultToCurrentScreen   true
 config nudgePercentOf           screenSize
 config resizePercentOf          screenSize
+
+# helpers
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
 
 # movements
 bind c:ctrl;alt;cmd        move ${centered}
