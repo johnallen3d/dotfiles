@@ -46,6 +46,9 @@ bind left:ctrl;alt         throw 0 resize
 
 bind x:ctrl;alt;cmd        move ${fullpadded}
 
+# Switch currently doesn't work well so I'm commenting it out until I fix it.
+# bind tab:cmd switch
+
 
 
 # bind right:alt           resize +10% +0
