@@ -1,16 +1,6 @@
 [user]
   name = John Allen
   email = john@threedogconsulting.com
-[merge]
-  tool = p4merge
-  keepBackup = false
-[mergetool "p4merge"]
-  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  keepTemporaries = false
-  trustExitCode = false
-  keepBackup = false
-[diff]
-  external = p4diff
 [core]
   excludesfile = /Users/johna/.gitignore
   editor = /usr/bin/vim
