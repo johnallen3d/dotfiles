@@ -3,7 +3,7 @@
   email = john@threedogconsulting.com
 [core]
   excludesfile = /Users/johna/.gitignore
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/mvim
 [github]
   user = johnallen3d
 [alias]
@@ -19,3 +19,5 @@
   account = nekes
 [pull]
   rebase = true
+[color]
+  ui = true
