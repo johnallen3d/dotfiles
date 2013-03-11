@@ -25,6 +25,7 @@ Bundle 'benmills/vimux'
 Bundle 'pgr0ss/vimux-ruby-test'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'wikitopian/hardmode'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
