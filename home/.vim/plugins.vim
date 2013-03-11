@@ -69,6 +69,6 @@ function! RunLastCommand()
   call RSpec()
 endfunction
 
-nmap <Leader>t :call RunCurrentTest()<CR>
+" nmap <Leader>t :call RunCurrentTest()<CR>
 nmap <Leader>l :call RunCurrentLineInTest()<CR>
 nmap <Leader>rr :call RunLastCommand()<CR>
