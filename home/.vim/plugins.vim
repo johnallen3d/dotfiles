@@ -38,3 +38,37 @@ map <silent> <Leader>l :VimuxRunLastCommand<CR>
 map <silent> <Leader>vp :VimuxPromptCommand<CR>
 vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
 nmap <silent> <Leader>vs vip<Leader>vs<CR>
+
+" " RunCommand : https://coderwall.com/p/d1pa0a
+function! SendToTerminal(args)
+  execute ":silent !run_command '" . a:args . "'"
+endfunction
+
+function! ClearTerminal()
+  call SendToTerminal("clear")
+endfunction
+
+function! RSpec()
+  call ClearTerminal()
+  if exists("s:current_test")
+    call SendToTerminal("rspec -fd " . s:current_test)
+  endif
+endfunction
+
+function! RunCurrentTest()
+  let s:current_test = expand('%:p')
+  call RSpec()
+endfunction
+
+function! RunCurrentLineInTest()
+  let s:current_test = expand('%:p') . ":" . line('.')
+  call RSpec()
+endfunction
+
+function! RunLastCommand()
+  call RSpec()
+endfunction
+
+nmap <Leader>t :call RunCurrentTest()<CR>
+nmap <Leader>l :call RunCurrentLineInTest()<CR>
+nmap <Leader>rr :call RunLastCommand()<CR>
