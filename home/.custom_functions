@@ -84,7 +84,7 @@ else # should be 'Darwin' for OS X
     run_command_on_devbox "start_app $1"
   }
 
-  function stop__app() {
+  function stop_app() {
     run_command_on_devbox "stop_app $1"
   }
 
@@ -96,4 +96,3 @@ else # should be 'Darwin' for OS X
     run_command_on_devbox "cd /var/apps/$1_app; bundle; restart_app $1"
   }
 fi
-
