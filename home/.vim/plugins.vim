@@ -39,6 +39,9 @@ map <silent> <Leader>vp :VimuxPromptCommand<CR>
 vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
 nmap <silent> <Leader>vs vip<Leader>vs<CR>
 
+" " The Silver Searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " " RunCommand : https://coderwall.com/p/d1pa0a
 function! SendToTerminal(args)
   execute ":silent !run_command '" . a:args . "'"
