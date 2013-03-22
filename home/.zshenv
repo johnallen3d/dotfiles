@@ -22,7 +22,7 @@ export EDITOR=vi
 # set editing-mode vi
 
 # devbox helpers
-export DEV_BOX=$HOME/development/technekes/dev_ops/vagrant/dev_box
+export DEV_BOX=$HOME/development/technekes/devbox
 
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

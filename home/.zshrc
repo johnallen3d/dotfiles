@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 setopt auto_cd
-cdpath=($HOME/development/technekes/dev_ops/vagrant/dev_box/apps $HOME/development/technekes/dev_ops/vagrant/dev_box/gems)
+cdpath=(/var/apps /var/gems)
 
 export TERM="xterm-256color"
 
