@@ -18,7 +18,7 @@ rescue LoadError => err
 end
 
 # configure irb
-#IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 # irb history
 IRB.conf[:EVAL_HISTORY] = 1000
