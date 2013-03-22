@@ -1,0 +1,14 @@
+def efind(email)
+  User.where(email: email).first
+end
+
+# set a nice prompt
+rails_root = File.basename(Dir.pwd)
+IRB.conf[:PROMPT] ||= {}
+IRB.conf[:PROMPT][:RAILS] = {
+  :PROMPT_I => "#{rails_root}> ",
+  :PROMPT_S => "#{rails_root}* ",
+  :PROMPT_C => "#{rails_root}? ",
+  :RETURN   => "=> %s\n"
+}
+IRB.conf[:PROMPT_MODE] = :RAILS
