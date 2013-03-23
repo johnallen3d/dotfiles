@@ -47,6 +47,9 @@ set expandtab
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" Tab line
+set showtabline=2 " always show tab bar
+
 " Display extra whitespace etc.
 set list                          " Show invisible characters
 
