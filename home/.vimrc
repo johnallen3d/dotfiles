@@ -27,7 +27,6 @@ set synmaxcol=800       " don't try to highlight long lines
 " set title             " not really sure what this does
 set number              " show line numbers
 set clipboard=unnamed   " use system clipboard by default!
-set undofile            " allow undo after buffer is re-opened
 set shell=/bin/zsh      " use zsh for shell (:sh)
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
@@ -77,6 +76,14 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Disable error bells
 set noerrorbells
 set visualbell
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
