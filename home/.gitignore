@@ -1,6 +1,7 @@
 # ignore vim temp files
 *~
 .*.sw*
+.un~
 
 # ignore common system files
 .DS_Store
