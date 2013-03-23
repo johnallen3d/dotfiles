@@ -17,7 +17,9 @@ set scrolloff=3         " keep at least three lines visible above/below cursor
 set colorcolumn=80      " show a marker at 80th character
 set hlsearch            " Highlight searches
 set incsearch           " do incremental searching
-set smartcase           " when searching ignore case unless mixed
+set ignorecase          " searches are case insensitive...
+set smartcase           " ... unless they contain at least one capital letter
+set gdefault            " have :s///g flag by default on
 
 set cursorline          " highlight the line the cursor is on
 set cursorcolumn        " highlight the column the cursor is in
@@ -59,9 +61,7 @@ nnoremap <C-y> 3<C-y>
 set showtabline=2                 " always show tab bar
 
 " Display extra whitespace etc.
-set list                          " Show invisible characters
-set listchars=""                  " Reset the listchars
-set listchars=tab:▸\ ,trail:•,extends:❯,precedes:❮
+set list listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
 
 "It's easier to press Space than / for searching:
 nmap <Space> /
