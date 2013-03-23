@@ -1,32 +1,42 @@
-set nocompatible  " Use Vim settings, rather then Vi settings
+set nocompatible        " Use Vim settings, rather then Vi settings
 
 " Vundle
 source ~/.vim/vundle.vim
 
-set nobackup
-set nowritebackup
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set showmode      " show the current mode
-set laststatus=2  " Always display the status line
-set nowrap        " set nowrap
-set t_ti= t_te=   " Prevent Vim from clobbering the scrollback buffer.
-set scrolloff=3
+set nobackup            " do not make backup before saving
+set nowritebackup       " do not write backup before saving
+set history=50          " remember 50 commands
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+set showmode            " show the current mode
+set laststatus=2        " Always display the status line
+set nowrap              " set nowrap
+set t_ti= t_te=         " Prevent Vim from clobbering the scrollback buffer.
+set scrolloff=3         " keep at least three lines visible above/below cursor
 
-set colorcolumn=80
-set hlsearch      " Highlight searches
-set incsearch     " do incremental searching
-set ignorecase    " Ignore case of searches
-set smartcase
+set colorcolumn=80      " show a marker at 80th character
+set hlsearch            " Highlight searches
+set incsearch           " do incremental searching
+set smartcase           " when searching ignore case unless mixed
 
-set cursorline
-set title
-set number        " show line numbers
-" set rnu           " relative line numbers
-set clipboard=unnamed " use system clipboard by default!
+set cursorline          " highlight the line the cursor is on
+set cursorcolumn        " highlight the column the cursor is in
+set synmaxcol=800       " don't try to highlight long lines
+" set title             " not really sure what this does
+set number              " show line numbers
+set clipboard=unnamed   " use system clipboard by default!
+set undofile            " allow undo after buffer is re-opened
+set shell=/bin/zsh      " use zsh for shell (:sh)
 
-set shell=sh
+" Allow backgrounding buffers without writing them, and remember marks/undo
+" for backgrounded buffers
+set hidden
+
+" Auto-reload buffers when file changed on disk
+set autoread
+
+" Disable swap files; systems don't crash that often these days
+set updatecount=0
 
 syntax on
 syntax enable
@@ -34,8 +44,6 @@ syntax enable
 " colors
 set t_Co=256
 set background=dark
-" colorscheme molokai
-" colorscheme monokai
 colorscheme solarized
 
 " Softtabs, 2 spaces
@@ -48,18 +56,12 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Tab line
-set showtabline=2 " always show tab bar
+set showtabline=2                 " always show tab bar
 
 " Display extra whitespace etc.
 set list                          " Show invisible characters
-
 set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.            " show trailing spaces as dots
-set listchars+=extends:>          " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-set listchars+=precedes:<         " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
+set listchars=tab:▸\ ,trail:•,extends:❯,precedes:❮
 
 "It's easier to press Space than / for searching:
 nmap <Space> /
