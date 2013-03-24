@@ -26,6 +26,9 @@ alias rss='bundle exec rspec spec'
 # git rebase local commits before pushing upstream
 alias gr='git rebase -i @{u}'
 
+# homesick
+alias hph='homesick pull homesick'
+
 if [[ `uname` == 'Linux' ]]; then
   alias call_center='cd call_center_app'
 else # should be 'Darwin' for OS X
