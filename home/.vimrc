@@ -22,7 +22,6 @@ set smartcase           " ... unless they contain at least one capital letter
 set gdefault            " have :s///g flag by default on
 
 set cursorline          " highlight the line the cursor is on
-set cursorcolumn        " highlight the column the cursor is in
 set synmaxcol=800       " don't try to highlight long lines
 " set title             " not really sure what this does
 set number              " show line numbers
@@ -56,7 +55,11 @@ set expandtab
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Tab line
+" make the tab key match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Tab bar line
 set showtabline=2                 " always show tab bar
 
 " Display extra whitespace etc.
@@ -85,6 +88,9 @@ silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 
+" save on losing focus
+au FocusLost * :wa
+
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -92,8 +98,9 @@ let g:html_indent_tags = 'li\|p'
 let mapleader = ","
 
 " No Help, please
-nmap <F1> <Esc>
-imap <F1> <Esc>
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 " Pane navigation
 nmap <C-J> <C-W><C-J>
@@ -226,5 +233,5 @@ source ~/.vim/plugins.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT EXPANSION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap clog console.log? 
+imap clog console.log?
 imap <C-L> <SPACE>=><SPACE>
