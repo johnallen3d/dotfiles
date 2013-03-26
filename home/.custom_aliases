@@ -61,4 +61,8 @@ else # should be 'Darwin' for OS X
   alias vssh="cd $DEV_BOX; vagrant ssh;"
   alias apps="cd $DEV_BOX/apps"
   alias gems="cd $DEV_BOX/gems"
+
+  # utility
+  #  cleans up open with context menu: http://goo.gl/NSNCv
+  alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 fi
