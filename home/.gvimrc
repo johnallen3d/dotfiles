@@ -9,6 +9,9 @@ set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
 if has("gui_running")
   " hides toolbar
   set guioptions=egmrt
+
+  " use bash in mvim
+  set shell=bash
 endif
 
 set transparency=1
