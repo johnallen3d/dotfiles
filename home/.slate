@@ -21,9 +21,11 @@ alias centered                  ${sox}+${ssx}/8;${soy}+${ssy}/8 ${ssx}/8*6;${ssy
 alias fullpadded                ${sox}+40;${soy}+40 ${ssx}-80;${ssy}-80
 alias fullscreen                ${sox};${soy} ${ssx};${ssy}
 alias leftHalf                  ${sox};${soy} ${ssx}/2;${ssy}
+alias leftHalfPadded            ${sox}+40;${soy}+40 ${ssx}/2-40;${ssy}-80
 alias bottomHalf                ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
 alias topHalf                   ${sox};${soy} ${ssx};${ssy}/2
 alias rightHalf                 ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
+alias rightHalfPadded           ${sox}+${ssx}/2;${soy}+40 ${ssx}/2-40;${ssy}-80
 alias topLeftQuarter            ${sox};${soy} ${ssx}/2;${ssy}/2
 alias topRightQuarter           ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
 alias bottomLeftQuarter         ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
@@ -40,9 +42,9 @@ bind c:ctrl;alt;cmd        move ${centered}
 bind m:ctrl;alt;cmd        move ${fullscreen}
 
 bind up:ctrl;alt;cmd       move ${topHalf}
-bind right:ctrl;alt;cmd    move ${rightHalf}
+bind right:ctrl;alt;cmd    move ${rightHalfPadded}
 bind down:ctrl;alt;cmd     move ${bottomHalf}
-bind left:ctrl;alt;cmd     move ${leftHalf}
+bind left:ctrl;alt;cmd     move ${leftHalfPadded}
 
 bind up:shift;alt;ctrl     move ${topLeftQuarter}
 bind right:shift;alt;ctrl  move ${topRightQuarter}
