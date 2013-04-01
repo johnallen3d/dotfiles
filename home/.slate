@@ -59,16 +59,15 @@ bind x:ctrl;alt;cmd        move ${fullpadded}
 # Switch currently doesn't work well so I'm commenting it out until I fix it.
 # bind tab:cmd switch
 
-
-
-# bind right:alt           resize +10% +0
-# bind left:alt            resize -10% +0
+bind right:shift;ctrl      resize +5% +0
+bind left:shift;ctrl       resize -5% +0
 # bind up:alt              resize +0   -10%
 # bind down:alt            resize +0   +10%
-# bind right:ctrl;alt      resize -10% +0 bottom-right
-# bind left:ctrl;alt       resize +10% +0 bottom-right
+bind right:shift;alt;cmd   resize -5% +0 bottom-right
+bind left:shift;alt;cmd    resize +5% +0 bottom-right
 # bind up:ctrl;alt         resize +0   +10% bottom-right
 # bind down:ctrl;alt       resize +0   -10% bottom-right
+
 
 # Nudge Bindings
 # bind right:shift;alt nudge +10% +0
