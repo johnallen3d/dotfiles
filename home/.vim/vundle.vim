@@ -27,6 +27,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'wikitopian/hardmode'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'tpope/vim-dispatch'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
