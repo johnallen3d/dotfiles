@@ -40,7 +40,7 @@ Bundle 'puppetlabs/puppet-syntax-vim'
 
 " colors
 " make colors just work in terminal vim
-Bundle 'vim-scripts/CSApprox'
+" Bundle 'vim-scripts/CSApprox'
 " Bundle 'flazz/vim-colorschemes'
 Bundle 'zachphillips/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
