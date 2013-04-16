@@ -28,6 +28,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'wikitopian/hardmode'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'tpope/vim-dispatch'
+Bundle 'sjl/gundo.vim'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
