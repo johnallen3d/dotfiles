@@ -59,6 +59,9 @@ nnoremap <C-y> 3<C-y>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" use the dot command on visual selections
+vnoremap . :norm.<CR>
+
 " Tab bar line
 set showtabline=2                 " always show tab bar
 
