@@ -21,6 +21,9 @@ let g:ctrlp_dotfiles = 0
 " " vim-ruby-minitest
 set completefunc=syntaxcomplete#Complete
 
+" " gundo.vim
+nnoremap <F5> :GundoToggle<CR>
+
 " " tabular-vim
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
