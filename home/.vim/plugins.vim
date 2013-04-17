@@ -34,11 +34,11 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 let g:VimuxUseNearestPane = 1
 
 " map <silent> <Leader>rl :wa <CR> :VimuxRunLastCommand<CR>
-map <silent> <Leader>r :call RunVimTmuxCommand("clear && zeus rspec spec")<CR>
-map <silent> <Leader>l :VimuxRunLastCommand<CR>
-map <silent> <Leader>vp :VimuxPromptCommand<CR>
-vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
-nmap <silent> <Leader>vs vip<Leader>vs<CR>
+" map <silent> <Leader>r :call RunVimTmuxCommand("clear && zeus rspec spec")<CR>
+" map <silent> <Leader>l :VimuxRunLastCommand<CR>
+" map <silent> <Leader>vp :VimuxPromptCommand<CR>
+" vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
+" nmap <silent> <Leader>vs vip<Leader>vs<CR>
 
 " " The Silver Searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -73,6 +73,7 @@ function! RunLastCommand()
   call RSpec()
 endfunction
 
+nmap <silent> <Leader>r :call SendToTerminal('clear && bin/rspec spec') <CR>
 " nmap <Leader>t :call RunCurrentTest()<CR>
-nmap <Leader>l :call RunCurrentLineInTest()<CR>
-nmap <Leader>rr :call RunLastCommand()<CR>
+" nmap <Leader>l :call RunCurrentLineInTest()<CR>
+" nmap <Leader>rr :call RunLastCommand()<CR>
