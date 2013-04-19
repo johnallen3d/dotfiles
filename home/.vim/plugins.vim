@@ -21,14 +21,17 @@ let g:ctrlp_dotfiles = 0
 " " vim-ruby-minitest
 set completefunc=syntaxcomplete#Complete
 
-" " gundo.vim
-nnoremap <F5> :GundoToggle<CR>
-
 " " tabular-vim
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+
+" " The Silver Searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" " Git Gutter
+let g:gitgutter_enabled = 0  "  disable by default
 
 " " Vimux
 let g:VimuxUseNearestPane = 1
@@ -39,9 +42,6 @@ let g:VimuxUseNearestPane = 1
 " map <silent> <Leader>vp :VimuxPromptCommand<CR>
 " vmap <silent> <Leader>vs "vy :call VimuxRunCommand(@v)<CR>
 " nmap <silent> <Leader>vs vip<Leader>vs<CR>
-
-" " The Silver Searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " " RunCommand : https://coderwall.com/p/d1pa0a
 function! SendToTerminal(args)
