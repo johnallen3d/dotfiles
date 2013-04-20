@@ -30,9 +30,6 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 " " The Silver Searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" " Git Gutter
-let g:gitgutter_enabled = 0  "  disable by default
-
 " " Vimux
 let g:VimuxUseNearestPane = 1
 
