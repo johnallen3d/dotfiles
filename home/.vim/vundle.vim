@@ -30,6 +30,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'nelstrom/vim-visual-star-search'
 " Bundle 'tpope/vim-dispatch'
 " Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/ruby-matchit' " use % to move from start/end of blocks
+Bundle 'ervandew/supertab' "tab completion
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
