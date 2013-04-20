@@ -66,7 +66,7 @@ vnoremap . :norm.<CR>
 set showtabline=2                 " always show tab bar
 
 " Display extra whitespace etc.
-set list listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
+set list listchars=tab:▸\ ,trail:.
 
 "It's easier to press Space than / for searching:
 nmap <Space> /
