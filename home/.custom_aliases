@@ -42,6 +42,7 @@ else # should be 'Darwin' for OS X
   alias hpsp='heroku ps --remote prod'
 
   # qa & prod ssh
+  alias ssq='ssh deploy@tk-qa'
   alias ssqa='ssh deploy@tk-qa'
   alias ssp='ssh deploy@tk-prod'
 
