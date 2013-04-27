@@ -54,6 +54,7 @@ else # should be 'Darwin' for OS X
 
   # app shortcuts
   alias sam="cd ~/development/web/rails/samgreen"
+  alias src="cd ~/development/iapp/motion/src"
   alias tix="cd ~/development/web/rails/futuretix"
 
   # devbox
