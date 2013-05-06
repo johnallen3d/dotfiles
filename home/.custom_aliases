@@ -29,6 +29,9 @@ alias gr='git rebase -i @{u}'
 # homesick
 alias hph='homesick pull homesick'
 
+# quick editor
+alias scratch='vi ~/temp/scratch.md'
+
 if [[ `uname` == 'Linux' ]]; then
   alias call_center='cd call_center_app'
 else # should be 'Darwin' for OS X
