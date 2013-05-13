@@ -23,6 +23,3 @@ export EDITOR=vi
 
 # devbox helpers
 export DEV_BOX=$HOME/development/technekes/devbox
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
