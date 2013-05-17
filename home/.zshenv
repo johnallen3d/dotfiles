@@ -23,3 +23,6 @@ export EDITOR=vi
 
 # devbox helpers
 export DEV_BOX=$HOME/development/technekes/devbox
+
+# set history per session in iTerm
+export HISTFILE=~/.zsh-history/${ITERM_SESSION_ID}
