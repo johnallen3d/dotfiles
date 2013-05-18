@@ -17,6 +17,6 @@ if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
     require 'rails/console/app'
     require 'rails/console/helpers'
   else
-    warn "[WARN] cannot load Rails console commands (Not on Rails2 or Rails3?)"
+    # warn "[WARN] cannot load Rails console commands (Not on Rails2 or Rails3?)"
   end
 end
