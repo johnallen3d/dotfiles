@@ -34,6 +34,8 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'ervandew/supertab'
 " use % to move from start/end of blocks
 Bundle 'vim-scripts/ruby-matchit'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
