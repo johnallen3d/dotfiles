@@ -36,6 +36,7 @@ Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/ruby-matchit'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'slim-template/vim-slim'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
