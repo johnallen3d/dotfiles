@@ -95,4 +95,10 @@ else # should be 'Darwin' for OS X
   function bundle_app() {
     run_command_on_devbox "cd /var/apps/$1_app; bundle; restart_app $1"
   }
+
+  function compile_gem() {
+    git push
+    version=$(gem build $(ls *.gemspec) | grep File | awk '{print $2}')
+    fury push $version
+  }
 fi
