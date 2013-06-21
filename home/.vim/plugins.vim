@@ -39,7 +39,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:VimuxUseNearestPane = 1
 
 " " Unite
-nmap <Leader>t :Unite file <CR>
+nmap <Leader>t :Unite file -auto-preview<CR>
 let g:unite_data_directory='~/.vim/backups/unite'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
