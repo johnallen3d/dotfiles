@@ -39,7 +39,8 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc.vim' " allows async unite search
+" allows async unite search
+Bundle 'Shougo/vimproc.vim'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
