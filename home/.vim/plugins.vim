@@ -39,8 +39,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:VimuxUseNearestPane = 1
 
 " " Unite
+" fuzzy and recursive file search
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>t :<C-u>Unite -start-insert file_rec<CR>
+" search yank history
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 let g:unite_data_directory='~/.vim/backups/unite'
 let g:unite_enable_start_insert=1
