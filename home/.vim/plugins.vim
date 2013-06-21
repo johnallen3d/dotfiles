@@ -38,6 +38,30 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " " Vimux
 let g:VimuxUseNearestPane = 1
 
+" " Unite
+nmap <Leader>t :Unite file <CR>
+let g:unite_data_directory='~/.vim/backups/unite'
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_rec_max_cache_files=5000
+let g:unite_prompt='» '
+
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
+  let g:unite_source_grep_recursive_opt=''
+elseif executable('ack')
+  let g:unite_source_grep_command='ack'
+  let g:unite_source_grep_default_opts='--no-heading --no-color -a'
+  let g:unite_source_grep_recursive_opt=''
+endif
+
+
+
+
+
+
+
 " map <silent> <Leader>rl :wa <CR> :VimuxRunLastCommand<CR>
 " map <silent> <Leader>r :call RunVimTmuxCommand("clear && zeus rspec spec")<CR>
 " map <silent> <Leader>l :VimuxRunLastCommand<CR>
