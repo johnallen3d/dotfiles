@@ -38,6 +38,10 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " " Vimux
 let g:VimuxUseNearestPane = 1
 
+" " vim-ruby-xmpfilter
+map <F4> <Plug>(xmpfilter-mark)
+map <F5> <Plug>(xmpfilter-run)
+
 " " Unite
 " fuzzy and recursive file search
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
