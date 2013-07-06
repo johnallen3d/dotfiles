@@ -42,6 +42,7 @@ Bundle 'Shougo/unite.vim'
 " allows async unite search
 Bundle 'Shougo/vimproc.vim'
 Bundle 't9md/vim-ruby-xmpfilter'
+Bundle 'exu/pgsql.vim'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'

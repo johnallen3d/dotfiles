@@ -42,6 +42,9 @@ let g:VimuxUseNearestPane = 1
 map <F4> <Plug>(xmpfilter-mark)
 map <F5> <Plug>(xmpfilter-run)
 
+" " sql.vim
+let g:sql_type_default = 'pgsql'
+
 " " Unite
 " fuzzy and recursive file search
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
