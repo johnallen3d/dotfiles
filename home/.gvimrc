@@ -15,7 +15,8 @@ set shell=bash
 set transparency=1
 " colorscheme made_of_code
 " colorscheme monokai
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+colorscheme solarized
 
 " hides scroll bars
 set guioptions=aAce
