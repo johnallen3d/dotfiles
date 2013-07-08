@@ -38,10 +38,10 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'ngmy/vim-rubocop'
-Bundle 'Shougo/unite.vim'
+" Bundle 'Shougo/unite.vim'
 " allows async unite search
-Bundle 'Shougo/vimproc.vim'
-Bundle 't9md/vim-ruby-xmpfilter'
+" Bundle 'Shougo/vimproc.vim'
+" Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'exu/pgsql.vim'
 
 " syntaxes
