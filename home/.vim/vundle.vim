@@ -42,7 +42,6 @@ Bundle 'ngmy/vim-rubocop'
 " allows async unite search
 " Bundle 'Shougo/vimproc.vim'
 " Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'exu/pgsql.vim'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
@@ -52,6 +51,8 @@ Bundle 'nono/vim-handlebars'
 Bundle 'tpope/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'exu/pgsql.vim'
+Bundle 'jnwhiteh/vim-golang'
 
 " colors
 " make colors just work in terminal vim
