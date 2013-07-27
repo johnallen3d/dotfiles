@@ -19,30 +19,19 @@ Bundle 'mileszs/ack.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 " Bundle 'mrtazz/simplenote.vim'
-Bundle 'swaroopch/vim-markdown-preview'
-" Bundle 'sunaku/vim-ruby-minitest'
-" Bundle 'klen/vim-taglist-plus'
 Bundle 'benmills/vimux'
 Bundle 'pgr0ss/vimux-ruby-test'
-" Bundle 'Valloric/YouCompleteMe'
-" Bundle 'airblade/vim-gitgutter'
-" Bundle 'wikitopian/hardmode'
 Bundle 'nelstrom/vim-visual-star-search'
-" Bundle 'tpope/vim-dispatch'
-" Bundle 'sjl/gundo.vim'
-" tab completion
-Bundle 'ervandew/supertab'
 " use % to move from start/end of blocks
 Bundle 'vim-scripts/ruby-matchit'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'slim-template/vim-slim'
 Bundle 'ngmy/vim-rubocop'
-" Bundle 'Shougo/unite.vim'
-" allows async unite search
-" Bundle 'Shougo/vimproc.vim'
-" Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'christoomey/vim-tmux-navigator'
+Bundle 't9md/vim-ruby-xmpfilter'
+
+" tab completion
+" Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
@@ -54,6 +43,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'exu/pgsql.vim'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'slim-template/vim-slim'
 
 " colors
 " make colors just work in terminal vim
