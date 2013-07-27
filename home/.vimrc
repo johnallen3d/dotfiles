@@ -42,9 +42,9 @@ syntax on
 syntax enable
 
 " colors
-set t_Co=256
+set t_Co=16 "256
 set background=dark
-colorscheme solarized " hybrid Tomorrow-Night
+colorscheme base16-monokai " solarized " hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2
