@@ -42,6 +42,7 @@ Bundle 'ngmy/vim-rubocop'
 " allows async unite search
 " Bundle 'Shougo/vimproc.vim'
 " Bundle 't9md/vim-ruby-xmpfilter'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
