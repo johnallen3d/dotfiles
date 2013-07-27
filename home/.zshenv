@@ -1,4 +1,7 @@
+export GOPATH=$HOME/go
+
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$PATH:$GOPATH/bin
 
 eval "$(rbenv init - --no-rehash)"
 
