@@ -25,7 +25,7 @@ export EDITOR=vi
 # set editing-mode vi
 
 # devbox helpers
-export DEV_BOX=$HOME/development/technekes/devbox
+export DEV_BOX=$HOME/development/connexio-labs/devbox
 
 # set history per session in iTerm
 export HISTFILE=~/.zsh-history/${ITERM_SESSION_ID}
