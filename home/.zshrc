@@ -48,4 +48,6 @@ bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
 # source nvm
-. ~/.nvm/nvm.sh
+if [[ -r $HOME/.nvm/nvm.sh ]]; then
+  . ~/.nvm/nvm.sh
+fi
