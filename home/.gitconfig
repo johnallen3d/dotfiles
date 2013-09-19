@@ -3,7 +3,7 @@
   email = john@threedogconsulting.com
 [core]
   excludesfile = /Users/johna/.gitignore
-  editor = "/usr/local/bin/mvim -v"
+  editor = "vi"
 [github]
   user = johnallen3d
 [alias]
