@@ -32,7 +32,7 @@ Bundle 'thoughtbot/vim-rspec'
 
 " tab completion
 " Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
