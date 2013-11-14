@@ -65,7 +65,7 @@ else # should be 'Darwin' for OS X
   alias vhalt="vagrant halt;"
   alias vssh="vagrant ssh;"
   alias devbox="cd $DEV_BOX;"
-  alias nekes_box="cd ~/development/technekes/devbox;"
+  alias nekesbox="cd ~/development/technekes/devbox;"
   # alias apps="cd $DEV_BOX/apps"
   # alias gems="cd $DEV_BOX/gems"
 
