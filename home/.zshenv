@@ -6,12 +6,12 @@ export PATH=$PATH:$GOPATH/bin
 eval "$(rbenv init - --no-rehash)"
 
 # see here for explanation: http://goo.gl/N46hS
-export RUBY_HEAP_MIN_SLOTS=800000
+# export RUBY_HEAP_MIN_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=90000000
-export RUBY_FREE_MIN=200000
+# export RUBY_FREE_MIN=200000
 
 # Editor config
 if [[ -r /usr/local/Cellar/macvim/7.3-66/bin/mvim ]]; then
