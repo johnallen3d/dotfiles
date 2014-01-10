@@ -2,7 +2,7 @@
   name = John Allen
   email = john@threedogconsulting.com
 [core]
-  excludesfile = /Users/johna/.gitignore
+  excludesfile = ~/.gitignore
   editor = "vi"
 [github]
   user = johnallen3d
