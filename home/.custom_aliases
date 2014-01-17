@@ -48,6 +48,9 @@ else # should be 'Darwin' for OS X
   alias ssq='ssh deploy@cx-qa'
   alias ssqa='ssh deploy@cx-qa'
   alias ssp='ssh deploy@cx-prod'
+  alias ussq='ssh ubuntu@cx-qa'
+  alias ussqa='ssh ubuntu@cx-qa'
+  alias ussp='ssh ubuntu@cx-prod'
 
   # Github/hub config
   alias git=hub
