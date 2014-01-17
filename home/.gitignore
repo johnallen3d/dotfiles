@@ -22,3 +22,6 @@ zeus.json
 
 # Bundler binstubs
 /bin/
+
+# Histories
+.pry_history
