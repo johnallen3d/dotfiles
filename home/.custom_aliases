@@ -47,6 +47,14 @@ else # should be 'Darwin' for OS X
   # qa & prod ssh
   alias ssq='ssh deploy@cx-qa'
   alias ssqa='ssh deploy@cx-qa'
+
+  alias app1-qa='ssh -t cx-qa ssh -t app1'
+  alias app2-qa='ssh -t cx-qa ssh -t app2'
+  alias app3-qa='ssh -t cx-qa ssh -t app3'
+  alias worker1-qa='ssh -t cx-qa ssh -t worker1'
+  alias db1-qa='ssh -t ubuntu@cx-qa ssh -t db1'
+  alias db2-qa='ssh -t ubuntu@cx-qa ssh -t db2'
+
   alias ssp='ssh deploy@cx-prod'
   alias ussq='ssh ubuntu@cx-qa'
   alias ussqa='ssh ubuntu@cx-qa'
