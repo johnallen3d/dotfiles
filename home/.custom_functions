@@ -1,3 +1,20 @@
+# usage: connexio console app1 api-server
+function connexio() {
+  # $1 = action       # console/logs
+  # $2 = app server   # app1
+  # $3 = app name     # api-server
+  # $4 = environment  # qa
+
+  case "$1" in
+    "console") COMMAND="bin/rails $1 $4";;
+    "logs")    COMMAND="tail -f log/$4.log";;
+    # "ssh")
+  esac
+
+  #TODO: add support for connecting to production
+  ssh -t deploy@cx-qa "ssh -t $2 'cd /var/apps/$3/current; $COMMAND'"
+}
+
 if [[ `uname` == 'Linux' ]]; then
   # DEVBOX FUNCTIONS
   function start_app {
