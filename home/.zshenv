@@ -1,4 +1,5 @@
-export GOPATH=$HOME/development/go
+export GOROOT=/usr/local/go
+export GOPATH="$HOME/go"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
