@@ -55,3 +55,8 @@ bindkey '^R' history-incremental-search-backward
 if [[ -r $HOME/.nvm/nvm.sh ]]; then
   . ~/.nvm/nvm.sh
 fi
+
+### Added by the Heroku Toolbelt
+if [[ -r /usr/local/heroku ]]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
