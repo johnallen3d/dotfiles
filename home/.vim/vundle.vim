@@ -45,7 +45,7 @@ Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'exu/pgsql.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'slim-template/vim-slim'
-Bundle 'stephpy/vim-yaml'
+Bundle 'avakhov/vim-yaml'
 
 " colors
 " make colors just work in terminal vim
