@@ -34,6 +34,9 @@ Bundle 'thoughtbot/vim-rspec'
 " Bundle 'ervandew/supertab'
 " Bundle 'Valloric/YouCompleteMe'
 
+" misc
+Bundle 'mhinz/vim-startify'
+
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-haml'
