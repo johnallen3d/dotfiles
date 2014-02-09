@@ -29,6 +29,7 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'mhinz/vim-startify'
 
 " tab completion
 " Bundle 'ervandew/supertab'
