@@ -45,6 +45,9 @@ map <F5> <Plug>(xmpfilter-run)
 " " sql.vim
 let g:sql_type_default = 'pgsql'
 
+" " vim-startify
+let g:startify_session_dir = "~/.vim/sessions"
+
 " " Unite
 " fuzzy and recursive file search
 " call unite#filters#matcher_default#use(['matcher_fuzzy'])
