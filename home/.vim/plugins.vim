@@ -48,6 +48,43 @@ let g:sql_type_default = 'pgsql'
 " " vim-startify
 let g:startify_session_dir = "~/.vim/sessions"
 
+let g:ctrlp_reuse_window = 'startify'
+
+let g:startify_list_order = [
+      \ ['   Sessions:'],
+      \ 'sessions',
+      \ ['   Bookmarks:'],
+      \ 'bookmarks',
+      \ ['   LRU:'],
+      \ 'files',
+      \ ]
+
+let g:startify_skiplist = [
+      \ 'COMMIT_EDITMSG',
+      \ $VIMRUNTIME .'/doc',
+      \ 'bundle/.*/doc',
+      \ '.vimgolf',
+      \ ]
+
+let g:startify_bookmarks = [
+      \ '~/dotfiles/home/.vimrc',
+      \ '~/dotfiles/home/.vim/plugins.vim',
+      \ '~/dotfiles/home/.vim/vundle.vim',
+      \ ]
+
+let g:startify_custom_header = [
+      \ '  __     ___             _____ _____ ',
+      \ '  \ \   / (_)_ __ ___   |___  |___ / ',
+      \ '   \ \ / /| | ''_ ` _ \     / /  |_ \ ',
+      \ '    \ V / | | | | | | |   / /_ ___) |',
+      \ '     \_/  |_|_| |_| |_|  /_/(_)____/ ',
+      \ '',
+      \ '',
+      \ ]
+
+
+
+
 " " Unite
 " fuzzy and recursive file search
 " call unite#filters#matcher_default#use(['matcher_fuzzy'])
