@@ -41,8 +41,20 @@ else # should be 'Darwin' for OS X
   # }
 
   function compile_gem() {
+    git stash
     git push
+    git stash pop
     version=$(gem build $(ls *.gemspec) | grep File | awk '{print $2}')
+    echo "$version"
+  }
+
+  function push_gem() {
+    version=$(compile_gem)
+    gem push $version
+  }
+
+  function push_fury_gem() {
+    version=$(compile_gem)
     fury push $version
   }
 fi
