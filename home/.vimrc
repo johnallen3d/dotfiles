@@ -159,6 +159,9 @@ set wildmode=list:longest,list:full
 " set wildmode=longest,list:longest
 " set completeopt=menu,preview
 
+" add gems.tags to ctags list
+set tags+=gems.tags
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SELECT ALL
 " Hit Ctrl+A to select all in current buffer
