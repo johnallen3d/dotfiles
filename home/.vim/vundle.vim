@@ -32,6 +32,12 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'mhinz/vim-startify'
 Bundle 'majutsushi/tagbar'
 
+" snippets
+Bundle 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Bundle 'honza/vim-snippets'
+
 " tab completion
 " Bundle 'ervandew/supertab'
 " Bundle 'Valloric/YouCompleteMe'
