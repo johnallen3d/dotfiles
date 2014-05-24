@@ -64,3 +64,6 @@ fi
 if [[ -r /usr/local/heroku ]]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
+
+# added by travis gem
+[ -f /Users/johna/.travis/travis.sh ] && source /Users/johna/.travis/travis.sh
