@@ -44,7 +44,7 @@ syntax enable
 " colors
 set t_Co=16 "256
 set background=dark
-colorscheme base16-monokai " base16-ocean solarized hybrid Tomorrow-Night
+colorscheme lavalamp "base16-monokai base16-ocean solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2
