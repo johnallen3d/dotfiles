@@ -40,7 +40,7 @@ Bundle 'honza/vim-snippets'
 
 " tab completion
 " Bundle 'ervandew/supertab'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 " syntaxes
 Bundle 'kchmck/vim-coffee-script'
