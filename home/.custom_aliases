@@ -32,6 +32,11 @@ alias hph='homesick pull homesick'
 # quick editor
 alias scratch='vi ~/temp/scratch.md'
 
+# docker
+alias dockercleancontainers="docker ps -a --no-trunc | grep 'Exit' | awk '{print $1}' | xargs -r docker rm"
+alias dockercleanimages="docker images --no-trunc| grep none | awk '{print $3}' | xargs -r docker rmi"
+alias dockerclean="dockercleancontainers && dockercleanimages"
+
 if [[ `uname` == 'Linux' ]]; then
   alias call_center='cd call_center_app'
 else # should be 'Darwin' for OS X
