@@ -71,6 +71,10 @@ else # should be 'Darwin' for OS X
      compdef hub=git
   fi
 
+  # folder shortcuts
+  alias connexio="cd ~/development/connexio-labs"
+  alias nekes="cd ~/development/technekes"
+
   # app shortcuts
   alias sam="cd ~/development/web/rails/samgreen"
   alias src="cd ~/development/iapp/motion/src"
