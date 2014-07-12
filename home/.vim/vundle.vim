@@ -54,6 +54,7 @@ Bundle 'exu/pgsql.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'slim-template/vim-slim'
 Bundle 'avakhov/vim-yaml'
+Bundle 'ekalinin/Dockerfile.vim'
 
 " colors
 " make colors just work in terminal vim
