@@ -14,15 +14,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=90000000
 # export RUBY_FREE_MIN=200000
 
-# Editor config
-if [[ -r /usr/local/Cellar/macvim/7.3-66/bin/mvim ]]; then
-  # always use mvim
-  alias vi='/usr/local/Cellar/macvim/7.3-66/bin/mvim -v -N'
-  alias vim=vi
-  alias mvim=vi
-fi
-
-export EDITOR=vi
+export EDITOR=mvim
 # set -o vi
 # set editing-mode vi
 
