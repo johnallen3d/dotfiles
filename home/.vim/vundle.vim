@@ -53,6 +53,7 @@ Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'exu/pgsql.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'slim-template/vim-slim'
+Bundle 'heartsentwined/vim-emblem'
 Bundle 'avakhov/vim-yaml'
 Bundle 'ekalinin/Dockerfile.vim'
 
