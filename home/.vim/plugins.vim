@@ -7,7 +7,7 @@ let g:Powerline_symbols = 'fancy'
 
 " " CntrlP
 map <Leader>t :CtrlP<CR>
-let g:ctrlp_custom_ignore = 'tmp$\|public/assets$\|tags$\|\.ds_store$\|\.swp$\|.png\|node_modules'
+let g:ctrlp_custom_ignore = 'tmp$\|public/assets$\|tags$\|\.ds_store$\|\.swp$\|.png\|node_modules\|bower_components\|dist'
 let g:ctrlp_dotfiles = 0
 nnoremap <leader>f :CtrlPTag<cr>
 
