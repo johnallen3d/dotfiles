@@ -9,7 +9,6 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-bundler'
@@ -20,27 +19,15 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tommcdo/vim-exchange'
 " Plugin 'mrtazz/simplenote.vim'
-Plugin 'benmills/vimux'
-Plugin 'pgr0ss/vimux-ruby-test'
-Plugin 'nelstrom/vim-visual-star-search'
 " use % to move from start/end of blocks
 Plugin 'vim-scripts/ruby-matchit'
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'ngmy/vim-rubocop'
-Plugin 't9md/vim-ruby-xmpfilter'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'mhinz/vim-startify'
-Plugin 'majutsushi/tagbar'
 
 " snippets
 Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
 " tab completion
-" Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 
 " syntaxes
@@ -62,9 +49,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 " make colors just work in terminal vim
 " Plugin 'vim-scripts/CSApprox'
 " Plugin 'flazz/vim-colorschemes'
-Plugin 'zachphillips/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'rickharris/vim-monokai'
+" Plugin 'zachphillips/vim-colorschemes'
+" Plugin 'altercation/vim-colors-solarized'
 " Plugin 'vim-scripts/colorsupport.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'w0ng/vim-hybrid'
