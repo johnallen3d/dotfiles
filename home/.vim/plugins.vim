@@ -28,9 +28,6 @@ vmap <Leader>a=> :Tabularize /=><CR>
 " " dash.vim
 nmap <silent> <leader>d <Plug>DashSearch
 
-" " The Silver Searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
 " " Vimux
 let g:VimuxUseNearestPane = 1
 
