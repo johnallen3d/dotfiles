@@ -20,8 +20,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'tommcdo/vim-exchange'
 " Plugin 'mrtazz/simplenote.vim'
 " use % to move from start/end of blocks
-Plugin 'vim-scripts/ruby-matchit'
 Plugin 'mhinz/vim-startify'
+
+" custom text objects
+Plugin 'vim-scripts/ruby-matchit'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " snippets
 Plugin 'SirVer/ultisnips'
