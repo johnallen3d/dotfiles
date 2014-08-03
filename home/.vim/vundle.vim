@@ -31,6 +31,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 
 " syntaxes
+Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-haml'
 Plugin 'vim-ruby/vim-ruby'
