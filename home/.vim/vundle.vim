@@ -50,7 +50,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 " make colors just work in terminal vim
 " Plugin 'vim-scripts/CSApprox'
 " Plugin 'flazz/vim-colorschemes'
-" Plugin 'zachphillips/vim-colorschemes'
+Plugin 'zachphillips/vim-colorschemes'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'vim-scripts/colorsupport.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
