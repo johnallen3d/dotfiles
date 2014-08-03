@@ -1,7 +1,9 @@
 " Use 14pt Menlo
 " set guifont=Menlo:h14
 " set guifont=Inconsolata:h15
-set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
+" set guifont=Droid\ Sans\ Mono:h14
+set guifont=DejaVu\ Sans\ Mono\ Bold:h14
 
 " Better line-height
 " set linespace=8
