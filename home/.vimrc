@@ -15,6 +15,7 @@ set t_ti= t_te=         " Prevent Vim from clobbering the scrollback buffer.
 set scrolloff=3         " keep at least three lines visible above/below cursor
 
 set colorcolumn=80      " show a marker at 80th character
+highlight ColorColumn ctermbg=DarkGray
 set hlsearch            " Highlight searches
 set incsearch           " do incremental searching
 set ignorecase          " searches are case insensitive...

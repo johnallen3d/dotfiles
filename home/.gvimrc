@@ -22,3 +22,6 @@ set transparency=1
 
 " hides scroll bars
 set guioptions=aAce
+
+" set the color of 80 character indicator
+highlight ColorColumn guibg=Gray14
