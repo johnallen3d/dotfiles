@@ -4,7 +4,7 @@
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
 " set guifont=Droid\ Sans\ Mono:h14
 " set guifont=DejaVu\ Sans\ Mono\ Bold:h14
-set guifont=TheSansMonoCd-W7Bold:h14
+set guifont=TheSansMonoCd-W7Bold:h15
 
 " Better line-height
 set linespace=2
