@@ -25,6 +25,7 @@ alias rss='bundle exec rspec spec'
 
 # git rebase local commits before pushing upstream
 alias gr='git rebase -i @{u}'
+alias gst='git status --short'
 
 # homesick
 alias hph='homesick pull homesick'
