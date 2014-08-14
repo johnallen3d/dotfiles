@@ -9,8 +9,8 @@ nnoremap <leader>f :CtrlPTag<cr>
 " " tabular-vim
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a: :Tabularize/\(:.*\)\@<!:\zs /l0<CR>
+vmap <Leader>a: :Tabularize/\(:.*\)\@<!:\zs /l0<CR>
 nmap <Leader>a=> :Tabularize /=><CR>
 vmap <Leader>a=> :Tabularize /=><CR>
 
