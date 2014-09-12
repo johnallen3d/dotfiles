@@ -23,6 +23,19 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'vim-scripts/ruby-matchit'
 Plugin 'mhinz/vim-startify'
 
+" Unite
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/unite-outline'
+Plugin 'Shougo/unite-help'
+Plugin 'Shougo/unite-session'
+Plugin 'Shougo/neomru.vim'
+Plugin 'thinca/vim-unite-history'
+
+" For file browsing, etc in unite, we need to utilize vimproc
+" After this is installed through bundle, we also need to run
+" make to finish setting it up
+Plugin 'Shougo/vimproc.vim'
+
 " snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'

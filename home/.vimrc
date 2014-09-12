@@ -3,6 +3,11 @@ set nocompatible        " Use Vim settings, rather then Vi settings
 " Vundle
 source ~/.vim/vundle.vim
 
+" MyAutoCmd : an augroup for my autocmd
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
 set nobackup            " do not make backup before saving
 set nowritebackup       " do not write backup before saving
 set history=50          " remember 50 commands

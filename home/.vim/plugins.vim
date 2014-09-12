@@ -41,3 +41,7 @@ endif
 if filereadable(glob('~/.vim/plugins.lightline.vim'))
   source ~/.vim/plugins.lightline.vim
 endif
+
+if filereadable(glob('~/.vim/plugins.unite.vim'))
+  source ~/.vim/plugins.unite.vim
+endif
