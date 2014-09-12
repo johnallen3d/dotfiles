@@ -82,6 +82,9 @@ nnoremap <silent> <leader>c :<C-u>Unite -buffer-name=commands command<CR>
 " ,/ Grep
 nnoremap <silent> <leader>/ :<C-u>Unite -no-quit -buffer-name=search grep:.<CR>
 
+" ,/ CntrlP replacement
+nnoremap <silent> <leader>t :<C-u>Unite file_rec/async<CR>
+
 
 " Unite grep ===================================================================
 if executable('ag')
