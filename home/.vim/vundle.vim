@@ -21,7 +21,6 @@ Plugin 'tommcdo/vim-exchange'
 " Plugin 'mrtazz/simplenote.vim'
 " use % to move from start/end of blocks
 Plugin 'vim-scripts/ruby-matchit'
-Plugin 'mhinz/vim-startify'
 
 " Unite
 Plugin 'Shougo/unite.vim'
