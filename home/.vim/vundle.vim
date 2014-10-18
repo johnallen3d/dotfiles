@@ -29,6 +29,7 @@ Plugin 'Shougo/unite-help'
 Plugin 'Shougo/unite-session'
 Plugin 'Shougo/neomru.vim'
 Plugin 'thinca/vim-unite-history'
+Plugin 'Shougo/vimfiler.vim'
 
 " For file browsing, etc in unite, we need to utilize vimproc
 " After this is installed through bundle, we also need to run

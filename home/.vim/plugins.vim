@@ -33,6 +33,9 @@ endfunction
 
 nmap <silent> <Leader>r :call SendToTerminal('clear && rake') <CR>
 
+" " vimfiler
+let g:vimfiler_as_default_explorer = 1
+
 " " Larger configurations
 if filereadable(glob('~/.vim/plugins.startify.vim'))
   source ~/.vim/plugins.startify.vim
