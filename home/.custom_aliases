@@ -82,6 +82,7 @@ else # should be 'Darwin' for OS X
   alias tix="cd ~/development/web/rails/futuretix"
 
   # devbox
+  export DEV_BOX=$HOME/development/connexio-labs/devbox
   alias vup="vagrant up --provision;"
   alias vhalt="vagrant halt;"
   alias vssh="vagrant ssh;"

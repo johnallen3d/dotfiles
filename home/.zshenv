@@ -1,25 +1,4 @@
-export GOROOT=/usr/local/go
-export GOPATH="$HOME/go"
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH=$PATH:$GOPATH/bin
-
-eval "$(rbenv init - --no-rehash)"
-
-# see here for explanation: http://goo.gl/N46hS
-# export RUBY_HEAP_MIN_SLOTS=800000
-export RUBY_HEAP_FREE_MIN=100000
-export RUBY_HEAP_SLOTS_INCREMENT=300000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=90000000
-# export RUBY_FREE_MIN=200000
-
 export EDITOR=mvim
-# set -o vi
-# set editing-mode vi
-
-# devbox helpers
-export DEV_BOX=$HOME/development/connexio-labs/devbox
 
 # set history per session in iTerm
 export HISTFILE=~/.zsh-history/${ITERM_SESSION_ID}
