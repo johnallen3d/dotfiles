@@ -50,7 +50,7 @@ syntax enable
 " colors
 set t_Co=16 "256
 set background=dark
-colorscheme base16-pop " base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
+colorscheme base16-atelierforest " base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2
