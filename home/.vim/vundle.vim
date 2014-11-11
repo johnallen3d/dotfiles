@@ -6,7 +6,7 @@ Plug 'gmarik/vundle'
 " helpers
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlp.vim'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 " Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-bundler'
