@@ -38,7 +38,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " tab completion
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 " syntaxes
 Plug 'scrooloose/syntastic'
