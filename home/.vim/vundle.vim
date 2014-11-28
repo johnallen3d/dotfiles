@@ -65,6 +65,7 @@ Plug 'chriskempson/base16-vim'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'vim-scripts/colorsupport.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'zenorocha/dracula-theme'
 
 call plug#end()
 
