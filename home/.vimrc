@@ -92,6 +92,9 @@ set visualbell
 " Spell check and automatic wrapping at 72 columns for commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" force markdown format for all .md files http://goo.gl/2xSiBU
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
