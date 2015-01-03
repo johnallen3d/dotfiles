@@ -6,7 +6,7 @@ Plug 'gmarik/vundle'
 " helpers
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlp.vim'
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 " Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-bundler'
@@ -18,7 +18,8 @@ Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
 " Plug 'mrtazz/simplenote.vim'
 " use % to move from start/end of blocks
-Plug 'vim-scripts/ruby-matchit'
+" Plug 'vim-scripts/ruby-matchit'
+Plug 'mtth/scratch.vim'
 
 " Unite
 Plug 'Shougo/unite.vim'
