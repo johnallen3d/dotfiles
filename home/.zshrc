@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 if [[ `uname` == 'Linux' ]]; then
-  ZSH_THEME='robbyrussell'
+  ZSH_THEME='cloud'
 else # should be 'Darwin' for OS X
   ZSH_THEME="dracula"
 fi
