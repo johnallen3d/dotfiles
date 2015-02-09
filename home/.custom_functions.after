@@ -17,6 +17,44 @@ function connexio() {
   ssh -t deploy@cx-qa "ssh -t $2 'cd /var/apps/$3/current; $COMMAND'"
 }
 
+# docker
+function dockercleancontainers() {
+    docker ps -aq -f status=exited | xargs docker rm
+}
+
+function dockercleanimages() {
+    docker images -f dangling=true -q | xargs docker rmi
+}
+
+function dockerclean() {
+    dockercleancontainers && dockercleanimages
+}
+
+function docker() {
+  case "$1" in
+    clean*)
+        case "$2" in
+            images*)
+                echo 'running docker clean images'
+                dockercleanimages
+                ;;
+            containers*)
+                echo 'running docker clean containers'
+                dockercleancontainers
+                ;;
+            *)
+                echo 'running docker clean all'
+                dockerclean
+                ;;
+        esac
+        ;;
+    *)
+        command docker "$@"
+        ;;
+  esac
+}
+
+
 if [[ `uname` == 'Linux' ]]; then
   # DEVBOX FUNCTIONS
 else # should be 'Darwin' for OS X
