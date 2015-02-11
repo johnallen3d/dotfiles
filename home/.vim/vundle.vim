@@ -56,6 +56,7 @@ Plug 'slim-template/vim-slim'
 Plug 'heartsentwined/vim-emblem'
 Plug 'avakhov/vim-yaml'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'dag/vim-fish'
 
 " colors
 " make colors just work in terminal vim
