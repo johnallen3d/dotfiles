@@ -19,24 +19,7 @@ Plug 'tommcdo/vim-exchange'
 " Plug 'mrtazz/simplenote.vim'
 " use % to move from start/end of blocks
 " Plug 'vim-scripts/ruby-matchit'
-Plug 'mtth/scratch.vim'
-
-" Unite
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/unite-outline'
-Plug 'Shougo/unite-help'
-Plug 'Shougo/unite-session'
-Plug 'Shougo/neomru.vim'
-Plug 'thinca/vim-unite-history'
-
-" For file browsing, etc in unite, we need to utilize vimproc
-" After this is installed through bundle, we also need to run
-" make to finish setting it up
-Plug 'Shougo/vimproc.vim'
-
-" snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'mtth/scratch.vim'
 
 " tab completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
