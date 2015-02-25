@@ -18,15 +18,6 @@ vmap <Leader>a=> :Tabularize /=><CR>
 " " sql.vim
 let g:sql_type_default = 'pgsql'
 
-" " ultisnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 " " RunCommand : https://coderwall.com/p/d1pa0a
 function! SendToTerminal(args)
   execute ":silent !run_command '" . a:args . "'"
@@ -48,4 +39,8 @@ endif
 
 if filereadable(glob('~/.vim/plugins.unite.vim'))
   source ~/.vim/plugins.unite.vim
+endif
+
+if filereadable(glob('~/.vim/plugins.ultisnips.vim'))
+  source ~/.vim/plugins.ultisnips.vim
 endif

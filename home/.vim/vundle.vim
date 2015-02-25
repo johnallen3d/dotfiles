@@ -23,6 +23,8 @@ Plug 'tommcdo/vim-exchange'
 
 " tab completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " syntaxes
 Plug 'scrooloose/syntastic'
