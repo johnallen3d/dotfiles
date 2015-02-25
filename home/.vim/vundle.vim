@@ -25,6 +25,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 
 " syntaxes
 Plug 'scrooloose/syntastic'
