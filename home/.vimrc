@@ -1,7 +1,7 @@
 set nocompatible        " Use Vim settings, rather then Vi settings
 
 " Vundle
-source ~/.vim/vundle.vim
+source ~/.vim/Pluginfile.vim
 
 " MyAutoCmd : an augroup for my autocmd
 augroup MyAutoCmd
@@ -248,4 +248,4 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LOAD PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source ~/.vim/plugins.vim
+runtime! ~/.vim/config/*.vim

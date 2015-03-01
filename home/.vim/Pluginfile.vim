@@ -1,8 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plug 'gmarik/vundle'
-
 " helpers
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlp.vim'
@@ -56,4 +53,3 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 call plug#end()
-
