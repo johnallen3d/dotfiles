@@ -244,8 +244,3 @@ filetype plugin indent on
 syntax on
 autocmd FileType go setlocal shiftwidth=2 tabstop=2 noexpandtab
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LOAD PLUGIN SETTINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-runtime! ~/.vim/config/*.vim
