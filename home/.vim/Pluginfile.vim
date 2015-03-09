@@ -17,6 +17,7 @@ Plug 'tommcdo/vim-exchange'
 " use % to move from start/end of blocks
 " Plug 'vim-scripts/ruby-matchit'
 " Plug 'mtth/scratch.vim'
+Plug 'tpope/vim-vinegar'
 
 " tab completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
