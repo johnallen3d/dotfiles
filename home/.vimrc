@@ -1,6 +1,6 @@
-set nocompatible        " Use Vim settings, rather then Vi settings
+scriptencoding utf-8
 
-" Vundle
+" Plugged
 source ~/.vim/Pluginfile.vim
 
 " MyAutoCmd : an augroup for my autocmd
@@ -29,10 +29,8 @@ set gdefault            " have :s///g flag by default on
 
 set cursorline          " highlight the line the cursor is on
 set synmaxcol=800       " don't try to highlight long lines
-" set title             " not really sure what this does
 set number              " show line numbers
 set clipboard=unnamed   " use system clipboard by default!
-set shell=/bin/zsh      " use zsh for shell (:sh)
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
@@ -48,8 +46,6 @@ syntax on
 syntax enable
 
 " colors
-set t_Co=16 "256
-set background=dark
 colorscheme dracula " base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
@@ -75,9 +71,9 @@ set showtabline=2                 " always show tab bar
 set list listchars=tab:▸\ ,trail:.
 
 "It's easier to press Space than / for searching:
-nmap <Space> /
-nmap <C-Space> ?
-nmap </> /\v
+nnoremap <Space> /
+nnoremap <C-Space> ?
+nnoremap </> /\v
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -118,10 +114,10 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Pane navigation
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-H> <C-W><C-H>
-nmap <C-L> <C-W><C-L>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -142,7 +138,7 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 
 " Quickly hide search highlighting
-" nmap <silent> <leader>n :silent :nohlsearch<CR>
+" nnoremap <silent> <leader>n :silent :nohlsearch<CR>
 :nnoremap <CR> :nohlsearch<cr>
 
 "folding settings
@@ -152,13 +148,7 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 " complete settings
-set complete=.,t
-" (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu
-set wildmode=list:longest,list:full
-" set complete=.,b,u,]
-" set wildmode=longest,list:longest
-" set completeopt=menu,preview
+set wildmenu
 
 " add gems.tags to ctags list
 set tags+=gems.tags
@@ -167,7 +157,7 @@ set tags+=gems.tags
 " SELECT ALL
 " Hit Ctrl+A to select all in current buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <C-a> ggVG
+nnoremap <C-a> ggVG
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MARK DOWN
