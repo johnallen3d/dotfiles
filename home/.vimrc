@@ -208,9 +208,6 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-map <leader>gr :topleft :split config/routes.rb<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT EXPANSION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
