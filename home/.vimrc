@@ -108,6 +108,9 @@ let g:html_indent_tags = 'li\|p'
 " <,> is the leader character
 let mapleader = ","
 
+" do not display info on the top of window
+let g:netrw_banner = 0
+
 " No Help, please
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
