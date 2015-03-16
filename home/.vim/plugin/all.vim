@@ -24,6 +24,3 @@ function! SendToTerminal(args)
 endfunction
 
 nmap <silent> <Leader>r :call SendToTerminal('clear && bin/rake') <CR>
-
-" " vimfiler
-let g:vimfiler_as_default_explorer = 1
