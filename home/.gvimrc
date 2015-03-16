@@ -26,3 +26,8 @@ set guioptions=aAce
 
 " set the color of 80 character indicator
 highlight ColorColumn guibg=Gray14
+
+" better trailing whitespace hightlighting
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd ColorScheme * highlight ExtraWhitespace guibg=red ctermbg=darkred
