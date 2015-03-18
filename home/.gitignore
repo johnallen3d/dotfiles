@@ -8,6 +8,8 @@
 
 # always ignore tag files
 tags
+tags.lock
+tags.temp
 
 # igrnore zeus config
 custom_plan.rb
