@@ -2,30 +2,20 @@
 alias apps="cd /var/apps"
 alias gems="cd /var/gems"
 
-# application settings
-alias tmux="TERM=screen-256color-bce tmux"
-
-# rails
-alias rfs='RACK_ENV=development foreman start'
-alias rake='bundle exec rake'
-alias beg='bundle exec guard'
-
-# zeus
-alias zs='zeus start'
-alias zc='zeus console'
-alias zt='zeus test'
-alias zr='zeus rake'
-
 # tmux
+alias tmux="TERM=screen-256color-bce tmux"
 alias ta='tmux attach -t'
 alias tn='tmux new-session -s'
 
-# testing
-alias rss='bundle exec rspec spec'
-
-# git rebase local commits before pushing upstream
+# git
 alias gr='git rebase -i @{u}'
 alias gst='git status --short'
+alias gc="git commit -v"
+alias gb="git branch"
+alias gp="git push"
+alias gl="git pull"
+alias gco="git checkout"
+alias gm="git merge"
 
 # homesick
 alias hph='homesick pull homesick'
@@ -38,33 +28,8 @@ alias :e=vim
 alias :q=exit
 
 if [[ `uname` == 'Linux' ]]; then
-  alias call_center='cd call_center_app'
+  # set some linux aliases
 else # should be 'Darwin' for OS X
-
-  # heroku
-  alias hlogqa='heroku logs --tail --remote qa'
-  alias hlogp='heroku logs --tail --remote prod'
-  alias hconqa='heroku run console --remote qa'
-  alias hconp='heroku run console --remote prod'
-  alias hpsqa='heroku ps --remote qa'
-  alias hpsp='heroku ps --remote prod'
-
-  # qa & prod ssh
-  alias ssq='mosh deploy@cx-qa'
-  alias ssqa='mosh deploy@cx-qa'
-
-  alias app1-qa='mosh -t cx-qa ssh -t app1'
-  alias app2-qa='mosh -t cx-qa ssh -t app2'
-  alias app3-qa='mosh -t cx-qa ssh -t app3'
-  alias worker1-qa='mosh -t cx-qa ssh -t worker1'
-  alias db1-qa='mosh -t ubuntu@cx-qa ssh -t db1'
-  alias db2-qa='mosh -t ubuntu@cx-qa ssh -t db2'
-
-  alias ssp='mosh deploy@cx-prod'
-  alias ussq='mosh ubuntu@cx-qa'
-  alias ussqa='mosh ubuntu@cx-qa'
-  alias ussp='mosh ubuntu@cx-prod'
-
   # Github/hub config
   alias git=hub
   if type compdef >/dev/null; then
@@ -77,18 +42,12 @@ else # should be 'Darwin' for OS X
 
   # app shortcuts
   alias sam="cd ~/development/web/rails/samgreen"
-  alias src="cd ~/development/iapp/motion/src"
   alias tix="cd ~/development/web/rails/futuretix"
 
   # devbox
   export DEV_BOX=$HOME/development/connexio-labs/devbox
-  alias vup="vagrant up --provision;"
-  alias vhalt="vagrant halt;"
-  alias vssh="vagrant ssh;"
   alias devbox="cd $DEV_BOX;"
   alias nekesbox="cd ~/development/technekes/devbox;"
-  # alias apps="cd $DEV_BOX/apps"
-  # alias gems="cd $DEV_BOX/gems"
 
   # utility
   #  cleans up open with context menu: http://goo.gl/NSNCv
