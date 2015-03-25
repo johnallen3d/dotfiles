@@ -18,7 +18,6 @@ Plug 'tommcdo/vim-exchange'
 " Plug 'vim-scripts/ruby-matchit'
 " Plug 'mtth/scratch.vim'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'fmoralesc/vim-pad'
 
 " tab completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
