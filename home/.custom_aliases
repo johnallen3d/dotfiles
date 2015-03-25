@@ -36,6 +36,10 @@ else # should be 'Darwin' for OS X
      compdef hub=git
   fi
 
+  # always use mvim
+  alias vi="/usr/local/bin/mvim -v"
+  alias vim="/usr/local/bin/mvim -v"
+
   # folder shortcuts
   alias connexio="cd ~/development/connexio-labs"
   alias nekes="cd ~/development/technekes"
