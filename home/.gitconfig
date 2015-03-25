@@ -3,7 +3,6 @@
   email = john@threedogconsulting.com
 [core]
   excludesfile = ~/.gitignore
-  editor = "vi"
 [github]
   user = johnallen3d
 [alias]
