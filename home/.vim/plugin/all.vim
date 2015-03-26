@@ -4,8 +4,14 @@
 map <Leader>t :CtrlP<CR>
 let g:ctrlp_custom_ignore = 'tmp$\|public/assets$\|tags$\|\.ds_store$\|\.swp$\|.png\|node_modules\|bower_components\|dist'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_dotfiles = 0
+let g:ctrlp_show_hidden = 0
 nnoremap <leader>f :CtrlPTag<cr>
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
 
 " " tabular-vim
 nmap <Leader>a= :Tabularize /=<CR>
