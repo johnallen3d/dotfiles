@@ -158,7 +158,7 @@ nnoremap <C-a> ggVG
 " MARK DOWN
 " Hit leader+m to preview markdown file in Marked
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p' -g<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
