@@ -19,6 +19,7 @@ Plug 'tommcdo/vim-exchange'
 " Plug 'mtth/scratch.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'bruno-/vim-husk'
 
 " tab completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
