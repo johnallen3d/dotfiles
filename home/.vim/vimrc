@@ -3,9 +3,16 @@ scriptencoding utf-8
 " Plugged
 source ~/.vim/Pluginfile.vim
 
-" MyAutoCmd : an augroup for my autocmd
-augroup MyAutoCmd
+" myfiletypes : an augroup for my autocmd
+augroup myfiletypes
+  " Clear old autocmds in group
   autocmd!
+  " autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,eruby,yaml setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml setlocal path+=lib
+  autocmd FileType ruby,eruby,yaml setlocal colorcolumn=80
+  " Make ?s part of words
+  autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
 augroup END
 
 set nobackup            " do not make backup before saving
@@ -70,7 +77,7 @@ set showtabline=2                 " always show tab bar
 " Display extra whitespace etc.
 set list listchars=tab:▸\ ,trail:·
 
-"It's easier to press Space than / for searching:
+" It's easier to press Space than / for searching:
 nnoremap <Space> /
 nnoremap <C-Space> ?
 nnoremap </> /\v
@@ -95,7 +102,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
+silent !mkdir -p ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 
@@ -116,6 +123,18 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" Disable Ex mode
+map Q <Nop>
+
+" Disable K looking stuff up
+map K <Nop>
+
+" Bind :Q to :q etc
+command! Q q
+command! Qall qall
+command! QA qall
+command! E e
+
 " Pane navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -128,6 +147,7 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 "Visual mode blockwise indentEdit
 vmap > >gv
 vmap < <gv
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5
 
 " Strip trailing whitespace (,ss)
 noremap <leader>ss :call whitespace#Strip()<CR>
@@ -201,3 +221,18 @@ map <leader>n :call file#Rename()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap clog console.log?
 imap <C-L> <SPACE>=><SPACE>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EDIT IN CURRENT DIRECTORY
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
+map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Emacs-like beginning and end of line (insert mode)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
