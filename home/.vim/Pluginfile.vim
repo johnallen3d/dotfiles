@@ -43,6 +43,7 @@ Plug 'heartsentwined/vim-emblem'
 Plug 'avakhov/vim-yaml'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'dag/vim-fish'
+plug 'derekwyatt/vim-scala'
 
 " colors
 " make colors just work in terminal vim
