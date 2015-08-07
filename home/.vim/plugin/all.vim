@@ -30,3 +30,9 @@ function! SendToTerminal(args)
 endfunction
 
 nmap <silent> <Leader>r :call SendToTerminal('clear && bin/rake') <CR>
+
+" " rainbow parentheses
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType ruby,javascript,lisp,clojure,scheme RainbowParentheses
+augroup END

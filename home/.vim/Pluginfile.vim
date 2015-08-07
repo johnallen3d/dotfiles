@@ -2,7 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 " helpers
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'itchyny/lightline.vim'
 " Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
@@ -20,6 +21,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'bruno-/vim-husk'
+Plug 'unblevable/quick-scope'
 
 " tab completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
@@ -43,7 +45,7 @@ Plug 'heartsentwined/vim-emblem'
 Plug 'avakhov/vim-yaml'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'dag/vim-fish'
-plug 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 
 " colors
 " make colors just work in terminal vim
@@ -55,5 +57,7 @@ Plug 'chriskempson/base16-vim'
 " Plug 'vim-scripts/colorsupport.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plug 'bruschill/madeofcode'
+Plug 'jdkanani/vim-material-theme'
 
 call plug#end()
