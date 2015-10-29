@@ -37,3 +37,5 @@ bindkey '^R' history-incremental-search-backward
 
 # added by travis gem
 [ -f /Users/johna/.travis/travis.sh ] && source /Users/johna/.travis/travis.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
