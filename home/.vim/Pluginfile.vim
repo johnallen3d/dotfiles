@@ -14,7 +14,7 @@ Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
-" Plug 'mrtazz/simplenote.vim'
+Plug 'mrtazz/simplenote.vim'
 " use % to move from start/end of blocks
 " Plug 'vim-scripts/ruby-matchit'
 " Plug 'mtth/scratch.vim'
