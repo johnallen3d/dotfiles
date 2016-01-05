@@ -37,6 +37,9 @@ augroup rainbow_lisp
   autocmd FileType ruby,javascript,lisp,clojure,scheme RainbowParentheses
 augroup END
 
+" " tpope/vim-markdown
+let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'yaml', 'javascript', 'html', 'vim', 'coffee', 'json', 'diff']
+
 
 " " quick-scope
 " only show quick-scope highlights after f/F/t/T is pressed
