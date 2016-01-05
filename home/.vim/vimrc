@@ -53,7 +53,7 @@ syntax on
 syntax enable
 
 " colors
-colorscheme dracula " base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
+colorscheme onedark " dracula base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2
