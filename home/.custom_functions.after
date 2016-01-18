@@ -1,22 +1,5 @@
 # COMMON FUNCTIONS
 
-# usage: connexio console app1 api-server
-function connexio() {
-  # $1 = action       # console/logs
-  # $2 = app server   # app1
-  # $3 = app name     # api-server
-  # $4 = environment  # qa
-
-  case "$1" in
-    "console") COMMAND="bin/rails $1 $4";;
-    "logs")    COMMAND="tail -f log/$4.log";;
-    # "ssh")
-  esac
-
-  #TODO: add support for connecting to production
-  ssh -t deploy@cx-qa "ssh -t $2 'cd /var/apps/$3/current; $COMMAND'"
-}
-
 # docker
 function dockercleancontainers() {
     docker ps -aq -f status=exited | xargs docker rm
@@ -53,46 +36,3 @@ function docker() {
         ;;
   esac
 }
-
-
-if [[ `uname` == 'Linux' ]]; then
-  # DEVBOX FUNCTIONS
-else # should be 'Darwin' for OS X
-  function run_command_on_devbox() {
-    ssh -p 2222 -i ~/.vagrant.d/insecure_private_key vagrant@localhost "source ~/.zshrc; $1"
-  }
-
-  # function start_app() {
-  #   run_command_on_devbox "start_app $1"
-  # }
-
-  # function stop_app() {
-  #   run_command_on_devbox "stop_app $1"
-  # }
-
-  # function restart_app() {
-  #   run_command_on_devbox "restart_app $1"
-  # }
-
-  # function bundle_app() {
-  #   run_command_on_devbox "cd /var/apps/$1_app; bundle; restart_app $1"
-  # }
-
-  function compile_gem() {
-    git stash
-    git push
-    git stash pop
-    version=$(gem build $(ls *.gemspec) | grep File | awk '{print $2}')
-    echo "$version"
-  }
-
-  function push_gem() {
-    version=$(compile_gem)
-    gem push $version
-  }
-
-  function push_fury_gem() {
-    version=$(compile_gem)
-    fury push $version
-  }
-fi
