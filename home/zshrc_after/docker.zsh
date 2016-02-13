@@ -1,7 +1,19 @@
-# COMMON FUNCTIONS
+# technekes/nib docker/compose wrapper
+alias nib='
+  docker run                                             \
+    -it                                                  \
+    --rm                                                 \
+    -w $(pwd)                                            \
+    -v $(pwd):$(pwd)                                     \
+    -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro                \
+    -v /var/run/docker.sock:/var/run/docker.sock         \
+    technekes/nib'
 
+#
+# image and container cleanup helper
+#
 function dockercleancontainers() {
-# find exited containers that are not labeled "data" and remove them
+  # find exited containers that are not labeled "data" and remove them
   docker rm $(
     comm -13 \
       <(docker ps -aq -f status=exited -f label=data | sort) \
