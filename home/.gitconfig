@@ -3,9 +3,14 @@
   email = john@threedogconsulting.com
 [core]
   excludesfile = ~/.gitignore
+  pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [github]
   user = johnallen3d
 [alias]
+  hist = log --color --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
+  unstage = reset HEAD --
+  restore = checkout --
+  graph = log --color --graph --pretty=format:\"%h | %ad | %an | %s%d\" --date=short
   lol = log --pretty=oneline --graph
   head = !git l -1
   h = !git head
@@ -19,7 +24,19 @@
 [pull]
   rebase = true
 [color]
-  ui = true
+  ui = always
+[color "diff"]
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [push]
 	default = simple
 [commit]

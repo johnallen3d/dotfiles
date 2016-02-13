@@ -13,6 +13,7 @@ augroup myfiletypes
   autocmd FileType ruby,eruby,yaml setlocal colorcolumn=80
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
+  autocmd BufRead,BufNewFile *.md setlocal spell
 augroup END
 
 set nobackup            " do not make backup before saving
@@ -53,7 +54,9 @@ syntax on
 syntax enable
 
 " colors
-colorscheme onedark " dracula base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
+set background=dark
+colorscheme hybrid
+" colorscheme dracula " onedark base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -91,6 +94,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Disable error bells
 set noerrorbells
 set visualbell
+
+" Allow for spelling tab completion when enabled
+set complete+=kspell
 
 " Spell check and automatic wrapping at 72 columns for commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
