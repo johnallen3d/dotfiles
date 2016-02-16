@@ -1,3 +1,5 @@
+eval $(docker-machine env dinghy)
+
 # technekes/nib docker/compose wrapper
 alias nib='
   docker run                                             \
