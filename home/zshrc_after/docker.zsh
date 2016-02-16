@@ -1,6 +1,8 @@
 eval $(docker-machine env dinghy)
 
+#
 # technekes/nib docker/compose wrapper
+#
 alias nib='
   docker run                                             \
     -it                                                  \
@@ -15,16 +17,24 @@ alias nib='
 # image and container cleanup helper
 #
 function dockercleancontainers() {
-  # find exited containers that are not labeled "data" and remove them
-  docker rm $(
-    comm -13 \
-      <(docker ps -aq -f status=exited -f label=data | sort) \
-      <(docker ps -aq -f status=exited | sort)
-  )
+  if [[ -n "${1}" ]]; then
+    docker rm $(docker ps -aq -f name="${1}")
+  else
+    # find exited containers that are not labeled "data" and remove them
+    docker rm $(
+      comm -13 \
+        <(docker ps -aq -f status=exited -f label=data | sort) \
+        <(docker ps -aq -f status=exited | sort)
+    )
+  fi
 }
 
 function dockercleanimages() {
-  docker rmi $(docker images -f dangling=true -q)
+  if [[ -n "${1}" ]]; then
+    docker images | grep "${1}" | awk '{print $3}' | xargs docker rmi
+  else
+    docker rmi $(docker images -f dangling=true -q)
+  fi
 }
 
 function dockerclean() {
@@ -34,23 +44,20 @@ function dockerclean() {
 function docker() {
   case "$1" in
     clean*)
-        case "$2" in
-            images*)
-                echo 'running docker clean images'
-                dockercleanimages
-                ;;
-            containers*)
-                echo 'running docker clean containers'
-                dockercleancontainers
-                ;;
-            *)
-                echo 'running docker clean all'
-                dockerclean
-                ;;
-        esac
-        ;;
+      case "$2" in
+        images*)
+          dockercleanimages "${3}"
+          ;;
+        containers*)
+          dockercleancontainers "${3}"
+          ;;
+        *)
+          dockerclean
+          ;;
+      esac
+      ;;
     *)
-        command docker "$@"
-        ;;
+      command docker "$@"
+      ;;
   esac
 }
