@@ -1,16 +1,19 @@
-eval $(docker-machine env dinghy)
+if [[ "$(docker-machine status dinghy 2>/dev/null)" == 'Running' ]]; then
+  eval $(dinghy shellinit)
+fi
 
 #
 # technekes/nib docker/compose wrapper
 #
 alias nib='
-  docker run                                             \
-    -it                                                  \
-    --rm                                                 \
-    -w $(pwd)                                            \
-    -v $(pwd):$(pwd)                                     \
-    -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro                \
-    -v /var/run/docker.sock:/var/run/docker.sock         \
+  docker run \
+    -it \
+    --rm \
+    -v $(pwd):$(pwd) \
+    -w $(pwd) \
+    -v ~/.docker/config.json:/root/.docker/config.json:ro \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -e "docker_host_url=$docker_host" \
     technekes/nib'
 
 #
@@ -60,4 +63,17 @@ function docker() {
       command docker "$@"
       ;;
   esac
+}
+
+function docker-ruby() {
+  local cmd="${1:-irb}"
+
+  [[ $# -gt 0 ]] && shift
+
+  docker run \
+    -it \
+    --rm \
+    -v $PWD:/usr/src/app \
+    -w /usr/src/app \
+    ruby:latest /bin/bash -c "${cmd} $@"
 }

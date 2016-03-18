@@ -24,3 +24,20 @@ function jq() {
     --entrypoint=/bin/jq \
     realguess/jq "$@"
 }
+
+function heroku() {
+  docker run \
+    --rm \
+    -it \
+    -v $HOME/.netrc:/root/.netrc \
+    -v $PWD:/usr/src/app \
+    -w /usr/src/app \
+    technekes/heroku-toolbelt "$@"
+}
+
+function http() {
+  docker run -t --rm \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    --log-driver none \
+    jess/httpie "$@"
+}
