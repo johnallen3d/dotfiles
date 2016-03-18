@@ -23,6 +23,8 @@
   account = nekes
 [pull]
   rebase = true
+[fetch]
+  prune = true
 [color]
   ui = always
 [color "diff"]
