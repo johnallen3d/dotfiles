@@ -43,3 +43,5 @@
 	default = simple
 [commit]
   template = ~/.gitmessage
+[rebase]
+	autosquash = true
