@@ -1,6 +1,12 @@
+home/.config/nvim/autoload/*
+home/.config/nvim/plugged/*
+home/.config/nvim/spell/*
+home/.config/nvim/.netrwhist
+
 home/.vim/.netrwhist
 home/.vim/autoload/plug.vim
 home/.vim/backups/
 home/.vim/plugged/
 home/.vim/spell/
+
 home/.osx
