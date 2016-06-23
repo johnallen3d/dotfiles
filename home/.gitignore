@@ -23,7 +23,7 @@ zeus.json
 /.rbenv-version
 
 # Bundler binstubs
-/bin/
+# /bin/
 
 # Histories
 .pry_history
