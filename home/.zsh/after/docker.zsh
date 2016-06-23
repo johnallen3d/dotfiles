@@ -1,21 +1,3 @@
-if [[ "$(docker-machine status dinghy 2>/dev/null)" == 'Running' ]]; then
-  eval $(dinghy shellinit)
-fi
-
-#
-# technekes/nib docker/compose wrapper
-#
-alias nib='
-  docker run \
-    -it \
-    --rm \
-    -v $(pwd):$(pwd) \
-    -w $(pwd) \
-    -v ~/.docker/config.json:/root/.docker/config.json:ro \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -e "docker_host_url=$docker_host" \
-    technekes/nib'
-
 #
 # image and container cleanup helper
 #
@@ -65,6 +47,9 @@ function docker() {
   esac
 }
 
+#
+# a ruby environment for building gems and other one-off tasks
+#
 function docker-ruby() {
   local cmd="${1:-irb}"
 
@@ -74,6 +59,9 @@ function docker-ruby() {
     -it \
     --rm \
     -v $PWD:/usr/src/app \
+    -v $HOME/.gem:/root/.gem \
+    -v $HOME/.ssh:/root/.ssh \
+    -v $HOME/.gitconfig:/root/.gitconfig \
     -w /usr/src/app \
     ruby:latest /bin/bash -c "${cmd} $@"
 }
