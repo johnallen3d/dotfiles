@@ -9,7 +9,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
@@ -19,11 +19,12 @@ Plug 'tommcdo/vim-exchange'
 " Plug 'mtth/scratch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-rsi'
+Plug 'junegunn/goyo.vim'
 
 Plug 'neomake/neomake'
 
 " tab completion
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " syntaxes
 " Plug 'scrooloose/syntastic'

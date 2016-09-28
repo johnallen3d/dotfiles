@@ -46,9 +46,10 @@ set updatecount=0
 syntax on
 syntax enable
 
-" colors
-set t_Co=256
-set background=dark
+" " colors
+" https://github.com/romainl/idiomatic-vimrc/blob/master/idiomatic-vimrc.vim#L66-L67
+" set t_Co=256
+" set background=dark
 colorscheme onedark " dracula base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
@@ -121,6 +122,12 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
+" Re-select block after in/outdent in visual block mode
+vnoremap > ><CR>gv
+vnoremap < <<CR>gv
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5
+
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
