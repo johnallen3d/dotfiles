@@ -50,13 +50,18 @@ set autoread
 " Disable swap files; systems don't crash that often these days
 set updatecount=0
 
+" colors and syntax highlighting
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 syntax on
 syntax enable
 
-" colors
-set background=dark
-colorscheme hybrid
-" colorscheme dracula " onedark base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
+" set background=dark
+let macvim_skip_colorscheme=1
+colorscheme tender
+" colorscheme " onedark dracula base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2

@@ -24,6 +24,13 @@ vmap <Leader>a=> :Tabularize /=><CR>
 " " sql.vim
 let g:sql_type_default = 'pgsql'
 
+" " tpope/vim-commentary
+" bring back deprecated shortcuts (muscle memory)
+xmap \\  <Plug>Commentary<CR>
+nmap \\  <CR><Plug>Commentary
+nmap \\\ <Plug>CommentaryLine<CR>
+nmap \\u <Plug>CommentaryUndo<CR>
+
 " " RunCommand : https://coderwall.com/p/d1pa0a
 function! SendToTerminal(args)
   execute ":silent !run_command '" . a:args . "'"

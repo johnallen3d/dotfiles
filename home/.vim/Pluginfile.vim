@@ -50,7 +50,8 @@ Plug 'derekwyatt/vim-scala'
 " colors
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+" Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plug 'w0ng/vim-hybrid'
+Plug 'jacoborus/tender'
 
 call plug#end()
