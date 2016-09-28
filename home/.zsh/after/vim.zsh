@@ -5,8 +5,8 @@ alias scratch='vi ~/temp/scratch.md'
 alias :e=vim
 alias :q=exit
 
-if hash nvim 2>/dev/null; then
-  # always use mvim
-  alias vi="/usr/local/bin/nvim"
-  alias vim="/usr/local/bin/nvim"
-fi
+# if hash nvim 2>/dev/null; then
+#   # always use mvim
+#   alias vi="/usr/local/bin/nvim"
+#   alias vim="/usr/local/bin/nvim"
+# fi

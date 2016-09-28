@@ -12,7 +12,22 @@ alias nib='
     -w $(pwd) \
     -v $HOME/.docker/:/root/.docker/:ro \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    technekes/nib'
+    technekes/nib:latest'
+
+alias nibb='
+  docker run \
+    -it \
+    --rm \
+    -v $(pwd):$(pwd) \
+    -v $HOME/.gem:/root/.gem \
+    -v $HOME/.ssh:/root/.ssh \
+    -v $HOME/.gitconfig:/root/.gitconfig \
+    -w $(pwd) \
+    -v $HOME/.docker/:/root/.docker/:ro \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    technekes/nib:beta'
+
+# alias nib=nibb
 
 alias nibdev='
   docker run \
@@ -29,24 +44,32 @@ alias nibdev='
 # msic apps as docker containers
 #
 function aws() {
+  echo "running docker version of aws"
   docker run \
     -it \
     --rm \
     --volume $HOME/.aws:/root/.aws \
+    --volume $PWD:/tmp \
+    --workdir /tmp \
     technekes/awscli "$@"
 }
 
-function codeclimate() {
-  docker run \
-    --interactive \
-    --tty \
-    --rm \
-    --env CODECLIMATE_CODE="$PWD" \
-    --volume "$PWD":/code \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume /tmp/cc:/tmp/cc \
-    codeclimate/codeclimate help
+function neovim() {
+  # opens in neovim-dot-app
+  open -a Neovim $*
 }
+
+# function codeclimate() {
+#   docker run \
+#     --interactive \
+#     --tty \
+#     --rm \
+#     --env CODECLIMATE_CODE="$PWD" \
+#     --volume "$PWD":/code \
+#     --volume /var/run/docker.sock:/var/run/docker.sock \
+#     --volume /tmp/cc:/tmp/cc \
+#     codeclimate/codeclimate help
+# }
 
 function jq() {
   docker run \

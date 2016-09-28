@@ -8,8 +8,8 @@ function dockercleancontainers() {
     # find exited containers that are not labeled "data" and remove them
     docker rm $(
       comm -13 \
-        <(docker ps -aq -f status=exited -f label=data | sort) \
-        <(docker ps -aq -f status=exited | sort)
+        <(docker ps -aq -f status=exited --no-trunc -f label=data | sort) \
+        <(docker ps -aq -f status=exited --no-trunc | sort)
     )
   fi
 }
@@ -62,6 +62,7 @@ function docker-ruby() {
     -v $HOME/.gem:/root/.gem \
     -v $HOME/.ssh:/root/.ssh \
     -v $HOME/.gitconfig:/root/.gitconfig \
+    -v $HOME/.netrc:/root/.netrc \
     -w /usr/src/app \
     ruby:latest /bin/bash -c "${cmd} $@"
 }
