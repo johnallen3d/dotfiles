@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 " Plugged
-source ~/.vim/Pluginfile.vim
+source ~/.vim/bundle.vim
 
 " myfiletypes : an augroup for my autocmd
 augroup myfiletypes
