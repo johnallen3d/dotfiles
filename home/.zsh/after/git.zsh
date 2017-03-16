@@ -10,3 +10,10 @@ alias gm='git merge --ff-only'
 
 # alias git to hub if it's installed
 hash hub 2>/dev/null && alias git=hub
+
+function delete-branch() {
+  local branch="${1}"
+
+  git push origin :$branch
+  git branch -D $branch
+}
