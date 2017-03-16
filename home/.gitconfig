@@ -13,7 +13,7 @@
   hist = log --pretty=oneline --graph
   unstage = reset HEAD --
   restore = checkout --
-  head = !git l -1
+  head = !git l -10
   h = !git head
   hp = "!. ~/.githelpers && show_git_head"
   r = !git l -30
