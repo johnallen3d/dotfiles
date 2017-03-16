@@ -1,6 +1,7 @@
 [user]
   name = John Allen
   email = john@threedogconsulting.com
+  signingkey = B59B9D90
 [core]
   excludesfile = ~/.gitignore
   pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
@@ -43,5 +44,6 @@
 	default = simple
 [commit]
   template = ~/.gitmessage
+  gpgsign = true
 [rebase]
 	autosquash = true
