@@ -17,17 +17,17 @@ function neovim() {
   open -a Neovim $*
 }
 
-# function codeclimate() {
-#   docker run \
-#     --interactive \
-#     --tty \
-#     --rm \
-#     --env CODECLIMATE_CODE="$PWD" \
-#     --volume "$PWD":/code \
-#     --volume /var/run/docker.sock:/var/run/docker.sock \
-#     --volume /tmp/cc:/tmp/cc \
-#     codeclimate/codeclimate help
-# }
+function codeclimate() {
+  docker run \
+    --interactive \
+    --tty \
+    --rm \
+    --env CODECLIMATE_CODE="$PWD" \
+    --volume "$PWD":/code \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume /tmp/cc:/tmp/cc \
+    codeclimate/codeclimate "${1:-help}"
+}
 
 function jq() {
   docker run \
