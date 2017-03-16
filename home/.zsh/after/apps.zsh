@@ -32,6 +32,8 @@ function codeclimate() {
 function jq() {
   docker run \
     -i \
+    -v $(pwd):$(pwd) \
+    -w $(pwd) \
     --rm \
     colstrom/jq "$@"
 }
