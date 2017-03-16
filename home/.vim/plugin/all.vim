@@ -13,6 +13,13 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+" " vim-grepper
+nnoremap <leader>g :Grepper -tool rg<cr>
+
+" " QFEnter
+let g:qfenter_open_map = ['o']
+let g:qfenter_vopen_map = ['v']
+
 " " tabular-vim
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
