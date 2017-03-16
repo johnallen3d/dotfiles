@@ -6,7 +6,7 @@ alias gp="git push"
 alias gpf="git push --force-with-lease"
 alias gl="git pull"
 alias gco="git checkout"
-alias gm="git merge"
+alias gm='git merge --ff-only'
 
 # alias git to hub if it's installed
 hash hub 2>/dev/null && alias git=hub
