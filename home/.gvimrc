@@ -12,7 +12,7 @@ set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h13
 set linespace=2
 
 " hides toolbar
-set guioptions=egmrt
+set guioptions=M
 
 " use bash in mvim
 set shell=bash
