@@ -1,46 +1,4 @@
 #
-# technekes/nib docker/compose wrapper
-#
-alias nib='
-  docker run \
-    -it \
-    --rm \
-    -v $(pwd):$(pwd) \
-    -v $HOME/.gem:/root/.gem \
-    -v $HOME/.ssh:/root/.ssh \
-    -v $HOME/.gitconfig:/root/.gitconfig \
-    -w $(pwd) \
-    -v $HOME/.docker/:/root/.docker/:ro \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    technekes/nib:latest'
-
-alias nibb='
-  docker run \
-    -it \
-    --rm \
-    -v $(pwd):$(pwd) \
-    -v $HOME/.gem:/root/.gem \
-    -v $HOME/.ssh:/root/.ssh \
-    -v $HOME/.gitconfig:/root/.gitconfig \
-    -w $(pwd) \
-    -v $HOME/.docker/:/root/.docker/:ro \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    technekes/nib:beta'
-
-# alias nib=nibb
-
-alias nibdev='
-  docker run \
-    -it \
-    --rm \
-    -v $(pwd):$(pwd) \
-    -w $(pwd) \
-    -v $HOME/.docker:/root/.docker:ro \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -e "DOCKER_HOST_URL=$DOCKER_HOST" \
-    nibdev:latest'
-
-#
 # msic apps as docker containers
 #
 function aws() {
