@@ -234,8 +234,13 @@ map <leader>n :call file#Rename()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT EXPANSION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap clog console.log?
+imap clog console.log(
 imap <C-L> <SPACE>=><SPACE>
+
+abbr bp binding.pry<ESC>:w<CR>
+
+" create Jira Markdown Link: type a ticket number, space, jt, space
+abbr jt <esc>xv3bdi[<esc>pa](https://technekes.atlassian.net/browse/<esc>pa)<esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EDIT IN CURRENT DIRECTORY
