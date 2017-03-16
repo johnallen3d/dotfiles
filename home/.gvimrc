@@ -17,15 +17,6 @@ set guioptions=M
 " use bash in mvim
 set shell=bash
 
-set transparency=1
-" colorscheme made_of_code
-" colorscheme monokai
-" colorscheme Tomorrow-Night
-" colorscheme solarized
-
-" hides scroll bars
-set guioptions=aAce
-
 " set the color of 80 character indicator
 highlight ColorColumn guibg=Gray14
 
