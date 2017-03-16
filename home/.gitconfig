@@ -41,9 +41,9 @@
   newNormal = green bold
   newHighlight = green bold 22
 [push]
-	default = simple
+  default = simple
 [commit]
   template = ~/.gitmessage
   gpgsign = true
 [rebase]
-	autosquash = true
+  autosquash = true
