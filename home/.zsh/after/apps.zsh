@@ -2,7 +2,6 @@
 # msic apps as docker containers
 #
 function aws() {
-  echo "running docker version of aws"
   docker run \
     -it \
     --rm \
@@ -63,4 +62,11 @@ function psql() {
     --rm \
     -it \
     governmentpaas/psql "$@"
+}
+
+function speedtest() {
+  docker run \
+    --rm \
+    --net=host \
+    tianon/speedtest
 }
