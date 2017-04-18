@@ -3,14 +3,14 @@
 #
 function dockercleancontainers() {
   if [[ -n "${1}" ]]; then
-    docker rm $(docker ps -aq -f name="${1}")
+    docker container rm -f $(docker container ls -aq -f name="${1}") &> /dev/null
   else
     # find exited containers that are not labeled "data" and remove them
     docker rm $(
       comm -13 \
-        <(docker ps -aq -f status=exited --no-trunc -f label=data | sort) \
-        <(docker ps -aq -f status=exited --no-trunc | sort)
-    )
+        <(docker container ls -aq -f status=exited --no-trunc -f label=data | sort) \
+        <(docker container ls -aq -f status=exited --no-trunc | sort)
+    ) &> /dev/null
   fi
 }
 
@@ -23,7 +23,7 @@ function dockercleanimages() {
 }
 
 function dockerclean() {
-  dockercleancontainers && dockercleanimages
+  dockercleancontainers; dockercleanimages
 }
 
 function docker() {
