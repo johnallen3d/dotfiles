@@ -1,14 +1,17 @@
 " " Lightline
+let g:responsive_width_mid=70
+
 let g:lightline = {
       \ 'colorscheme': 'tender',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'ale' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'LightLineModified',
       \   'readonly': 'LightLineReadonly',
       \   'fugitive': 'LightLineFugitive',
+    \     'ale':      'LightLineAle',
       \   'filename': 'LightLineFilename',
       \   'fileformat': 'LightLineFileformat',
       \   'filetype': 'LightLineFiletype',
@@ -48,17 +51,21 @@ function! LightLineFugitive()
 endfunction
 
 function! LightLineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+  return winwidth(0) > g:responsive_width_mid ? &fileformat : ''
 endfunction
 
 function! LightLineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  return winwidth(0) > g:responsive_width_mid ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
 function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+  return winwidth(0) > g:responsive_width_mid ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LightLineAle()
+    return winwidth(0) > g:responsive_width_mid ? ALEGetStatusLine() : ''
 endfunction

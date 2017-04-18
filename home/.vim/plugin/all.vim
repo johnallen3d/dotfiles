@@ -50,8 +50,3 @@ let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'yaml', 'javascri
 
 " " w0ng/vim-hybrid
 let g:hybrid_custom_term_colors = 1
-
-" " neomake/neomake
-" run neomake with rubocop for all .rb files on save
-au BufWritePost *.rb Neomake rubocop
-let g:neomake_verbose = 3 " https://github.com/neomake/neomake/issues/696#issuecomment-252688687

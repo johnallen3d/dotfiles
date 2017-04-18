@@ -34,7 +34,8 @@ Plug 'yssl/QFEnter'
 
 " syntaxes
 " Plug 'scrooloose/syntastic'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-haml'
