@@ -51,7 +51,7 @@ Plug 'heartsentwined/vim-emblem'
 Plug 'avakhov/vim-yaml'
 Plug 'ekalinin/Dockerfile.vim'
 " Plug 'dag/vim-fish'
-" Plug 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 Plug 'mxw/vim-jsx'
 
 " colors
