@@ -12,4 +12,6 @@ fi
 
 # Customize to your needs...
 # content above this line was sourced from prezto
+
+# source all zsh config from ~/.zsh/after
 for f in ~/.zsh/after/*.zsh; do source $f; done
