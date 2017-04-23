@@ -1,0 +1,29 @@
+# ignore vim temp files
+*~
+.*.sw*
+.un~
+
+# ignore common system files
+.DS_Store
+
+# always ignore tag files
+tags
+tags.lock
+tags.temp
+
+# igrnore zeus config
+custom_plan.rb
+zeus.json
+
+# Pow and Powder config
+/.pow*
+
+# RVM and rbenv
+/.rvmrc
+/.rbenv-version
+
+# Bundler binstubs
+# /bin/
+
+# Histories
+.pry_history
