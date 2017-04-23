@@ -1,5 +1,5 @@
 # quick editor
-alias scratch='vi ~/temp/scratch.md'
+alias scratch='vi ~/tmp/scratch.md'
 
 # vim brain
 alias :e=vim
