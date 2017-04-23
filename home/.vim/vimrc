@@ -14,6 +14,7 @@ augroup myfiletypes
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
   autocmd BufRead,BufNewFile *.md setlocal spell
+  autocmd BufRead,BufNewFile Dangerfile set filetype=ruby
 augroup END
 
 set nobackup            " do not make backup before saving
