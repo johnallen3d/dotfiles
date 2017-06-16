@@ -24,9 +24,11 @@ Plug 'mrtazz/simplenote.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'bruno-/vim-husk'
-" Plug 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
 Plug 'Yggdroot/indentLine'
 Plug 'yssl/QFEnter'
+
+Plug 'vimwiki/vimwiki'
 
 " tab completion
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
@@ -53,6 +55,7 @@ Plug 'ekalinin/Dockerfile.vim'
 " Plug 'dag/vim-fish'
 Plug 'derekwyatt/vim-scala'
 Plug 'mxw/vim-jsx'
+" Plug 'rudes/vim-java'
 
 " colors
 Plug 'chriskempson/base16-vim'

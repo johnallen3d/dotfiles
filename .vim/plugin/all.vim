@@ -29,6 +29,10 @@ vmap <Leader>a: :Tabularize/\(:.*\)\@<!:\zs /l0<CR>
 nmap <Leader>a=> :Tabularize /=><CR>
 vmap <Leader>a=> :Tabularize /=><CR>
 
+" " quick-scope
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 " " sql.vim
 let g:sql_type_default = 'pgsql'
 
@@ -51,3 +55,7 @@ let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'yaml', 'javascri
 
 " " w0ng/vim-hybrid
 let g:hybrid_custom_term_colors = 1
+
+" vimwiki/vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+map <Leader>c <Plug>VimwikiToggleListItem
