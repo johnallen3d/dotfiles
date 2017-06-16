@@ -66,3 +66,12 @@ function docker-ruby() {
     -w /usr/src/app \
     ruby:latest /bin/bash -c "${cmd} $@"
 }
+
+function alpine() {
+  docker run \
+    --rm \
+    -it \
+    -v $PWD:$PWD \
+    -w $PWD \
+    alpine:latest ash
+}
