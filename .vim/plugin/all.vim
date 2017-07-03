@@ -60,5 +60,5 @@ let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'yaml', 'javascri
 let g:hybrid_custom_term_colors = 1
 
 " vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/Notes/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 map <Leader>c <Plug>VimwikiToggleListItem
