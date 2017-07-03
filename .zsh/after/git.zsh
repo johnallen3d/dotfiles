@@ -9,7 +9,7 @@ alias gco="git checkout"
 alias gm='git merge --ff-only'
 
 # too many times have i typed gs and stashed when i meant to type gst!!!
-unalias gs
+unalias gs &> /dev/null
 
 function delete-branch() {
   local branch="${1}"
