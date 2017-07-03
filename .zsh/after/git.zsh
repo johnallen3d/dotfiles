@@ -17,3 +17,11 @@ function delete-branch() {
   git push origin :$branch
   git branch -D $branch
 }
+
+# hub
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+
+eval "$(hub alias -s)"
+
+alias pr="hub pull-request --push --browse"
