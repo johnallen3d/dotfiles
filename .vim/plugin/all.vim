@@ -19,8 +19,10 @@ endif
 nnoremap <leader>g :Grepper -tool rg<cr>
 
 " " QFEnter
-let g:qfenter_open_map = ['o']
-let g:qfenter_vopen_map = ['v']
+let g:qfenter_keymap.open = ['o']
+let g:qfenter_keymap.vopen = ['v']
+let g:qfenter_keymap.hopen = ['h']
+let g:qfenter_keymap.topen = ['t']
 
 " " tabular-vim
 nmap <Leader>a= :Tabularize /=<CR>
