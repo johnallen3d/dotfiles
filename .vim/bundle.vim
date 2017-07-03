@@ -1,68 +1,77 @@
-call plug#begin('~/.vim/plugged')
+packadd minpac
 
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Add other plugins here.
+" call minpac#add('
 " helpers
-Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('ctrlpvim/ctrlp.vim')
 " FZF doesn't play nice with MacVim :(
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'itchyny/lightline.vim'
-" Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-" Plug 'rking/ag.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-surround'
-" Plug 'tommcdo/vim-exchange'
-Plug 'mrtazz/simplenote.vim'
+" call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'
+" })
+" call minpac#add('junegunn/rainbow_parentheses.vim')
+" call minpac#add('itchyny/lightline.vim')
+" call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-endwise')
+" call minpac#add('tpope/vim-bundler')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-repeat')
+" call minpac#add('rking/ag.vim')
+call minpac#add('mhinz/vim-grepper')
+call minpac#add('godlygeek/tabular')
+call minpac#add('tpope/vim-surround')
+" call minpac#add('tommcdo/vim-exchange')
+call minpac#add('mrtazz/simplenote.vim')
 " use % to move from start/end of blocks
-" Plug 'vim-scripts/ruby-matchit'
-" Plug 'mtth/scratch.vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'bruno-/vim-husk'
-Plug 'unblevable/quick-scope'
-Plug 'Yggdroot/indentLine'
-Plug 'yssl/QFEnter'
+" call minpac#add('vim-scripts/ruby-matchit')
+" call minpac#add('mtth/scratch.vim')
+call minpac#add('ludovicchabant/vim-gutentags')
+call minpac#add('pbrisbin/vim-mkdir')
+call minpac#add('bruno-/vim-husk')
+" call minpac#add('unblevable/quick-scope')
+call minpac#add('Yggdroot/indentLine')
+call minpac#add('yssl/QFEnter')
 
-Plug 'vimwiki/vimwiki'
+call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
 
 " tab completion
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-" Plug 'ervandew/supertab'
+" call minpac#add('Valloric/YouCompleteMe', { 'do': './install.sh' })
+" call minpac#add('ervandew/supertab')
 
 " syntaxes
-" Plug 'scrooloose/syntastic'
-" Plug 'neomake/neomake'
-Plug 'w0rp/ale'
-Plug 'pangloss/vim-javascript'
-Plug 'kchmck/vim-coffee-script'
-Plug 'tpope/vim-haml'
-Plug 'vim-ruby/vim-ruby'
-Plug 'nono/vim-handlebars'
-Plug 'tpope/vim-markdown'
-Plug 'groenewege/vim-less'
-" Plug 'puppetlabs/puppet-syntax-vim'
-Plug 'exu/pgsql.vim'
-Plug 'jnwhiteh/vim-golang'
-Plug 'slim-template/vim-slim'
-Plug 'heartsentwined/vim-emblem'
-Plug 'avakhov/vim-yaml'
-Plug 'ekalinin/Dockerfile.vim'
-" Plug 'dag/vim-fish'
-Plug 'derekwyatt/vim-scala'
-Plug 'mxw/vim-jsx'
-" Plug 'rudes/vim-java'
+" call minpac#add('scrooloose/syntastic')
+" call minpac#add('neomake/neomake')
+call minpac#add('w0rp/ale')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('kchmck/vim-coffee-script')
+call minpac#add('tpope/vim-haml')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('nono/vim-handlebars')
+call minpac#add('tpope/vim-markdown')
+call minpac#add('groenewege/vim-less')
+" call minpac#add('puppetlabs/puppet-syntax-vim')
+call minpac#add('exu/pgsql.vim')
+call minpac#add('jnwhiteh/vim-golang')
+call minpac#add('slim-template/vim-slim')
+call minpac#add('heartsentwined/vim-emblem')
+call minpac#add('avakhov/vim-yaml')
+call minpac#add('ekalinin/Dockerfile.vim')
+" call minpac#add('dag/vim-fish')
+call minpac#add('derekwyatt/vim-scala')
+call minpac#add('mxw/vim-jsx')
+" call minpac#add('rudes/vim-java')
 
 " colors
-Plug 'chriskempson/base16-vim'
-Plug 'joshdick/onedark.vim'
-" Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plug 'w0ng/vim-hybrid'
-Plug 'jacoborus/tender'
-Plug 'morhetz/gruvbox'
+call minpac#add('chriskempson/base16-vim')
+call minpac#add('joshdick/onedark.vim')
+" call minpac#add('zenorocha/dracula-theme', {'rtp': 'vim/'})
+call minpac#add('w0ng/vim-hybrid')
+call minpac#add('jacoborus/tender')
+call minpac#add('morhetz/gruvbox')
 
-call plug#end()
+" Load the plugins right now. (optional)
+packloadall

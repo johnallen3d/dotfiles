@@ -62,3 +62,7 @@ let g:hybrid_custom_term_colors = 1
 " vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 map <Leader>c <Plug>VimwikiToggleListItem
+
+" " minpac commands
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
