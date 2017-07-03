@@ -47,3 +47,5 @@
   gpgsign = true
 [rebase]
   autosquash = true
+[init]
+	templatedir = ~/.git_template

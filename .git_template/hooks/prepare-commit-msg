@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+message_file = ARGV[0]
+original_message = File.read(message_file)
+
+# Don't do anything if the commit already has a jira link
+unless original_message.match?(/technekes\.atlassian\.net/)
+  current_branch = `git rev-parse --abbrev-ref HEAD 2>/dev/null`.chomp
+  jira_ticket = current_branch.scan(/[a-z]+-\d+/i).first&.upcase
+
+  if jira_ticket
+    jira_link = <<~LINK
+      [#{jira_ticket}](https://technekes.atlassian.net/browse/#{jira_ticket})
+    LINK
+
+    new_message = "\n\n#{jira_link}"
+
+    content = if ARGV[1] == 'message' # a commit with -m
+      original_message + new_message
+    else
+      new_message + original_message
+    end
+
+    File.write(message_file, content)
+  end
+end
