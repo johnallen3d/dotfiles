@@ -168,9 +168,6 @@ vmap > >gv
 vmap < <gv
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5
 
-" Strip trailing whitespace (,ss)
-noremap <leader>ss :call whitespace#Strip()<CR>
-
 " Quickly hide search highlighting
 " nnoremap <silent> <leader>n :silent :nohlsearch<CR>
 :nnoremap <CR> :nohlsearch<cr>
@@ -263,3 +260,15 @@ map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Trailing spaces
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" delete on buffer write
+augroup spaces
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+augroup END
+
+" Strip trailing whitespace (,ss)
+noremap <leader>ss :call whitespace#Strip()<CR>
