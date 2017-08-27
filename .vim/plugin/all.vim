@@ -1,24 +1,34 @@
 "" Plugins
 
-" " CntrlP
-map <Leader>t :CtrlP<CR>
-let g:ctrlp_custom_ignore = 'tmp$\|public/assets$\|tags$\|\.ds_store$\|\.swp$\|.png\|node_modules\|bower_components\|dist'
-" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_user_command = 'rg --files  %s'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 'rw'
-nnoremap <leader>f :CtrlPTag<cr>
+if executable('rg')
+  " Use ripgrep over grep
+  set grepprg=rg\ --vimgrep
+endif
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+if has('nvim')
+  " " Fzf
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+  map <Leader>p :Files<CR>
+  map <c-p> :Files<CR>
+else
+  " " CntrlP
+  map <Leader>p :CtrlP<CR>
+  map <c-p> :CtrlP<CR>
+  let g:ctrlp_custom_ignore = 'tmp$\|public/assets$\|tags$\|\.ds_store$\|\.swp$\|.png\|node_modules\|bower_components\|dist'
+  " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+  let g:ctrlp_user_command = 'rg --files  %s'
+  let g:ctrlp_show_hidden = 1
+  let g:ctrlp_working_path_mode = 'rw'
+  nnoremap <leader>f :CtrlPTag<cr>
 endif
 
 " " vim-grepper
 nnoremap <leader>g :Grepper -tool rg<cr>
 
 " " QFEnter
+let g:qfenter_keymap = {}
 let g:qfenter_keymap.open = ['o']
 let g:qfenter_keymap.vopen = ['v']
 let g:qfenter_keymap.hopen = ['h']
@@ -63,6 +73,8 @@ let g:hybrid_custom_term_colors = 1
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 map <Leader>c <Plug>VimwikiToggleListItem
 
-" " minpac commands
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
+" " vim-ruby
+" https://github.com/vim-ruby/vim-ruby/blob/84afb552189060d1dae2d3154ba88454ee14fcda/doc/vim-ruby.txt#L117-L140
+let g:ruby_indent_block_style = 'do'
+" https://github.com/vim-ruby/vim-ruby/blob/84afb552189060d1dae2d3154ba88454ee14fcda/doc/vim-ruby.txt#L143-L164
+let g:ruby_indent_assignment_style = 'variable'

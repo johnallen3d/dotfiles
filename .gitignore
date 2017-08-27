@@ -27,3 +27,5 @@ zeus.json
 
 # Histories
 .pry_history
+
+.config/nvim/pack/

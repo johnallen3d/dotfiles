@@ -1,6 +1,13 @@
+command! PackUpdate call minpac#update()
+command! PackClean  call minpac#clean()
+
 packadd minpac
 
-call minpac#init()
+if !exists('*minpac#init')
+  finish
+endif
+
+call minpac#init({'verbose': 0})
 
 " minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
 call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -9,7 +16,6 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 " call minpac#add('
 " helpers
 call minpac#add('tpope/vim-fugitive')
-call minpac#add('ctrlpvim/ctrlp.vim')
 " FZF doesn't play nice with MacVim :(
 " call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'
 " })
@@ -68,10 +74,17 @@ call minpac#add('mxw/vim-jsx')
 " colors
 call minpac#add('chriskempson/base16-vim')
 call minpac#add('joshdick/onedark.vim')
-" call minpac#add('zenorocha/dracula-theme', {'rtp': 'vim/'})
 call minpac#add('w0ng/vim-hybrid')
 call minpac#add('jacoborus/tender')
 call minpac#add('morhetz/gruvbox')
+
+" Plugins for either Vim8 or NeoVim
+if has('nvim')
+  call minpac#add('junegunn/fzf')
+  call minpac#add('junegunn/fzf.vim')
+else
+  call minpac#add('ctrlpvim/ctrlp.vim')
+endif
 
 " Load the plugins right now. (optional)
 packloadall
