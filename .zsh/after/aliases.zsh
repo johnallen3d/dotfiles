@@ -5,6 +5,8 @@ alias irb='docker-ruby'
 alias vi=nvim
 alias vim=nvim
 
+alias la='exa -la --git'
+
 # home folder alias for git, see here for more details
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=/Users/johna/.cfg/ --work-tree=/Users/johna'
