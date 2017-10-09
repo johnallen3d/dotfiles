@@ -28,8 +28,9 @@ set nowrap              " set nowrap
 set t_ti= t_te=         " Prevent Vim from clobbering the scrollback buffer.
 set scrolloff=3         " keep at least three lines visible above/below cursor
 
-set colorcolumn=80      " show a marker at 80th character
+set colorcolumn=81      " show a marker at 80th character
 highlight ColorColumn ctermbg=DarkGray
+execute 'set colorcolumn=' . join(range(81,335), ',')
 set hlsearch            " Highlight searches
 set incsearch           " do incremental searching
 set ignorecase          " searches are case insensitive...
