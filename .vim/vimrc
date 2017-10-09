@@ -272,3 +272,14 @@ augroup END
 
 " Strip trailing whitespace (,ss)
 noremap <leader>ss :call whitespace#Strip()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" create a new tab
+nnoremap <leader>t :tabnew<CR>
+inoremap <leader>t <Esc>:tabnew<CR>
+
+" navigate left and right
+nnoremap <S-l> :tabnext<CR>
+nnoremap <S-h> :tabprevious<CR>
