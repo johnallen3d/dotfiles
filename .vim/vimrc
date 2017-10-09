@@ -194,6 +194,9 @@ set wildmenu
 " add gems.tags to ctags list
 set tags+=gems.tags
 
+" set buffer width to 88 characters
+nnoremap <leader>w :vertical resize 88<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SELECT ALL
 " Hit Ctrl+A to select all in current buffer
