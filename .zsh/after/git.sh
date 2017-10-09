@@ -8,6 +8,7 @@ alias gl="git pull"
 alias gco="git checkout"
 alias gm='git merge --ff-only'
 alias gcf='git commit --fixup'
+alias spp='git stash && git pull && git stash pop'
 
 # too many times have i typed gs and stashed when i meant to type gst!!!
 unalias gs &> /dev/null
@@ -21,8 +22,8 @@ function delete-branch() {
 alias db=delete-branch
 
 # hub
-fpath=(~/.zsh/completions $fpath)
-autoload -U compinit && compinit
+# fpath=(~/.zsh/completions $fpath)
+# autoload -U compinit && compinit
 
 eval "$(hub alias -s)"
 

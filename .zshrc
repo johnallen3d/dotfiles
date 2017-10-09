@@ -14,4 +14,6 @@ fi
 # content above this line was sourced from prezto
 
 # source all zsh config from ~/.zsh/after
-for f in ~/.zsh/after/*.zsh; do source $f; done
+for f in ~/.zsh/after/*.sh; do source $f; done
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

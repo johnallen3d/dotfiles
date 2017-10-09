@@ -70,3 +70,13 @@ function speedtest() {
     --net=host \
     tianon/speedtest
 }
+
+function yo() {
+  docker run \
+    --rm \
+    -it \
+    --volume "$PWD":"$PWD" \
+    -w "$PWD" \
+    yo \
+    yo --no-insight "$@"
+}
