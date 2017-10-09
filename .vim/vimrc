@@ -133,6 +133,9 @@ au FocusLost * :wa
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
+" also use <jk> as to exit insert
+imap jk <Esc>
+
 " <,> is the leader character
 let mapleader = ","
 
