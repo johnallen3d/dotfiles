@@ -60,8 +60,11 @@ syntax on
 syntax enable
 
 set background=dark
-colorscheme hybrid
-" colorscheme " tender onedark dracula base16-atelierforest base16-ocean jellybeans base16-monokai lavalamp solarized hybrid Tomorrow-Night
+if !empty($VIM_COLORSCHEME)
+  colorscheme $VIM_COLORSCHEME
+else
+  colorscheme base16-dracula
+endif
 
 " Softtabs, 2 spaces
 set tabstop=2

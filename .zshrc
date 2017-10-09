@@ -16,4 +16,8 @@ fi
 # source all zsh config from ~/.zsh/after
 for f in ~/.zsh/after/*.sh; do source $f; done
 
+# source vim environment config
+[ -f ~/.vim/.env ] && source ~/.vim/.env
+
+# source fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
