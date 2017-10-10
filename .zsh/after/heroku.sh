@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# bash-it is `alias h=history` somehow this is what's used in `ctr + r` history
+# searches and re-defining `h` without removing the alias first causes
+# `ctrl + r` to call my heroku function!?!
+unalias h
+
 h() {
   local command=""
 
