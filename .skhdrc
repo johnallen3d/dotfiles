@@ -71,8 +71,8 @@ shift + cmd - l : chunkc tiling::window --warp east
 
 # send window to desktop
 # shift + alt - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
-shift + alt - h : chunkc tiling::window --send-to-desktop prev
-shift + alt - l : chunkc tiling::window --send-to-desktop next
+# shift + alt - h : chunkc tiling::window --send-to-desktop prev
+# shift + alt - l : chunkc tiling::window --send-to-desktop next
 shift + alt - 1 : chunkc tiling::window --send-to-desktop 1
 shift + alt - 2 : chunkc tiling::window --send-to-desktop 2
 shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
@@ -81,8 +81,8 @@ shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
 shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
 
 # focus monitor
-ctrl + cmd - h  : chunkc tiling::monitor -f prev
-ctrl + cmd - l  : chunkc tiling::monitor -f next
+# ctrl + cmd - h  : chunkc tiling::monitor -f prev
+# ctrl + cmd - l  : chunkc tiling::monitor -f next
 ctrl + cmd - 1  : chunkc tiling::monitor -f 1
 ctrl + cmd - 2  : chunkc tiling::monitor -f 2
 ctrl + cmd - 3  : chunkc tiling::monitor -f 3
