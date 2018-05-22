@@ -30,3 +30,16 @@ function yo() {
     yo \
     yo --no-insight "$@"
 }
+
+brew-search() {
+  term=$1
+
+  echo "Searching homebrew..."
+  brew search "$term"
+  echo
+  echo "Searching homebrew cask..."
+  brew cask search "$term"
+  echo
+  echo "Searching mas..."
+  mas search "$term"
+}
