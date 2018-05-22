@@ -24,20 +24,20 @@ chunkc set 5_desktop_mode                float
 
 chunkc set 1_desktop_tree                ~/.chunkwm_layouts/dev_1
 
-chunkc set global_desktop_offset_top     12
-chunkc set global_desktop_offset_bottom  12
+chunkc set global_desktop_offset_top     36
+chunkc set global_desktop_offset_bottom  36
 chunkc set global_desktop_offset_left    6
 chunkc set global_desktop_offset_right   6
 chunkc set global_desktop_offset_gap     6
 
-chunkc set 1_desktop_offset_top          12
-chunkc set 1_desktop_offset_bottom       12
+chunkc set 1_desktop_offset_top          36
+chunkc set 1_desktop_offset_bottom       36
 chunkc set 1_desktop_offset_left         6
 chunkc set 1_desktop_offset_right        6
 chunkc set 1_desktop_offset_gap          6
 
-chunkc set 3_desktop_offset_top          12
-chunkc set 3_desktop_offset_bottom       12
+chunkc set 3_desktop_offset_top          36
+chunkc set 3_desktop_offset_bottom       36
 chunkc set 3_desktop_offset_left         6
 chunkc set 3_desktop_offset_right        6
 
@@ -62,9 +62,9 @@ chunkc set window_region_locked          1
 # chunkc set mouse_modifier              \"cmd shift\"
 chunkc set mouse_modifier                fn
 
-chunkc set preselect_border_color        0xFFBFD203
-chunkc set preselect_border_width        5
-chunkc set preselect_border_radius       5
+chunkc set preselect_border_color        0xffc0b18b
+chunkc set preselect_border_width        1
+chunkc set preselect_border_radius       1
 
 #
 # NOTE: these settings require chwm-sa.
@@ -81,9 +81,9 @@ chunkc set window_use_cgs_move           0
 # NOTE: the following are config variables for the chunkwm-border plugin.
 #
 
-chunkc set focused_border_color          0xFFBFD203
-chunkc set focused_border_width          5
-chunkc set focused_border_radius         5
+chunkc set focused_border_color          0xffc0b18b
+chunkc set focused_border_width          1
+chunkc set focused_border_radius         1
 chunkc set focused_border_skip_floating  0
 
 #
