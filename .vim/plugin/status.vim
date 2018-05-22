@@ -8,23 +8,21 @@ function! ActiveStatus()
   let statusline.="%1*"
   let statusline.="\ %{LinterStatus()}\ "
   let statusline.="%2*"
-  let statusline.=""
-  let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':''}"
+  let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':''}"
   let statusline.="%3*"
-  let statusline.=""
+  let statusline.="\ "
   let statusline.="%4*"
   let statusline.="\ %<"
   let statusline.="%f"
-  let statusline.="%{&modified?'\ \ +':''}"
-  let statusline.="%{&readonly?'\ \ ':''}"
+  let statusline.="%{&modified?'\ \ +':''}"
+  let statusline.="%{&readonly?'\ \ ':''}"
   let statusline.="%="
   let statusline.="\ %{''!=#&filetype?&filetype:'none'}"
-  let statusline.="%(\ %{(&bomb\|\|'^$\|utf-8'!~#&fileencoding?'\ '.&fileencoding.(&bomb?'-bom':''):'').('unix'!=#&fileformat?'\ '.&fileformat:'')}%)"
-  let statusline.="%(\ \ %{&modifiable?(&expandtab?'et\ ':'noet\ ').&shiftwidth:''}%)"
+  let statusline.="%(\ %{(&bomb\|\|'^$\|utf-8'!~#&fileencoding?'\ '.&fileencoding.(&bomb?'-bom':''):'').('unix'!=#&fileformat?'\ '.&fileformat:'')}%)"
+  let statusline.="%(\ \ %{&modifiable?(&expandtab?'et\ ':'noet\ ').&shiftwidth:''}%)"
   let statusline.="%3*"
-  let statusline.="\ "
+  let statusline.="\ "
   let statusline.="%2*"
-  let statusline.=""
   let statusline.="%1*"
   let statusline.="\ %2v"
   let statusline.="\ %3p%%\ "
@@ -34,16 +32,16 @@ endfunction
 function! InactiveStatus()
   let statusline=""
   " let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
-  let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
+  let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
   let statusline.="\ %<"
   let statusline.="%f"
-  let statusline.="%{&modified?'\ \ +':''}"
-  let statusline.="%{&readonly?'\ \ ':''}"
+  let statusline.="%{&modified?'\ \ +':''}"
+  let statusline.="%{&readonly?'\ \ ':''}"
   let statusline.="%="
   let statusline.="\ %{''!=#&filetype?&filetype:'none'}"
-  let statusline.="%(\ %{(&bomb\|\|'^$\|utf-8'!~#&fileencoding?'\ '.&fileencoding.(&bomb?'-bom':''):'').('unix'!=#&fileformat?'\ '.&fileformat:'')}%)"
-  let statusline.="%(\ \ %{&modifiable?(&expandtab?'et\ ':'noet\ ').&shiftwidth:''}%)"
-  let statusline.="\ \ "
+  let statusline.="%(\ %{(&bomb\|\|'^$\|utf-8'!~#&fileencoding?'\ '.&fileencoding.(&bomb?'-bom':''):'').('unix'!=#&fileformat?'\ '.&fileformat:'')}%)"
+  let statusline.="%(\ \ %{&modifiable?(&expandtab?'et\ ':'noet\ ').&shiftwidth:''}%)"
+  let statusline.="\ \ "
   let statusline.="\ %2v"
   let statusline.="\ %3p%%\ "
   return statusline
@@ -64,6 +62,7 @@ endfunction
 
 set laststatus=2
 set statusline=%!ActiveStatus()
+
 hi User1 guibg=#80CCFF guifg=#002E4D
 hi User2 guibg=#162955 guifg=#80CCFF
 hi User3 guibg=#001F33 guifg=#162955
@@ -78,4 +77,3 @@ augroup status
   autocmd WinEnter * setlocal statusline=%!ActiveStatus()
   autocmd WinLeave * setlocal statusline=%!InactiveStatus()
 augroup END
-
