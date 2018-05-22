@@ -32,14 +32,12 @@ set scrolloff=3         " keep at least three lines visible above/below cursor
 
 set colorcolumn=81      " show a marker at 80th character
 highlight ColorColumn ctermbg=DarkGray
-execute 'set colorcolumn=' . join(range(81,335), ',')
 set hlsearch            " Highlight searches
 set incsearch           " do incremental searching
 set ignorecase          " searches are case insensitive...
 set smartcase           " ... unless they contain at least one capital letter
 set gdefault            " have :s///g flag by default on
 
-set cursorline          " highlight the line the cursor is on
 set synmaxcol=800       " don't try to highlight long lines
 set number              " show line numbers
 set clipboard=unnamed   " use system clipboard by default!
@@ -86,7 +84,7 @@ vnoremap <tab> %
 vnoremap . :norm.<CR>
 
 " Tab bar line
-set showtabline=2                 " always show tab bar
+set showtabline=1                 " show tabline when more than one tab
 
 " Display extra whitespace etc.
 set list listchars=tab:▸\ ,trail:·
