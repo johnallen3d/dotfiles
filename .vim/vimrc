@@ -250,8 +250,7 @@ map <leader>n :call file#Rename()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT EXPANSION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap clog console.log(
-imap <C-L> <SPACE>=><SPACE>
+abbr clog <esc>ciwconsole.log();<esc>hi
 
 abbr bp binding.pry<ESC>:w<CR>
 
