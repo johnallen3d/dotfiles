@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
 message_file = ARGV[0]
-original_message = File.read(message_file)
+original_message = File
+  .read(message_file)
+  .encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
 
 # Don't do anything if the commit already has a jira link
 unless original_message.match?(/technekes\.atlassian\.net/)
