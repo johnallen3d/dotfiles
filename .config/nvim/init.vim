@@ -5,6 +5,9 @@ source ~/.vim/vimrc
 " live substitution
 set inccommand=nosplit
 
+" https://github.com/kovidgoyal/kitty/issues/380#issuecomment-372265265
+let &t_ut=''
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
