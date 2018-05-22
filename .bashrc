@@ -12,6 +12,10 @@ unset MAILCHECK
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
+# This will disable showing untracked, unstaged and staged file counts in the prompt
+# export SCM_GIT_SHOW_DETAILS=false
+# Don't show info on untracked files
+export SCM_GIT_IGNORE_UNTRACKED=true
 
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/djl/vcprompt
