@@ -85,3 +85,12 @@ function alpine() {
     -w $PWD \
     alpine:latest ash
 }
+
+function ctop() {
+  docker run \
+    --rm \
+    -it \
+    --name=ctop \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    quay.io/vektorlab/ctop:latest
+}
