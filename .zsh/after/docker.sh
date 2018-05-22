@@ -50,21 +50,31 @@ function docker() {
 #
 # a ruby environment for building gems and other one-off tasks
 #
+# volume mounts in order:
+#
+# * local folder into working directory
+# * pry config
+# * pry history
+# * bash history
+# * RubyGems credentials
+# * SSH credentials (git push)
+# * git configuration (sign commits)
+# * Gemfury and Heroku credentials
+#
 function docker-ruby() {
-  local cmd="${1:-irb}"
-
-  [[ $# -gt 0 ]] && shift
-
   docker run \
     -it \
     --rm \
+    -w /usr/src/app \
     -v $PWD:/usr/src/app \
+    -v $HOME/.pryrc:/root/.pryrc \
+    -v $HOME/.pry_history:/root/.pry_history \
+    -v $HOME/.bash_history:/root/.bash_history \
     -v $HOME/.gem:/root/.gem \
     -v $HOME/.ssh:/root/.ssh \
     -v $HOME/.gitconfig:/root/.gitconfig \
     -v $HOME/.netrc:/root/.netrc \
-    -w /usr/src/app \
-    ruby:latest /bin/bash -c "${cmd} $@"
+    johnallen3d/ruby-dev:latest "${@}"
 }
 
 function alpine() {
