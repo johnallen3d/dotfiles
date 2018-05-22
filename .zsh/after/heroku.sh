@@ -55,7 +55,6 @@ h() {
 
   app_name="${client_name}-${deploy_env}-${the_rest}"
 
-  echo "$command"
   eval "h_$command" "$@"
 }
 
