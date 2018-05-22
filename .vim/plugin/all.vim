@@ -26,6 +26,7 @@ endif
 
 " " vim-grepper
 nnoremap <leader>g :Grepper -tool rg<cr>
+nnoremap <c-g> :Grepper -tool rg<cr>
 
 " " QFEnter
 let g:qfenter_keymap = {}
