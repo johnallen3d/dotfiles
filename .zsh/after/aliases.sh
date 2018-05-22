@@ -13,6 +13,8 @@ alias passgen='dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 | rev | cut
 
 alias rc='brew services restart chunkwm'
 
+alias music='ncmpcpp'
+
 # home folder alias for git, see here for more details
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=/Users/johna/.cfg/ --work-tree=/Users/johna'
