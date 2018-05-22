@@ -1,6 +1,8 @@
 alias nekes='cd ~/development/technekes'
 alias dfm-ssh='screen $(readlink $HOME/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty)'
 alias irb='docker-ruby'
+alias dr='docker-ruby'
+alias pry='docker-ruby'
 
 alias vi=nvim
 alias vim=nvim
