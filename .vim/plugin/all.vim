@@ -42,12 +42,13 @@ vmap <Leader>a: :Tabularize/\(:.*\)\@<!:\zs /l0<CR>
 nmap <Leader>a=> :Tabularize /=><CR>
 vmap <Leader>a=> :Tabularize /=><CR>
 
-" " quick-scope
-" Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" " vim-dirvish
+augroup dirvish_config
+  autocmd!
+  autocmd FileType dirvish silent! unmap <buffer> <C-p>
+augroup END
 
-" " sql.vim
-let g:sql_type_default = 'pgsql'
+let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " " tpope/vim-commentary
 " bring back deprecated shortcuts (muscle memory)
@@ -55,6 +56,10 @@ xmap \\  <Plug>Commentary<CR>
 nmap \\  <CR><Plug>Commentary
 nmap \\\ <Plug>CommentaryLine<CR>
 nmap \\u <Plug>CommentaryUndo<CR>
+
+" " vim-sandwich
+" use vim-surround mappings (muscle memory)
+runtime macros/sandwich/keymap/surround.vim
 
 " " RunCommand : https://coderwall.com/p/d1pa0a
 function! SendToTerminal(args)

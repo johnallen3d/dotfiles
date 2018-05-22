@@ -18,14 +18,13 @@ call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('godlygeek/tabular')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-repeat')
-call minpac#add('mrtazz/simplenote.vim')
+call minpac#add('machakann/vim-sandwich')
 call minpac#add('ludovicchabant/vim-gutentags')
 call minpac#add('pbrisbin/vim-mkdir')
 call minpac#add('bruno-/vim-husk')
 call minpac#add('Yggdroot/indentLine')
 call minpac#add('yssl/QFEnter')
+call minpac#add('justinmk/vim-dirvish')
 
 " frameworks
 call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
@@ -47,16 +46,19 @@ call minpac#add('avakhov/vim-yaml')
 call minpac#add('ekalinin/Dockerfile.vim')
 call minpac#add('derekwyatt/vim-scala')
 call minpac#add('mxw/vim-jsx')
+call minpac#add('hashivim/vim-terraform', {'type': 'opt'})
 call minpac#add('rudes/vim-java', {'type': 'opt'})
 
 " colors
 call minpac#add('chriskempson/base16-vim')
 call minpac#add('joshdick/onedark.vim')
+call minpac#add('arcticicestudio/nord-vim')
 
 " Plugins for either Vim8 or NeoVim
 if has('nvim')
   call minpac#add('junegunn/fzf')
   call minpac#add('junegunn/fzf.vim')
+  call minpac#add('machakann/vim-highlightedyank')
 else
   call minpac#add('ctrlpvim/ctrlp.vim')
 endif

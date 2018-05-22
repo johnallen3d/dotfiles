@@ -139,6 +139,10 @@ imap jk <Esc>
 " <,> is the leader character
 let mapleader = ","
 
+" Open new split panes to right and bottom (dirvish uses this as well)
+set splitbelow
+set splitright
+
 " NETRW
 let g:netrw_banner=0    " do not display info on the top of window
 let g:netrw_altv=1      " open splits to the right
