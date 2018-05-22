@@ -21,10 +21,19 @@ function delete-branch() {
 }
 alias db=delete-branch
 
+# fixup the last (non-fixup) commit. avoids "fixup! fixup! fixup! ..."
+fixup() {
+  git log --oneline --no-color --max-count 30 \
+    | grep -v fixup! \
+    | head -n 1 \
+    | awk '{print $1}' \
+    | xargs git commit --fixup
+}
+
 # hub
 # fpath=(~/.zsh/completions $fpath)
 # autoload -U compinit && compinit
 
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 alias pr="hub pull-request --push --browse"
