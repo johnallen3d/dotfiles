@@ -16,6 +16,7 @@ augroup myfiletypes
   autocmd BufRead,BufNewFile *.md setlocal spell
   autocmd BufRead,BufNewFile *.md setlocal wrap linebreak nolist
   autocmd BufRead,BufNewFile Dangerfile set filetype=ruby
+  autocmd BufRead,BufNewFile Brewfile set filetype=ruby
 augroup END
 
 set nobackup            " do not make backup before saving
