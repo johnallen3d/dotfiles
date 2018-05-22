@@ -2,6 +2,9 @@ set runtimepath+=~/.vim,~/.vim/after
 " set packpath+=~/.vim
 source ~/.vim/vimrc
 
+" live substitution
+set inccommand=nosplit
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
