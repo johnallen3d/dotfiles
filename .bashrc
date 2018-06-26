@@ -35,3 +35,6 @@ for f in ~/.config/shell/*.sh; do source "$f"; done
 
 # source vim environment config
 [ -f ~/.vim/.env ] && source ~/.vim/.env
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/Users/johna/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
