@@ -23,12 +23,18 @@ brew 'exa'
 brew 'fzf'
 brew 'git'
 brew 'gpg'
-brew 'hub'
 brew 'heroku'
+brew 'hub'
+brew 'mpc'
+brew 'mpd'
+brew 'ncmpcpp'
+brew 'neofetch'
 brew 'neovim', args: ['--with-override-system-vim']
+brew 'ranger'
 brew 'readline'
 brew 'ripgrep'
 brew 'ruby'
+brew 'qes'
 brew 'shellcheck'
 # brew install koekeishiya/formulae/skhd
 # brew 'vim', args: ['--with-override-system-vim']
@@ -37,6 +43,7 @@ brew 'shellcheck'
 # Cask Apps
 #
 cask 'alfred'
+cask 'bartender'
 cask 'disk-inventory-x'
 cask 'dropbox'
 cask 'flash-npapi'
@@ -45,7 +52,11 @@ cask 'google-chrome'
 cask 'istat-menus'
 cask 'iterm2'
 cask 'java' unless system '/usr/libexec/java_home --failfast'
-cask 'skitch'
+cask 'karabiner-elements'
+cask 'recordit'
+cask 'rocket'
+cask 'tunnelbear'
+cask 'vanilla'
 cask 'visual-studio-code'
 cask 'vlc'
 
@@ -54,15 +65,14 @@ cask 'vlc'
 #
 mas '1password',     id: 443987910
 mas 'giphy capture', id: 668208984
+mas 'Monosnap',      id: 540348655
 mas 'pipifier',      id: 1160374471
 mas 'pixelmator',    id: 407963104
 mas 'slack',         id: 803453959
-
 #
 # Apps not avaialable on brew/cask/mas
 #
 # marked2 - http://marked2app.com
-# rocket  - http://matthewpalmer.net/rocket/
 
 #
 # Safari Extensions
@@ -78,3 +88,4 @@ mas 'slack',         id: 803453959
 # powerline fonts - https://github.com/powerline/fonts
 # vscode-onedark  - https://github.com/azemoh/vscode-onedark
 # vscode-vim      - https://github.com/VSCodeVim/Vim
+# circleci        - https://circleci.com/docs/2.0/local-jobs/#installing-the-cli-locally
