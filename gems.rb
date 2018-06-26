@@ -7,3 +7,5 @@ gem 'gemfury'
 
 gem 'pry'
 gem 'rubocop'
+
+gem 'colorls'
