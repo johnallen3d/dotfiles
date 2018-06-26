@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+image="${PWD}/${1}"
+cache="${HOME}/Pictures/Wallpapers/pecan-wal-set-current-wallpaper"
+pecan_dir="${HOME}/.config/uebersicht/widgets/pecan/"
+
+if [ "${1}" != "$cache" ]; then
+  cp "${image}" "${cache}"
+  osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"${image}\""
+else
+  image="${1}"
+fi
+
+wal -ste -i "${image}"
+/usr/local/bin/chunkwm --load-sa
+
+sassc \
+  --style expanded "${pecan_dir}scss/style.scss" > "${pecan_dir}style.css"
+
+osascript <<EOD
+tell application "uebersicht"
+  refresh widget id "Pecan-background-coffee"
+end tell
+EOD

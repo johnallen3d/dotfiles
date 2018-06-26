@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+export PATH=/usr/local/bin:$PATH
+
+cd $HOME
+
+pecan-wal-set "$(ls -d -1 Pictures/Wallpapers/recent/** | gshuf -n 1)"

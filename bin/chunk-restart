@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+# source launchd helper functions
+. /Users/johna/.bash/after/launchd.sh
+
+# restart chunk service
+services restart chunkwm

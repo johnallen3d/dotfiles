@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+# https://www.sethvargo.com/replace-icons-osx/
+
+cp ~/.config/alt-icons/kitty.icns /Applications/kitty.app/Contents/Resources/kitty.icns
+cp ~/.config/alt-icons/qutebrowser.icns /Applications/qutebrowser.app/Contents/Resources/qutebrowser.icns
+
+touch /Applications/kitty.app
+touch /Applications/qutebrowser.app
+
+killall Finder && killall Dock
