@@ -12,36 +12,35 @@ chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 #       and automatically reload any '.so' file that is changed.
 #
 
-chunkc core::hotload 1
+# chunkc core::hotload 1
 
 #
 # NOTE: the following are config variables for the chunkwm-tiling plugin.
 #
 
 chunkc set global_desktop_mode           bsp
-chunkc set 2_desktop_mode                bsp
-chunkc set 5_desktop_mode                float
+# chunkc set 2_desktop_mode                bsp
 
 chunkc set 1_desktop_tree                ~/.chunkwm_layouts/dev_1
 
-chunkc set global_desktop_offset_top     36
-chunkc set global_desktop_offset_bottom  36
-chunkc set global_desktop_offset_left    6
-chunkc set global_desktop_offset_right   6
+chunkc set global_desktop_offset_top     45
+chunkc set global_desktop_offset_bottom  45
+chunkc set global_desktop_offset_left    20
+chunkc set global_desktop_offset_right   20
 chunkc set global_desktop_offset_gap     6
 
-chunkc set 1_desktop_offset_top          36
-chunkc set 1_desktop_offset_bottom       36
-chunkc set 1_desktop_offset_left         6
-chunkc set 1_desktop_offset_right        6
-chunkc set 1_desktop_offset_gap          6
+# chunkc set 1_desktop_offset_top          36
+# chunkc set 1_desktop_offset_bottom       36
+# chunkc set 1_desktop_offset_left         6
+# chunkc set 1_desktop_offset_right        6
+# chunkc set 1_desktop_offset_gap          6
 
-chunkc set 3_desktop_offset_top          36
-chunkc set 3_desktop_offset_bottom       36
-chunkc set 3_desktop_offset_left         6
-chunkc set 3_desktop_offset_right        6
+# chunkc set 3_desktop_offset_top          36
+# chunkc set 3_desktop_offset_bottom       36
+# chunkc set 3_desktop_offset_left         6
+# chunkc set 3_desktop_offset_right        6
 
-chunkc set desktop_padding_step_size     10.0
+chunkc set desktop_padding_step_size     25.0
 chunkc set desktop_gap_step_size         5.0
 
 chunkc set bsp_spawn_left                0
@@ -62,9 +61,9 @@ chunkc set window_region_locked          1
 # chunkc set mouse_modifier              \"cmd shift\"
 chunkc set mouse_modifier                fn
 
-chunkc set preselect_border_color        0xffc0b18b
-chunkc set preselect_border_width        1
-chunkc set preselect_border_radius       1
+# chunkc set preselect_border_color        0xff282C34
+# chunkc set preselect_border_width        4
+# chunkc set preselect_border_radius       4
 
 #
 # NOTE: these settings require chwm-sa.
@@ -81,9 +80,11 @@ chunkc set window_use_cgs_move           0
 # NOTE: the following are config variables for the chunkwm-border plugin.
 #
 
-chunkc set focused_border_color          0xffc0b18b
-chunkc set focused_border_width          1
-chunkc set focused_border_radius         1
+# chunkc set focused_border_color          0xff282C34
+# chunkc set focused_border_color          0xff3374C7
+chunkc set focused_border_color          0xffCA3154
+chunkc set focused_border_width          4
+chunkc set focused_border_radius         4
 chunkc set focused_border_skip_floating  0
 
 #
@@ -93,7 +94,8 @@ chunkc set focused_border_skip_floating  0
 
 chunkc core::load border.so
 chunkc core::load tiling.so
-chunkc core::load ffm.so
+# chunkc core::load ffm.so
+# chunkc core::load purify.so
 
 #
 # NOTE: shell commands require escaped quotes
@@ -103,3 +105,7 @@ chunkc core::load ffm.so
 # chunkc tiling::rule --owner Spotify --role AXWindow --subrole AXDialog --state tile
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
+chunkc tiling::rule --owner \"1Password 7\" --state float
+
+# Log to file
+chunkc core::log_file /usr/local/var/log/chunkwm/chunkwm.log
