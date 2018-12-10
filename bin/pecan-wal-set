@@ -1,24 +1,61 @@
 #!/usr/bin/env bash
 
-image="${PWD}/${1}"
-cache="${HOME}/Pictures/Wallpapers/pecan-wal-set-current-wallpaper"
-pecan_dir="${HOME}/.config/uebersicht/widgets/pecan/"
+cd "$HOME/Pictures/Wallpapers/recent/" || exit 1
 
-if [ "${1}" != "$cache" ]; then
-  cp "${image}" "${cache}"
-  osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"${image}\""
-else
-  image="${1}"
-fi
+image="${1:-.}"
+# cache=$(cat pecan-wal-set-current-wallpaper)
+pecan_dir="${HOME}/.config/uebersicht/widgets/pecan-redux/"
 
-wal -ste -i "${image}"
-/usr/local/bin/chunkwm --load-sa
+# if [ "${1}" != "$cache" ]; then
+#   echo "${image}" > pecan-wal-set-current-wallpaper
+#   osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"${PWD}/${image}\""
+# fi
+
+echo "${image}"
+# Wal Backends preferred (?) order
+#  - colorz
+#  - wal
+#  - haishoku
+#  - colorthief
+#  - schemer2 ??? https://github.com/thefryscorer/schemer2
+wal -ste \
+  --saturate 0.7 \
+  --backend colorz \
+  -i "${image}"
+
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$(cat "$HOME/.cache/wal/wal")\""
+
+cp $HOME/.cache/wal/colors $HOME/.config/vis/colors/wal && killall -USR1 vis
+
+three_color=$(cat $HOME/.cache/wal/colors-kitty.conf | grep color3 | awk '{print $2}')
+
+sed -i -e "s~^chunkc set focused_border_color.*~chunkc set focused_border_color 0xFF${three_color:1}~g" "$HOME/.config/chunkwm/chunkwmrc"
+
+$HOME/bin/chunk-restart
+
+sed -i -e "s~^  border_color.*~  border_color=#${three_color:1}~g" "$HOME/bin/music"
+$HOME/bin/music extract
 
 sassc \
   --style expanded "${pecan_dir}scss/style.scss" > "${pecan_dir}style.css"
 
-osascript <<EOD
-tell application "uebersicht"
-  refresh widget id "Pecan-background-coffee"
-end tell
-EOD
+# osascript <<EOD
+# tell application "Uebersicht"
+#   refresh widget id "pecan-background-jsx"
+# end tell
+# EOD
+# WHY U NO WORK?! 👆
+osascript -e 'tell application "Uebersicht" to refresh'
+
+foreground_color=$(cat $HOME/.cache/wal/colors-kitty.conf | grep foreground | awk '{print $2}')
+background_color=$(cat $HOME/.cache/wal/colors-kitty.conf | grep background | awk '{print $2}')
+one_color=$(cat $HOME/.cache/wal/colors-kitty.conf        | grep "color2 "  | awk '{print $2}')
+
+echo "" >> $HOME/.cache/wal/colors-kitty.conf
+
+echo "active_tab_foreground $one_color" >> $HOME/.cache/wal/colors-kitty.conf
+echo "active_tab_background $background_color" >> $HOME/.cache/wal/colors-kitty.conf
+echo "inactive_tab_foreground $foreground_color" >> $HOME/.cache/wal/colors-kitty.conf
+echo "inactive_tab_background $background_color" >> $HOME/.cache/wal/colors-kitty.conf
+
+kitty @ --to unix:/tmp/mykitty set-colors --all --configured "$HOME/.cache/wal/colors-kitty.conf"

@@ -1,0 +1,52 @@
+#! /usr/bin/env bash
+
+function launch_player() {
+  kitty @ new-window --new-tab --tab-title music --title cover
+  kitty @ send-text --match title:cover 'sh \r'
+  kitty @ send-text --match title:cover 'export PS1="" \r'
+  kitty @ send-text --match title:cover 'clear \r'
+  kitty @ new-window --title ' ' /usr/local/bin/ncmpcpp
+  kitty @ new-window --keep-focus /usr/local/bin/vis
+  change_cover
+  kitty @ resize-window --increment 93
+  # kitty @ resize-window --increment 15 --axis vertical
+  # kitty @ set-font-size 2
+}
+
+function change_cover() {
+  kitty @ --to unix:/tmp/mykitty send-text \
+    --match title:cover \
+    "clear && /usr/local/bin/kitty icat --transfer-mode=stream $HOME/tmp/album-art/cover.png \r"
+}
+
+function extract_cover() {
+  path="$1"
+  border_color=#1fb1a4
+
+  ffmpeg \
+    -hide_banner \
+    -loglevel 0 \
+    -y \
+    -i "$path" \
+    -vf scale=400:-1 \
+    -vf "scale=400:-1,pad=410:ow:(ow-iw)/2:(oh-ih)/2:${border_color}" \
+    "$HOME/tmp/album-art/cover.png" > /dev/null 2>&1
+}
+
+function replace_cover() {
+  music_dir="$HOME/Music/iTunes/iTunes Music/Music"
+  temp_song="$HOME/tmp/album-art/current-song"
+
+  cp "$music_dir/$(/usr/local/bin/mpc --format %file% current)" "$temp_song"
+
+  extract_cover "$temp_song" || cp "$HOME/tmp/album-art/no-album-art.jpg" "$HOME/tmp/album-art/cover.png"
+
+  rm "$temp_song"
+}
+
+if [[ $1 == "extract" ]]; then
+  replace_cover
+  change_cover
+else
+  launch_player
+fi

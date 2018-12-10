@@ -1,7 +1,10 @@
 #! /usr/bin/env bash
 
 # source launchd helper functions
-. /Users/johna/.bash/after/launchd.sh
+. /Users/johna/.config/shell/launchd.bash
 
 # restart chunk service
 services restart chunkwm
+
+# reload chwm-sa
+$HOME/bin/chwm-sa-reload

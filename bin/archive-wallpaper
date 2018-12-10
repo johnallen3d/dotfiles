@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+to_archive=$(cat "$HOME/.cache/wal/wal")
+archive_dir="$HOME/Pictures/Wallpapers/archive/"
+mkdir -p $archive_dir
+
+$HOME/bin/pecan-wal-set
+
+mv "$to_archive" "$archive_dir"

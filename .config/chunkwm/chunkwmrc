@@ -18,8 +18,8 @@ chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 # NOTE: the following are config variables for the chunkwm-tiling plugin.
 #
 
-chunkc set global_desktop_mode           bsp
-# chunkc set 2_desktop_mode                bsp
+chunkc set global_desktop_mode           monocle
+# chunkc set 5_desktop_mode                bsp
 
 chunkc set 1_desktop_tree                ~/.chunkwm_layouts/dev_1
 
@@ -28,6 +28,12 @@ chunkc set global_desktop_offset_bottom  45
 chunkc set global_desktop_offset_left    20
 chunkc set global_desktop_offset_right   20
 chunkc set global_desktop_offset_gap     6
+
+# chunkc set global_desktop_offset_top     0
+# chunkc set global_desktop_offset_bottom  0
+# chunkc set global_desktop_offset_left    0
+# chunkc set global_desktop_offset_right   0
+# chunkc set global_desktop_offset_gap     0
 
 # chunkc set 1_desktop_offset_top          36
 # chunkc set 1_desktop_offset_bottom       36
@@ -59,9 +65,9 @@ chunkc set window_region_locked          1
 #       to pass value containing a whitespace.
 #
 # chunkc set mouse_modifier              \"cmd shift\"
-chunkc set mouse_modifier                fn
+# chunkc set mouse_modifier                fn
 
-# chunkc set preselect_border_color        0xff282C34
+# chunkc set preselect_border_color        0xEE35CEAB
 # chunkc set preselect_border_width        4
 # chunkc set preselect_border_radius       4
 
@@ -80,10 +86,8 @@ chunkc set window_use_cgs_move           0
 # NOTE: the following are config variables for the chunkwm-border plugin.
 #
 
-# chunkc set focused_border_color          0xff282C34
-# chunkc set focused_border_color          0xff3374C7
-chunkc set focused_border_color          0xffCA3154
-chunkc set focused_border_width          4
+chunkc set focused_border_color 0xFF1fb1a4
+chunkc set focused_border_width          6
 chunkc set focused_border_radius         4
 chunkc set focused_border_skip_floating  0
 
@@ -103,9 +107,17 @@ chunkc core::load tiling.so
 #
 
 # chunkc tiling::rule --owner Spotify --role AXWindow --subrole AXDialog --state tile
-chunkc tiling::rule --owner Finder --name Copy --state float
+# chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
 chunkc tiling::rule --owner \"1Password 7\" --state float
+# chunkc tiling::rule --owner qutebrowser --desktop 1 --follow-desktop
+# chunkc tiling::rule --owner Safari --desktop 1 --follow-desktop
+chunkc tiling::rule --owner Slack --desktop 2 --follow-desktop
+chunkc tiling::rule --owner Spark --desktop 3 --follow-desktop
+chunkc tiling::rule --owner Messages --desktop 4 --follow-desktop
+# chunkc tiling::rule --owner YakYak --desktop 4 --follow-desktop
+chunkc tiling::rule --owner Finder --desktop 5 --follow-desktop --state tile
 
 # Log to file
 chunkc core::log_file /usr/local/var/log/chunkwm/chunkwm.log
+chunkc core::log_level debug

@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+docker run \
+  --rm \
+  -it \
+  -v "$PWD":"$PWD" \
+  -w "$PWD" \
+  alpine:latest ash

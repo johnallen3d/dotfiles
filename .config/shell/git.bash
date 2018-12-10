@@ -1,0 +1,13 @@
+alias gr='git rebase -i @{u}'
+alias gst='git status --short'
+alias gc="git commit -v"
+alias gb="git branch"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+alias gl="git pull"
+alias gco="git checkout"
+alias gm='git merge --ff-only'
+alias gcf='git commit --fixup'
+alias spp='git stash; git pull; git stash pop'
+alias db=delete-branch
+alias pr="hub pull-request --push --browse"

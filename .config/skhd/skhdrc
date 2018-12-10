@@ -1,28 +1,41 @@
 #  NOTE(koekeishiya): A list of all built-in modifier and literal keywords can
 #                     be found at https://github.com/koekeishiya/skhd/issues/1
+#
+# Cheat sheet :
+# shift + cmd        - [key] : launch/switch application
+# shift + ctrl + cmd - [key] : music
+# ctrl  + alt  + cmd - [key] : ricing
+# alt                - [key] : bsp window switching
+# ctrl               - [key] : desktop switching
 
 # launch / switch apps
-# cmd + shift - g : open -a /Applications/Safari.app
-cmd + shift - g : open -a /Applications/qutebrowser.app
-cmd + shift - i : open -a /Applications/Kitty.app/Contents/MacOS/kitty
-cmd + shift - m : open -a /Applications/Astro.app
-cmd + shift - p : open -a /Applications/Messages.app
-cmd + shift - s : open -a /Applications/Slack.app
+shift + cmd - g : open -a /Applications/Safari.app
+# shift + cmd - g : open -a /Applications/qutebrowser.app
+shift + cmd - i : open -a /Applications/Kitty.app/Contents/MacOS/kitty
+shift + cmd - m : open -a /Applications/Spark.app
+shift + cmd - p : open -a /Applications/Messages.app
+shift + cmd - s : open -a /Applications/Slack.app
 
 # system commands
-alt + cmd - l          : open -a ScreenSaverEngine
-shift + ctrl + cmd - b : bt-toggle
-ctrl + cmd + alt - c   : ~/bin/chunk-restart
-ctrl + cmd + alt - u   : osascript -e 'tell application "Uebersicht" to refresh'
-# cmd + alt + ctrl - 0x24   : $HOME/tmp/chwm-sa/inject_test/bin/inject # Return
-cmd + alt + ctrl - 0x24   : chunkwm --load-sa # Return
+# ctrl + alt + cmd - c    : chunk-restart
+# ctrl + alt + cmd - u    : osascript -e 'tell application "Uebersicht" to refresh'
+# cmd + alt + ctrl - 0x24 : chunkwm --load-sa # Return
+# cmd + alt + ctrl - d    : open -a dismiss-all-macos-notifications.app
+hyper - c     : chunk-restart
+hyper - u     : osascript -e 'tell application "Uebersicht" to refresh'
+hyper - d     : open -a dismiss-all-macos-notifications.app
+alt + cmd - l : open -a ScreenSaverEngine
 
 # control music (mpd via mpc)
-cmd + shift + ctrl - p     : /usr/local/bin/mpc toggle
-cmd + shift + ctrl - down  : /usr/local/bin/mpc volume -5
-cmd + shift + ctrl - up    : /usr/local/bin/mpc volume +5
-cmd + shift + ctrl - left  : /usr/local/bin/mpc prev
-cmd + shift + ctrl - right : /usr/local/bin/mpc next
+shift + ctrl + cmd - p : /usr/local/bin/mpc toggle
+shift + ctrl + cmd - h : /usr/local/bin/mpc prev
+shift + ctrl + cmd - k : /usr/local/bin/mpc volume +5
+shift + ctrl + cmd - j : /usr/local/bin/mpc volume -5
+shift + ctrl + cmd - l : /usr/local/bin/mpc next
+shift + ctrl + cmd - b : bt-toggle
+
+# fun
+shift + alt + cmd - r : pecan-wal-set
 
 # close focused window
 # alt - w : chunkc tiling::window --close
@@ -96,19 +109,14 @@ ctrl + cmd - 2  : chunkc tiling::monitor -f 2
 # ctrl + cmd - 3  : chunkc tiling::monitor -f 3
 
 # send window to monitor and follow focus
-ctrl + alt - h  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
-ctrl + alt - l  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
+ctrl + alt - h  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f 1 # prev
+ctrl + alt - l  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f 2 # next
 ctrl + alt - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
 ctrl + alt - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 # ctrl + alt - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
 # ctrl + alt - 4  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 4
 
 # increase region size
-# shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
-# shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
-# shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
-# shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
-
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
 shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
 shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
@@ -167,8 +175,8 @@ alt - e : chunkc tiling::window --toggle split
 # shift + alt - t : chunkc set window_float_next 1
 
 # change layout of desktop
-ctrl + alt + cmd - b : chunkc tiling::desktop --layout bsp
-ctrl + alt + cmd - m : chunkc tiling::desktop --layout monocle
-ctrl + alt + cmd - f : chunkc tiling::desktop --layout float
+hyper - b : chunkc tiling::desktop --layout bsp
+hyper - m : chunkc tiling::desktop --layout monocle
+hyper - f : chunkc tiling::desktop --layout float
 #
 # ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1

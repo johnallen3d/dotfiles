@@ -3,72 +3,76 @@
 # Script to import and export Pecan styles
 # Author: Daniel Neemann
 
-uber="$HOME/.config/uebersicht/widgets"
+pecan="$HOME/.config/uebersicht/widgets/pecan-redux"
 name="$2"
 themes="./themes/$name"
 
 save(){
-	if [[ -z "$name" ]] ; then
-		echo "requires theme name.  try pecan -s name"
-		exit 1
-	else
-	status="saved"
-	mkdir "$themes"
-	cp ./style.css "$themes/style.css" &&
-	cp ./scss/style.scss "$themes/style.scss" &&
-	screencapture "$themes/$name.jpg" &&
-	convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg" &&
-	touch "$themes/README.md" &&
-	echo "![$name]($name.jpg)" > "$themes/README.md" &&
-	notify
-	fi
+  echo "not implemented"
+  # if [[ -z "$name" ]] ; then
+  #   echo "requires theme name.  try pecan -s name"
+  #   exit 1
+  # else
+  # status="saved"
+  # mkdir "$themes"
+  # cp ./style.css "$themes/style.css" &&
+  # cp ./scss/style.scss "$themes/style.scss" &&
+  # screencapture "$themes/$name.jpg" &&
+  # convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg" &&
+  # touch "$themes/README.md" &&
+  # echo "![$name]($name.jpg)" > "$themes/README.md" &&
+  # notify
+  # fi
 }
 
 load(){
-	if [[ -z "$name" ]] ; then
-		echo "requires theme name.  try pecan -l theme"
-		exit 1
-	else
-	status="loaded" &&
-	cp "$themes/style.css" ./style.css &&
-	cp "$themes/style.scss" ./scss/style.scss &&
-  sed -i -e "s~zzzeyez~johna~g" "$uber/Pecan/scss/style.scss" &&
-  pecan-wal-set /Users/johna/Pictures/Wallpapers/pecan-wal-set-current-wallpaper &&
-	refresh &&
-	notify
-	fi
+  if [[ -z "$name" ]] ; then
+    echo "requires theme name.  try pecan -l theme"
+    exit 1
+  else
+    status="loaded"
+    pwd
+    cp "$themes/style.css" ./style.css
+    cp "$themes/style.scss" ./scss/style.scss
+    sed -i -e "s~zzzeyez~johna~g" "$pecan/scss/style.scss"
+    sed -i -e "s~9ch~22ch~g" "$pecan/scss/style.scss"
+    # this line isn't right, we need the path to this cached image here
+    pecan-wal-set "$(cat /Users/johna/Pictures/Wallpapers/recent/pecan-wal-set-current-wallpaper)"
+    refresh
+    notify
+  fi
 }
 
 list(){
-	echo 'available themes: '
-	ls "$themes"
+  echo 'available themes: '
+  ls "$themes"
 }
 
 notify(){
-	if command -v notify-send >/dev/null 2>&1; then
-		notify-send "✔ Pecan style '$name' $status"
-	else
-		echo "Pecan style '$name' $status"
-	fi
+  if command -v notify-send >/dev/null 2>&1; then
+    notify-send "✔ Pecan style '$name' $status"
+  else
+    echo "Pecan style '$name' $status"
+  fi
 }
 
 refresh(){
 osascript <<EOD
-  tell application "Übersicht"
-  	refresh widget id "Pecan-background-coffee"
+  tell application "Uebersicht"
+    refresh widget id "Pecan-background-coffee"
   end tell
 EOD
 }
 
 help(){
-	echo '--load theme-name, --save theme-name, --list'
+  echo '--load theme-name, --save theme-name, --list'
 }
 
-cd "$uber/Pecan" &&
+cd "$pecan" &&
 case $1 in
-	-l|--load) load ;;
-	-s|--save) save ;;
-	-h|--help) help ;;
-	-ls|--list) list ;;
-	*) help && list ;;
+  -l|--load) load ;;
+  -s|--save) save ;;
+  -h|--help) help ;;
+  -ls|--list) list ;;
+  *) help && list ;;
 esac

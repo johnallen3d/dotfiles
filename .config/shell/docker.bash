@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 #
 # image and container cleanup helper
 #
@@ -45,52 +47,4 @@ function docker() {
       command docker "$@"
       ;;
   esac
-}
-
-#
-# a ruby environment for building gems and other one-off tasks
-#
-# volume mounts in order:
-#
-# * local folder into working directory
-# * pry config
-# * pry history
-# * bash history
-# * RubyGems credentials
-# * SSH credentials (git push)
-# * git configuration (sign commits)
-# * Gemfury and Heroku credentials
-#
-function docker-ruby() {
-  docker run \
-    -it \
-    --rm \
-    -w /usr/src/app \
-    -v $PWD:/usr/src/app \
-    -v $HOME/.pryrc:/root/.pryrc \
-    -v $HOME/.pry_history:/root/.pry_history \
-    -v $HOME/.bash_history:/root/.bash_history \
-    -v $HOME/.gem:/root/.gem \
-    -v $HOME/.ssh:/root/.ssh \
-    -v $HOME/.gitconfig:/root/.gitconfig \
-    -v $HOME/.netrc:/root/.netrc \
-    johnallen3d/ruby-dev:latest "${@}"
-}
-
-function alpine() {
-  docker run \
-    --rm \
-    -it \
-    -v $PWD:$PWD \
-    -w $PWD \
-    alpine:latest ash
-}
-
-function ctop() {
-  docker run \
-    --rm \
-    -it \
-    --name=ctop \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    quay.io/vektorlab/ctop:latest
 }

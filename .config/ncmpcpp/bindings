@@ -344,9 +344,9 @@ def_key "ctrl-h"
 #def_key "u"
 #  update_database
 #
-#def_key "ctrl-v"
-#  sort_playlist
-#
+def_key "ctrl-v"
+  sort_playlist
+
 #def_key "ctrl-r"
 #  reverse_playlist
 #
@@ -428,21 +428,21 @@ def_key "ctrl-a"
 #def_key "C"
 #  crop_main_playlist
 #
-#def_key "m"
-#  move_sort_order_up
-#
-#def_key "m"
-#  move_selected_items_up
-#
-#def_key "m"
-#  toggle_media_library_sort_mode
-#
-#def_key "n"
-#  move_sort_order_down
-#
-#def_key "n"
-#  move_selected_items_down
-#
+def_key "m"
+  move_sort_order_up
+
+def_key "m"
+  move_selected_items_up
+
+def_key "m"
+  toggle_media_library_sort_mode
+
+def_key "n"
+  move_sort_order_down
+
+def_key "n"
+  move_selected_items_down
+
 #def_key "M"
 #  move_selected_items_to
 #

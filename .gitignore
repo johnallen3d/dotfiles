@@ -37,3 +37,19 @@ zeus.json
 # uebersicht
 .config/uebersicht/widgets/font-awesome
 .config/uebersicht/widgets/pecan-redux
+
+# fish
+.config/fish/fishd.*
+
+# mpd
+.config/mpd/database
+.config/mpd/log
+.config/mpd/pid
+.config/mpd/playlists
+.config/mpd/state
+.config/mpd/sticker.sql
+
+# misc .config
+.config/configstore
+.config/hub
+./config/vis/vis.log

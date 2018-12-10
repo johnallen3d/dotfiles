@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+device="${1:-John’s AirPods}"
+
+osascript -e "
+  set device to \"${device}\"
+
+  tell application \"System Events\"
+    tell process \"SystemUIServer\"
+      tell (menu bar item 1 of menu bar 1 where description is \"bluetooth\")
+        click
+        tell (menu item device of menu 1)
+          click
+          click menu item 1 of menu 1
+        end tell
+      end tell
+    end tell
+  end tell
+"

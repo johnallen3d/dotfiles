@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+# fixup the last (non-fixup) commit. avoids "fixup! fixup! fixup! ..."
+git log --oneline --no-color --max-count 30 \
+  | grep -v fixup! \
+  | head -n 1 \
+  | awk '{print $1}' \
+  | xargs git commit --fixup

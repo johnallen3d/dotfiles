@@ -1,0 +1,22 @@
+#! /usr/bin/env bash
+
+echo "changing to source directory"
+cd ~/tmp/kitty || exit
+
+echo "pulling latest"
+git pull
+
+echo "compiling"
+make
+
+echo "building Macos app"
+make app
+
+echo "removing existing .app"
+rm -rf /Applications/kitty.app
+
+echo "moving new app in place"
+mv ./kitty.app /Applications/kitty.app
+
+echo "updating icon"
+~/bin/replace-icons
