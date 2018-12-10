@@ -29,3 +29,11 @@ zeus.json
 .pry_history
 
 .config/nvim/pack/
+
+# qutebrowser
+.qutebrowser/bookmarks
+.qutebrowser/quickmarks
+
+# uebersicht
+.config/uebersicht/widgets/font-awesome
+.config/uebersicht/widgets/pecan-redux
