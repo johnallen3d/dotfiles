@@ -7,16 +7,18 @@ source ~/.vim/bundle.vim
 augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
+
   " autoindent with two spaces, always expand tabs
   autocmd FileType ruby,eruby,yaml,xml setlocal ai sw=2 sts=2 et
   autocmd FileType ruby,eruby,yaml,xml setlocal path+=lib
-  autocmd FileType ruby,eruby,yaml,xml setlocal colorcolumn=80
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
-  autocmd BufRead,BufNewFile *.md setlocal spell
-  autocmd BufRead,BufNewFile *.md setlocal wrap linebreak nolist
+
   autocmd BufRead,BufNewFile Dangerfile set filetype=ruby
   autocmd BufRead,BufNewFile Brewfile set filetype=ruby
+
+  autocmd BufRead,BufNewFile *.md setlocal spell
+  autocmd BufRead,BufNewFile *.md setlocal wrap linebreak nolist
 augroup END
 
 set nobackup            " do not make backup before saving
@@ -31,7 +33,6 @@ set t_ti= t_te=         " Prevent Vim from clobbering the scrollback buffer.
 set scrolloff=3         " keep at least three lines visible above/below cursor
 
 set colorcolumn=81      " show a marker at 80th character
-highlight ColorColumn ctermbg=DarkGray
 set hlsearch            " Highlight searches
 set incsearch           " do incremental searching
 set ignorecase          " searches are case insensitive...
@@ -41,6 +42,20 @@ set gdefault            " have :s///g flag by default on
 set synmaxcol=800       " don't try to highlight long lines
 set number              " show line numbers
 set clipboard=unnamed   " use system clipboard by default!
+
+" https://www.reddit.com/r/neovim/comments/ab01n8/
+let g:clipboard = {
+  \ 'name': 'pbcopy',
+  \ 'copy': {
+  \    '+': 'pbcopy',
+  \    '*': 'pbcopy',
+  \  },
+  \ 'paste': {
+  \    '+': 'pbpaste',
+  \    '*': 'pbpaste',
+  \ },
+  \ 'cache_enabled': 0,
+  \ }
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
@@ -53,19 +68,29 @@ set autoread
 set updatecount=0
 
 " colors and syntax highlighting
-if (has("termguicolors"))
- set termguicolors
-endif
+" if (has("termguicolors"))
+"  set termguicolors
+" endif
 
 syntax on
 syntax enable
 
-set background=dark
-if !empty($VIM_COLORSCHEME)
-  colorscheme $VIM_COLORSCHEME
-else
-  colorscheme base16-dracula
-endif
+" set background=dark
+
+source ~/.vim/plugin/status.vim
+
+" let g:onedark_termcolors = 256
+" let g:onedark_terminal_italics = 1
+" colorscheme onedark
+
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
+" let g:nord_comment_brightness = 20
+" colorscheme nord
+
+colorscheme wal
+
+" colorscheme base16-solarized-light
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -252,7 +277,7 @@ map <leader>n :call file#Rename()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT EXPANSION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-abbr clog <esc>ciwconsole.log();<esc>hi
+abbr clog <esc>ciwconsole.log();<esc>==$hi
 
 abbr bp binding.pry<ESC>:w<CR>
 
@@ -282,17 +307,3 @@ augroup spaces
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
-
-" Strip trailing whitespace (,ss)
-noremap <leader>ss :call whitespace#Strip()<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" create a new tab
-nnoremap <leader>t :tabnew<CR>
-inoremap <leader>t <Esc>:tabnew<CR>
-
-" navigate left and right
-nnoremap <S-l> :tabnext<CR>
-nnoremap <S-h> :tabprevious<CR>

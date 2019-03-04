@@ -1,21 +1,23 @@
 "" Plugins
 
-if executable('rg')
-  " Use ripgrep over grep
-  set grepprg=rg\ --vimgrep
-endif
+" if executable('rg')
+"   " Use ripgrep over grep
+"   set grepprg=rg\ --vimgrep
+" endif
 
 if has('nvim')
   " " Fzf
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  " let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
-  map <Leader>p :Files<CR>
-  map <c-p> :Files<CR>
+  " map <Leader>p :Files<CR>
+  " map <c-p> :Files<CR>
 else
   " " CntrlP
   map <Leader>p :CtrlP<CR>
   map <c-p> :CtrlP<CR>
+  " vvv this is not working :'(
+  map <C-A-S-D-p> :CtrlP<CR>
   let g:ctrlp_custom_ignore = 'tmp$\|public/assets$\|tags$\|\.ds_store$\|\.swp$\|.png\|node_modules\|bower_components\|dist'
   " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
   let g:ctrlp_user_command = 'rg --files  %s'
@@ -60,20 +62,17 @@ nmap \\u <Plug>CommentaryUndo<CR>
 
 " " vim-sandwich
 " use vim-surround mappings (muscle memory)
-runtime macros/sandwich/keymap/surround.vim
+" runtime macros/sandwich/keymap/surround.vim
 
-" " RunCommand : https://coderwall.com/p/d1pa0a
-function! SendToTerminal(args)
-  execute ":silent !run_command '" . a:args . "'"
-endfunction
+" " neoterm
+command NewVerticalTerminal :vert Tnew
+nmap <silent> <Leader>r :T all<CR>
 
-nmap <silent> <Leader>r :call SendToTerminal('clear && bin/rake') <CR>
+nnoremap <leader>t :NewVerticalTerminal <CR> <C-W><C-L>
+inoremap <leader>t <Esc>:NewVerticalTerminal <CR> <C-W><C-L>
 
-" " tpope/vim-markdown
-let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'yaml', 'javascript', 'html', 'vim', 'coffee', 'json', 'diff']
-
-" " w0ng/vim-hybrid
-let g:hybrid_custom_term_colors = 1
+" " plasticboy/vim-markdown
+let g:vim_markdown_conceal = 0
 
 " vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -84,3 +83,23 @@ map <Leader>c <Plug>VimwikiToggleListItem
 let g:ruby_indent_block_style = 'do'
 " https://github.com/vim-ruby/vim-ruby/blob/84afb552189060d1dae2d3154ba88454ee14fcda/doc/vim-ruby.txt#L143-L164
 let g:ruby_indent_assignment_style = 'variable'
+
+" " LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+  \ 'ruby': ['solargraph', 'stdio'],
+  \ }
+
+" Tell the language client to use the default IP and port
+" that Solargraph runs on
+" let g:LanguageClient_serverCommands = {
+"     \ 'ruby': ['tcp://localhost:7658']
+"     \ }
+
+" Don't send a stop signal to the server when exiting vim.
+" This is optional, but I don't like having to restart Solargraph
+" every time I restart vim.
+let g:LanguageClient_autoStop = 0
+
+" Configure ruby omni-completion to use the language client:
+"
+autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
