@@ -20,6 +20,7 @@ if not set -q abbrs_initialized
   abbr --add pr 'hub pull-request --push --browse'
 
   abbr --add jq 'jq -C "."'
+  abbr --add jp 'jp "@"'
 
   abbr --add nekes 'cd ~/development/technekes'
   abbr --add src 'cd ~/development/technekes/src'
@@ -49,4 +50,6 @@ if not set -q abbrs_initialized
   abbr --add passgen 'dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 | rev | cut -b 2- | rev'
   abbr --add password passgen
   abbr --add pass passgen
+
+  abbr --add weather 'curl wttr.in'
 end
