@@ -20,5 +20,5 @@ kitty + complete setup fish | source
 # use ruby version installed by homebrew
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 # THEME PURE #
-set fish_function_path /Users/johna/.config/fish/functions/theme-pure/functions/ $fish_function_path
-source /Users/johna/.config/fish/functions/theme-pure/conf.d/pure.fish
+set fish_function_path $HOME/.config/fish/functions/theme-pure/functions/ $fish_function_path
+source $HOME/.config/fish/functions/theme-pure/conf.d/pure.fish
