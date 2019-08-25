@@ -21,41 +21,41 @@ augroup myfiletypes
   autocmd BufRead,BufNewFile *.md setlocal wrap linebreak nolist
 augroup END
 
-set nobackup            " do not make backup before saving
-set nowritebackup       " do not write backup before saving
-set history=50          " remember 50 commands
-set ruler               " show the cursor position all the time
-set showcmd             " display incomplete commands
-set showmode            " show the current mode
-set laststatus=2        " Always display the status line
-set nowrap              " set nowrap
-set t_ti= t_te=         " Prevent Vim from clobbering the scrollback buffer.
-set scrolloff=3         " keep at least three lines visible above/below cursor
+set nobackup              " do not make backup before saving
+set nowritebackup         " do not write backup before saving
+set history=50            " remember 50 commands
+set ruler                 " show the cursor position all the time
+set showcmd               " display incomplete commands
+set showmode              " show the current mode
+set laststatus=2          " Always display the status line
+set nowrap                " set nowrap
+set t_ti= t_te=           " Prevent Vim from clobbering the scrollback buffer.
+set scrolloff=3           " keep at least three lines visible above/below cursor
 
-set colorcolumn=81      " show a marker at 80th character
-set hlsearch            " Highlight searches
-set incsearch           " do incremental searching
-set ignorecase          " searches are case insensitive...
-set smartcase           " ... unless they contain at least one capital letter
-set gdefault            " have :s///g flag by default on
+set colorcolumn=81        " show a marker at 80th character
+set hlsearch              " Highlight searches
+set incsearch             " do incremental searching
+set ignorecase            " searches are case insensitive...
+set smartcase             " ... unless they contain at least one capital letter
+set gdefault              " have :s///g flag by default on
 
-set synmaxcol=800       " don't try to highlight long lines
-set number              " show line numbers
-set clipboard=unnamed   " use system clipboard by default!
+set synmaxcol=800         " don't try to highlight long lines
+set number                " show line numbers
+set clipboard=unnamedplus " use system clipboard by default!
 
 " https://www.reddit.com/r/neovim/comments/ab01n8/
-let g:clipboard = {
-  \ 'name': 'pbcopy',
-  \ 'copy': {
-  \    '+': 'pbcopy',
-  \    '*': 'pbcopy',
-  \  },
-  \ 'paste': {
-  \    '+': 'pbpaste',
-  \    '*': 'pbpaste',
-  \ },
-  \ 'cache_enabled': 0,
-  \ }
+" let g:clipboard = {
+"   \ 'name': 'pbcopy',
+"   \ 'copy': {
+"   \    '+': 'pbcopy',
+"   \    '*': 'pbcopy',
+"   \  },
+"   \ 'paste': {
+"   \    '+': 'pbpaste',
+"   \    '*': 'pbpaste',
+"   \ },
+"   \ 'cache_enabled': 0,
+"   \ }
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
@@ -89,6 +89,9 @@ source ~/.vim/plugin/status.vim
 " colorscheme nord
 
 colorscheme wal
+" hack for hard to read comments, hope I don't regret this!
+highlight Comment ctermfg=blue
+" colorscheme wpgtk
 
 " colorscheme base16-solarized-light
 
@@ -218,7 +221,8 @@ set foldlevel=1         "this is just what i use
 set path+=**
 
 " complete settings
-set wildmenu
+" set wildmenu
+set wildoptions=pum,tagfile
 
 " add gems.tags to ctags list
 set tags+=gems.tags
@@ -236,23 +240,25 @@ nnoremap <C-a> ggVG
 " MARK DOWN
 " Hit leader+m to preview markdown file in Marked
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p' -g<cr>
+" :nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p' -g<cr>
+" :command! -nargs=0 VMD execute 'silent !vmd % &>/dev/null &' | redraw!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+" function! InsertTabWrapper()
+"     let col = col('.') - 1
+"     if !col || getline('.')[col - 1] !~ '\k'
+"         return "\<tab>"
+"     else
+"         return "\<c-p>"
+"     endif
+" endfunction
+" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <s-tab> <c-n>
 
+set autoindent
 filetype plugin indent on
 
 augroup vimrcEx

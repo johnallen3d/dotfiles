@@ -6,12 +6,12 @@
 " endif
 
 if has('nvim')
-  " " Fzf
-  " let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  " Fzf
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
-  " map <Leader>p :Files<CR>
-  " map <c-p> :Files<CR>
+  map <Leader>p :Files<CR>
+  map <c-p> :Files<CR>
 else
   " " CntrlP
   map <Leader>p :CtrlP<CR>
@@ -73,6 +73,10 @@ inoremap <leader>t <Esc>:NewVerticalTerminal <CR> <C-W><C-L>
 
 " " plasticboy/vim-markdown
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_fenced_languages = ['bash=sh', 'ruby=rb', 'javascript=js']
 
 " vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -84,22 +88,22 @@ let g:ruby_indent_block_style = 'do'
 " https://github.com/vim-ruby/vim-ruby/blob/84afb552189060d1dae2d3154ba88454ee14fcda/doc/vim-ruby.txt#L143-L164
 let g:ruby_indent_assignment_style = 'variable'
 
-" " LanguageClient-neovim
-let g:LanguageClient_serverCommands = {
-  \ 'ruby': ['solargraph', 'stdio'],
-  \ }
-
-" Tell the language client to use the default IP and port
-" that Solargraph runs on
+" " " LanguageClient-neovim
 " let g:LanguageClient_serverCommands = {
-"     \ 'ruby': ['tcp://localhost:7658']
-"     \ }
-
-" Don't send a stop signal to the server when exiting vim.
-" This is optional, but I don't like having to restart Solargraph
-" every time I restart vim.
-let g:LanguageClient_autoStop = 0
-
-" Configure ruby omni-completion to use the language client:
+"   \ 'ruby': ['solargraph', 'stdio'],
+"   \ }
 "
-autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+" " Tell the language client to use the default IP and port
+" " that Solargraph runs on
+" " let g:LanguageClient_serverCommands = {
+" "     \ 'ruby': ['tcp://localhost:7658']
+" "     \ }
+"
+" " Don't send a stop signal to the server when exiting vim.
+" " This is optional, but I don't like having to restart Solargraph
+" " every time I restart vim.
+" let g:LanguageClient_autoStop = 0
+"
+" " Configure ruby omni-completion to use the language client:
+" "
+" autocmd FileType ruby setlocal omnifunc=LanguageClient#complete

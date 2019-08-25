@@ -2,7 +2,7 @@ let g:lightline = {
   \   'colorscheme': 'nord',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
-  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+  \              [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ]
   \     ]
   \   },
   \   'component': {
@@ -10,6 +10,7 @@ let g:lightline = {
   \   },
   \   'component_function': {
   \     'gitbranch': 'fugitive#head',
+  \     'cocstatus': 'coc#status',
   \   },
   \   'separator': {
   \     'left': '', 'right': ''
@@ -18,6 +19,9 @@ let g:lightline = {
   \     'left': '', 'right': ''
   \   }
   \ }
+
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
 
 " " ==============================================================================
 " " Status Line
