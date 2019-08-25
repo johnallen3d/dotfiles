@@ -5,6 +5,6 @@ function t
     set title (basename $PWD)
   end
 
-  kitty @ set-window-title " "
+  # kitty @ set-window-title " "
   kitty @ set-tab-title $title
 end

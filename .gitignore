@@ -40,6 +40,8 @@ zeus.json
 
 # fish
 .config/fish/fishd.*
+.config/fish/fish_variables
+.config/fish/functions/theme-pure/
 
 # mpd
 .config/mpd/database

@@ -31,17 +31,21 @@ if not set -q abbrs_initialized
 
   abbr --add vi nvim
   abbr --add vim nvim
+  abbr --add :e nvim
   abbr --add notes 't notes && vi -c "packadd vimwiki | normal '',ww''"'
   abbr --add ws 'nvim -c DefaultWorkspace'
-  abbr --add :e vim
+
   abbr --add :q exit
 
   abbr --add uuid "uuidgen | tr -d '\\n' | tr '[:upper:]' '[:lower:]' | pbcopy; pbpaste; echo"
 
   abbr --add yt "youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
-  abbr --add ls 'exa --header'
-  abbr --add la 'exa -hla --git'
+  # abbr --add ls 'exa --header'
+  # abbr --add la 'exa -hla --git'
+  abbr --add ls 'lsd -1'
+  abbr --add la 'lsd -la'
+
   abbr --add tree 'exa --tree'
   abbr --add .. 'cd ..'
 
@@ -52,4 +56,17 @@ if not set -q abbrs_initialized
   abbr --add pass passgen
 
   abbr --add weather 'curl wttr.in'
+
+  # LINUX
+  switch (uname)
+  case Darwin
+  case Linux
+    abbr --add pac 'sudo pacman --noconfirm -S'
+    # abbr --add docker 'sudo docker'
+
+    # macos brain
+    abbr --add pbcopy 'xclip -selection clipboard'
+    abbr --add pbpaste 'xclip -selection clipboard -o'
+    abbr --add open 'xdg-open'
+  end
 end

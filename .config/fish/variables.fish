@@ -1,7 +1,7 @@
 if not set -q EDITOR
-  set -x EDITOR /usr/local/bin/nvim
-  set -x VISUAL /usr/local/bin/nvim
-  set -x GIT_EDITOR /usr/local/bin/nvim
+  set -x EDITOR nvim
+  set -x VISUAL nvim
+  set -x GIT_EDITOR nvim
 
   # disable homebrew github api https://github.com/Homebrew/brew/issues/93
   set -x HOMEBREW_NO_GITHUB_API 1
