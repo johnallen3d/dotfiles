@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+# usage: md-to-doc [filename]
+#
+# given a file `notes.md`
+# > md-to-doc notes
+# will output `notes.docx`
+
+file="${1}"
+
+pandoc -s "${file}.md" -o "${file}.docx"

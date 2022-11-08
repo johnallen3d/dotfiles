@@ -1,0 +1,5 @@
+{{ if ne .chezmoi.os "darwin" }}
+karabiner/
+raycast/
+yabai/
+{{ end }}

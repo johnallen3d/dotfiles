@@ -1,0 +1,7 @@
+# vim:fileencoding=utf-8:ft=conf
+
+# Save all videos under ~/Downloads directory
+-o ~/Downloads/%(title)s.%(ext)s
+
+# Best quality audio and vidio
+-f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'

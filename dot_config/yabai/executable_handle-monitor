@@ -1,0 +1,76 @@
+#! /usr/bin/env ruby
+
+# require 'pry'
+
+class HandleMonitor
+  def call
+    # push_kitty(5)
+
+    return if !external? && internal_count == 5
+    return if external?  && internal_count == 4 && external_count == 1
+
+    optimal = external? ? 4 : 5
+
+    scale(1, optimal) if internal_count != optimal
+    scale(2, 1) if external? && external_count != 1
+
+    push_kitty(5)
+  end
+
+  def focus_kitty
+    `open -a /Applications/Kitty.app/Contents/MacOS/kitty`
+  end
+
+  def push_kitty(desktop)
+    puts 'trying to focus kitty'
+    focus_kitty
+    sleep 0.25
+    puts "trying to send kitty to desktop #{desktop}"
+    # `chunkc tiling::window --send-to-desktop #{desktop}`
+    `yabai -m window --space #{desktop}`
+    sleep 0.25
+    puts "trying to focus desktop #{desktop}"
+    # `chunkc tiling::desktop --focus #{desktop}`
+    `yabai -m space --focus #{desktop}`
+    sleep 0.25
+  end
+
+  def create_space
+    `yabai -m space --create`
+  end
+
+  def destroy_space
+    `yabai -m space --destroy`
+  end
+
+  def scale(monitor, to)
+    # focus last space and delete it untl `to`
+    puts "scale #{monitor}, to #{to}"
+    until (total = space_count_for(monitor)) == to
+      # push_kitty(total)
+      total > to ? destroy_space : create_space
+    end
+  end
+
+  def monitor_count
+    @monitor_count ||= `yabai -m query --displays | jq "length"`.to_i
+  end
+
+  def external?
+    monitor_count != 1
+  end
+
+  def space_count_for(monitor_number)
+    `yabai -m query --displays --display #{monitor_number} | jq ".spaces | length"`.to_i
+  end
+
+  def internal_count
+    space_count_for(1)
+  end
+
+  def external_count
+    space_count_for(2)
+  end
+end
+
+HandleMonitor.new.call

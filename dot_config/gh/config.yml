@@ -1,0 +1,9 @@
+# What protocol to use when performing git operations. Supported values: ssh, https
+git_protocol: ssh
+# What editor gh should run when creating issues, pull requests, etc. If blank, will refer to environment.
+editor: !!null nvim
+# Aliases allow you to create nicknames for gh commands
+aliases:
+    co: pr checkout
+    labels: '!gh api --paginate repos/:owner/:repo/labels | jq -r .[].name'
+    label-add: '!gh api /repos/technekes/$1/labels --field name=$2'

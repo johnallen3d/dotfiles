@@ -1,0 +1,6 @@
+# location to install the incent CLI tool to when running 'incent update'
+install_path: $HOME/bin/
+# absolute path of directory containing local copies of 'incent-gem' and 'incent-config-gem'?
+gems_path: $HOME/dev/src/gems/
+# path to the decrypted 'secrets.env' file from technekes/incent-api
+secrets_path: $HOME/dev/src/apps/incent-api/secrets.env

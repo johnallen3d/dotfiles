@@ -1,0 +1,336 @@
+#!/usr/bin/env sh
+
+#
+# colors
+#
+transparent_color="0x00000000"
+
+# catppuccin-mocha
+# bar_color="0xff1e1d2e"
+bar_color="${transparent_color}"
+default_label_color="0xffCDD6F4"
+default_icon_color="0xffCDD6F4"
+highlight_icon_color="0xff89b4fa"
+# bracket_border_color="0xff45475a"
+bracket_border_color="${transparent_color}"
+bracket_background_color="0xff313244"
+# right_bar_color="0xff313244"
+right_bar_color="0xff11111b"
+right_border_color="0xff585b70"
+danger_color="0xffF38BA8"
+
+#
+# fonts
+#
+default_icon_font="Font Awesome 6 Pro:Regular:14.0"
+default_label_font="Cascadia Code PL:SemiBold:14.0"
+brand_font="Font Awesome 6 Brands:Regular:14.0"
+# duotone_font="Font Awesome 6 Duotone:Solid:14.0"
+
+#
+# variables
+#
+plugins="$HOME/.config/sketchybar/plugins"
+display_count="$(yabai -m query --displays | jq -r 'length')"
+
+############## BAR ##############
+sketchybar --bar \
+	height=36 \
+	y_offset=6 \
+	blur_radius=0 \
+	position=top \
+	padding_left=12 \
+	padding_right=12 \
+	margin=0 \
+	corner_radius=0 \
+	color=$transparent_color \
+	shadow=off
+
+# ############## DEFAULTS ###############
+sketchybar --default \
+	icon.color="${default_icon_color}" \
+	icon.font="${default_icon_font}" \
+	icon.highlight_color="${highlight_icon_color}" \
+	icon.padding_left=6 \
+	icon.padding_right=6 \
+	label.color="${default_label_color}" \
+	label.font="${default_label_font}" \
+	label.padding_left=6 \
+	label.padding_right=6 \
+	background.height=24 \
+	background.padding_right=4 \
+	background.padding_left=4 \
+	background.corner_radius=5 \
+	updates=when_shown
+
+############## DISPLAY 1 ###############
+sketchybar \
+	--add space web left \
+	--set web associated_display=1 \
+	label.drawing=off \
+	associated_space=1 \
+	icon= \
+	click_script="yabai -m space --focus browser" \
+	background.color=$transparent_color \
+	--add space slack left \
+	--set slack associated_display=1 \
+	label.drawing=off \
+	associated_space=2 \
+	icon= \
+	icon.font="${brand_font}" \
+	click_script="yabai -m space --focus chat" \
+	background.color=$transparent_color \
+	--add space mail left \
+	--set mail associated_display=1 \
+	label.drawing=off \
+	associated_space=3 \
+	icon= \
+	click_script="yabai -m space --focus mail" \
+	background.color=$transparent_color \
+	--add space messages left \
+	--set messages associated_display=1 \
+	label.drawing=off \
+	icon.padding_right=8 \
+	associated_space=4 \
+	icon= \
+	click_script="yabai -m space --focus messages" \
+	background.color=$transparent_color \
+	--add item window_title_logo_display_1 left \
+	--set window_title_logo_display_1 associated_display=1 \
+	icon= \
+	icon.color=0xff121219 \
+	label.drawing=off \
+	background.color=0xff89b4fa
+
+sketchybar \
+	--add event window_focus \
+	--add event title_change \
+	--add item window_title_display_1 left \
+	--set window_title_display_1 associated_display=1 \
+	icon.drawing=off \
+	background.color=$transparent_color \
+	script="$plugins/window_title.sh" \
+	--subscribe window_title_display_1 \
+	window_focus \
+	front_app_switched \
+	space_change \
+	title_change
+
+sketchybar \
+	--add bracket primary_spaces_bracket \
+	web \
+	slack \
+	mail \
+	messages \
+	window_title_logo_display_1 \
+	window_title_display_1 \
+	--set primary_spaces_bracket \
+	background.color=$bracket_background_color \
+	background.border_color=$bracket_border_color \
+	background.border_width=3 \
+	background.corner_radius=8 \
+	background.height=32
+
+############## DISPLAY 2 ###############
+scratch_space=5
+terminal_space=6
+flex=" "
+
+if [ "${display_count}" = "2" ]; then
+	scratch_space=6
+	terminal_space=7
+	flex="flex"
+
+	sketchybar \
+		--add space flex left \
+		--set flex associated_display=2 \
+		label.drawing=off \
+		associated_space=5 \
+		icon=􏢺 \
+		background.color=$transparent_color \
+		click_script="yabai -m space --focus flex"
+fi
+
+sketchybar \
+	--add space scratch left \
+	--set scratch associated_display=2 \
+	label.drawing=off \
+	associated_space="${scratch_space}" \
+	icon= \
+	background.color=$transparent_color \
+	click_script="yabai -m space --focus scratch" \
+	--add space terminal left \
+	--set terminal associated_display=2 \
+	label.drawing=off \
+	associated_space="${terminal_space}" \
+	icon= \
+	background.color=$transparent_color \
+	click_script="yabai -m space --focus terminal" \
+	--add item window_title_logo_display_2 left \
+	--set window_title_logo_display_2 associated_display=2 \
+	icon= \
+	icon.color=0xff121219 \
+	label.drawing=off \
+	background.color=0xff89b4fa
+
+sketchybar \
+	--add event window_focus \
+	--add event title_change \
+	--add item window_title_display_2 left \
+	--set window_title_display_2 associated_display=2 \
+	icon.drawing=off \
+	background.color=$transparent_color \
+	script="$plugins/window_title.sh" \
+	--subscribe window_title_display_2 \
+	window_focus \
+	front_app_switched \
+	space_change \
+	title_change
+
+sketchybar \
+	--add bracket secondary_spaces_bracket \
+	"${flex}" \
+	scratch \
+	terminal \
+	window_title_logo_display_2 \
+	window_title_display_2 \
+	--set secondary_spaces_bracket \
+	background.color=$bracket_background_color \
+	background.border_color=$bracket_border_color \
+	background.border_width=3 \
+	background.corner_radius=8 \
+	background.height=32
+
+###################### FLOAT ###################
+if [ "${display_count}" = "1" ]; then
+	mpd_location="left"
+
+	sketchybar \
+		--add item mpd_spacer $mpd_location \
+		--set mpd_spacer \
+		icon= \
+		associated_display="${display_count}" \
+		icon.drawing=off \
+		label="" \
+		background.color=$transparent_color
+else
+	mpd_location="center"
+fi
+
+sketchybar \
+	--add item mpd_logo $mpd_location \
+	--set mpd_logo \
+	icon= \
+	associated_display="${display_count}" \
+	label.drawing=off \
+	icon.color=0xff121219 \
+	background.color=0xffEDC4E5
+
+sketchybar \
+	--add item mpd $mpd_location \
+	--set mpd \
+	associated_display="${display_count}" \
+	icon.drawing=on \
+	icon.color=0xffEDC4E5 \
+	update_freq=2 \
+	script="${plugins}/mpd.sh" \
+	click_script="mpc toggle" \
+	background.color=$transparent_color
+
+sketchybar \
+	--add bracket mpd_bracket \
+	mpd_logo \
+	mpd \
+	--set mpd_bracket \
+	background.color=$bracket_background_color \
+	background.border_color=$bracket_border_color \
+	background.border_width=3 \
+	background.corner_radius=8 \
+	background.height=32
+
+######################SHARED ###################
+sketchybar \
+	--add item time right \
+	--set time update_freq=10 \
+	icon.drawing=off \
+	script="~/.config/sketchybar/plugins/time.sh" \
+	background.color=$transparent_color \
+	background.padding_left=5
+
+sketchybar \
+	--add item time_logo right \
+	--set time_logo icon= \
+	icon.color=0xff121219 \
+	label.drawing=off \
+	background.color=0xffF5E3B5
+
+sketchybar \
+	--add item date right \
+	--set date update_freq=1000 \
+	icon.drawing=off \
+	script="~/.config/sketchybar/plugins/date.sh" \
+	background.color=$transparent_color \
+	background.padding_left=5
+
+sketchybar \
+	--add item date_logo right \
+	--set date_logo icon= \
+	icon.color=0xff121219 \
+	label.drawing=off \
+	background.color=0xffb4befe
+
+sketchybar \
+	--add item weather right \
+	--set weather \
+	update_freq=1800 \
+	icon.drawing=off \
+	script="${plugins}/weather.sh" \
+	background.color=$transparent_color \
+	click_script="open https://darksky.net/forecast/34.967,-80.927/us12/en"
+
+sketchybar \
+	--add item weather_logo right \
+	--set weather_logo icon= \
+	icon.font="Hack Nerd Font:Regular:14.0" \
+	icon.color=0xff121219 \
+	label.drawing=off \
+	background.color=0xffB3E1A7
+
+sketchybar \
+	--add item cpu right \
+	--set cpu \
+	icon.drawing=off \
+	update_freq=5 \
+	script="${plugins}/cpu.sh" \
+	background.color=$transparent_color \
+	click_script="open -a activity\ monitor"
+
+sketchybar \
+	--add item cpu_logo right \
+	--set cpu_logo icon= \
+	icon.color=0xff121219 \
+	label.drawing=off \
+	background.color=0xffa6adc8
+
+sketchybar --add bracket right_bar_bracket \
+	time \
+	time_logo \
+	date \
+	date_logo \
+	weather \
+	weather_logo \
+	cpu \
+	cpu_logo \
+	--set right_bar_bracket \
+	background.color=$bracket_background_color \
+	background.border_color=$bracket_border_color \
+	background.border_width=3 \
+	background.corner_radius=8 \
+	background.height=36
+
+###################### FINALIZE ###################
+sketchybar -m --update
+
+echo "sketchybar configuration loaded.."
+
+exit 0

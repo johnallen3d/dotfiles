@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+# grab the id of the first window that _isn't_ the stupid Zoom bar
+first_window_id=$(
+  yabai \
+    -m query \
+    --windows \
+    --space \
+    | jq "
+        del(.[] | select(.title | test(\"zoom share.*\")))
+          | del(.[] | select(.app == \"CptHost\"))
+          | .[0].id
+      "
+)
+
+yabai -m window --focus $first_window_id

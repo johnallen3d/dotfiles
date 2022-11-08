@@ -1,0 +1,69 @@
+[user]
+  name = John Allen
+  email = john@threedogconsulting.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHBm+OH64z4tbmeAbNKge88yfQ82na+sLLfaSisfSpa
+; [include]
+;   path = ~/.config/git/gpg.conf
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
+[core]
+  excludesfile = ~/.gitignore
+  ; pager = diff-so-fancy | less --tabs=4 -RFX
+[github]
+  user = johnallen3d
+[alias]
+  lol = log --color --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate --oneline
+  ; lol = log --relative-date --decorate --oneline --graph
+  head = lol -n 10
+  blog = log --graph --format=format:'%C(bold magenta)%h%C(reset) %C(white)%ai%C(reset) %C(bold dim white)%aN%C(auto)%+D%C(reset)%n%C(bold white)%s%C(reset)%+b%n'
+  graph = log --color --graph --pretty=format:\"%h | %ad | %an | %s%d\" --date=short
+  hist = log --pretty=oneline --graph
+  unstage = reset HEAD --
+  restore = checkout --
+  undo = reset HEAD^
+  bv = branch -vv --format='%(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(color:cyan)%(upstream:short)%(color:reset)'
+  url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
+[heroku]
+  account = nekes
+[pull]
+  rebase = true
+[fetch]
+  prune = true
+[color]
+  ui = always
+[color "diff"]
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[push]
+  default = simple
+[commit]
+  gpgsign = true
+[rebase]
+  autosquash = true
+[init]
+	; templatedir = ~/.git_template
+	defaultBranch = main
+[rerere]
+	enabled = true
+	autoupdate = true
+[log]
+	date = iso
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential

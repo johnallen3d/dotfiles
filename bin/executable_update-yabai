@@ -1,0 +1,24 @@
+#! /usr/bin/env bash
+
+# -> https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)#updating-to-latest-head
+# set codesigning certificate name here (default: yabai-cert)
+export YABAI_CERT=yabai-cert
+
+# stop yabai
+brew services stop koekeishiya/formulae/yabai
+
+# reinstall yabai
+brew uninstall koekeishiya/formulae/yabai
+brew install koekeishiya/formulae/yabai # --HEAD
+
+codesign -fs "${YABAI_CERT:-yabai-cert}" "$(brew --prefix yabai)/bin/yabai"
+
+# uninstall the scripting addition
+sudo yabai --uninstall-sa
+
+# installing the scripting addition will restart Dock.app
+sudo yabai --install-sa
+
+# finally, start yabai
+brew services start koekeishiya/formulae/yabai
+

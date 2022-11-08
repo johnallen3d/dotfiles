@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+status=$(curl -s 'wttr.in/~35.2270869,-80.8431267?format=%C+|+%t')
+condition=$(echo $status | awk -F '|' '{print $1}' | tr '[:upper:]' '[:lower:]')
+condition="${condition// /}"
+temp=$(echo $status | awk -F '|' '{print $2}')
+temp="${temp//\+/}"
+temp="${temp// /}"
+
+case "${condition}" in
+"clear" | "sunny")
+  icon=""
+  ;;
+"partlycloudy" | *partlysunny*)
+  icon=""
+  ;;
+"mostlycloudy" | "overcast" | "patchyrainpossible")
+  icon=""
+  ;;
+"lightdrizzle" | *mist* | lightrain* | rainshowers*)
+  icon=""
+  ;;
+"rain" | "moderaterain")
+  icon=""
+  ;;
+*fog* | *haze*)
+  icon=""
+  ;;
+*snow*)
+  icon=""
+  ;;
+*)
+  icon="?"
+  ;;
+esac
+
+# moon cloud? ""
+
+if [ "${1}" == "DEBUG" ]; then
+  # echo "${status}"
+  echo "${condition}"
+  echo "${temp}"
+  echo "${icon}"
+
+  exit 0
+fi
+
+sketchybar        \
+  --set weather   \
+    icon="$icon"  \
+    label="$temp"

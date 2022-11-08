@@ -1,0 +1,13 @@
+[player]
+font_width = 10
+font_height = 30
+
+[art]
+music_directory = ~/Music/iTunes/iTunes Music/Music/
+
+[theme]
+accent_color: blue
+bar_color: blue
+time_color: blue
+bar_body: -
+bar_head: >

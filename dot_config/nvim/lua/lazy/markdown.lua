@@ -1,0 +1,16 @@
+---- disable folding
+--vim.g.vim_markdown_folding_disabled = 1
+---- enable table of contents quickfix window auto-sizing
+--vim.g.vim_markdown_toc_autofit = 1
+--
+--vim.g.vim_markdown_strikethrough = 1
+
+-- local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+--
+-- parser_configs.markdown = {
+-- 	install_info = {
+-- 		url = "https://github.com/ikatyang/tree-sitter-markdown",
+-- 		files = { "src/parser.c", "src/scanner.cc" },
+-- 	},
+-- 	filetype = "markdown",
+-- }

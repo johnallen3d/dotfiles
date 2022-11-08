@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+# source launchd helper functions
+# . /Users/johna/.config/shell/launchd.bash
+
+# restart yabai service
+launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+# reload chwm-sa
+# $HOME/bin/chwm-sa-reload

@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+space=$(yabai -m query --spaces | jq ".[] | select(.label == \"${1}\") | .index")
+
+if [ -z "$space" ]; then
+  case "${1}" in
+    "terminal") space=$(expr $(/Users/johna/.config/yabai/max-space) - 1)
+      ;;
+  esac
+fi
+
+echo "$space"

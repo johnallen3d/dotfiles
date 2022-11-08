@@ -1,0 +1,33 @@
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+[git_status]
+stashed = ""
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+
+# [aws]
+# disabled = true
+# [jobs] # ✦
+# disabled = true
+# [package]
+# disabled = true
+# [conda]
+# disabled = true
+# [java]
+# disabled = true
+# [python]
+# disabled = true
+# [ruby]
+# disabled = true
+# [scala]
+# disabled = true

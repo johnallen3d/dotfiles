@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+brew uninstall neovim
+brew uninstall --ignore-dependencies luajit
+brew install --HEAD luajit
+brew install --HEAD neovim
+
+
+# brew uninstall neovim
+# brew uninstall --ignore-dependencies luajit
+# brew install luajit
+# brew install neovim

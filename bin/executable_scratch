@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+type="${1:-md}"
+
+# kitty @ set-window-title " "
+# kitty @ set-tab-title "scratch.${type}"
+
+nvim "$HOME/Dropbox/Notes/scratch/scratch.${type}"

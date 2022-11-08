@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+space=$(yabai -m query --windows | jq -c '.[] | select(.app | contains("kitty")).space')
+
+[ -z "$space" ] && space=$(expr $(/Users/johna/.config/yabai/max-space) - 1)
+
+yabai -m space --focus $space
+
+open -a /Applications/Kitty.app/Contents/MacOS/kitty

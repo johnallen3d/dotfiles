@@ -1,0 +1,53 @@
+#! /usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+  echo "
+Usage: play [artist]
+
+Available artists:
+  * caleb    - Caleb Grenier       - Sandy Friends
+  * dave     - Dave & Time         - Live At Luther College
+  * goose    - Goose               - Alive and Well
+  * joseph   - Joseph              - I'm Alone, No You're Not
+  * nin      - Nine Incch Nails    - Live in Charlotte 2014
+  * sarah    - Sarah Jarosz        - Blue Heron Suite
+  * trey     - Trey Anastasio      - Lonely Trip
+  * violent  - Violent Femmes      - Violent Femmes
+"
+
+exit 0
+fi
+
+artist="${1}"
+
+case $artist in
+  "trey")
+    album="Lonely Trip"
+    ;;
+  "goose")
+    album="Alive and Well"
+    ;;
+  "nin")
+    album="2014.08.07 Charlotte, PNC Music Pavilion"
+    ;;
+  "sarah")
+    album="Blue Heron Suite"
+    ;;
+  "violent")
+    album="Violent Femmes"
+    ;;
+  "caleb")
+    album="Sandy Friends"
+    ;;
+  "dave")
+    album="Live At Luther College"
+    ;;
+  "joseph")
+    album="I'm alone, No You're Not"
+esac
+
+mpc clear
+mpc search album "$album" | mpc add
+mpc play
+# sometimes mpd will not output audio after a clear 🤷
+killall mpd

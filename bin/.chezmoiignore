@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.os "darwin" }}
+set-wallpaper
+update-yabai
+{{ end }}

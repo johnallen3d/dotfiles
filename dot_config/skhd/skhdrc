@@ -1,0 +1,142 @@
+#  NOTE(koekeishiya): A list of all built-in modifier and literal keywords can
+#                     be found at https://github.com/koekeishiya/skhd/issues/2
+#
+# Cheat sheet :
+# shift + cmd        - [key] : launch/switch application
+# shift + ctrl + cmd - [key] : music
+# ctrl  + alt  + cmd - [key] : ricing
+# alt                - [key] : bsp window switching
+# ctrl               - [key] : desktop switching
+
+# launch / switch apps
+# shift + cmd - g : yabai -m space --focus browser  && open -a /Applications/Safari.app
+# shift + cmd - s : yabai -m space --focus chat     && open -a /Applications/Slack.app
+# shift + cmd - m : yabai -m space --focus mail     && open -a "/Applications/Boxy for Gmail.app"
+# shift + cmd - p : yabai -m space --focus messages && open -a /Applications/Messages.app
+# cmd - return : yabai -m space --focus terminal && /Applications/Kitty.app/Contents/MacOS/kitty --single-instance --directory ~
+# ctrl + alt + cmd - k : yabai -m space --focus browser; /Applications/kitty.app/Contents/MacOS/kitty --single-instance --directory ~; yabai -m space --focus terminal; yabai -m window --space terminal
+ctrl + alt + cmd - k : /Applications/kitty.app/Contents/MacOS/kitty --single-instance --directory ~
+
+# system commands
+ctrl + alt + cmd - c : /Users/john.allen/.config/yabai/restart
+ctrl + alt + cmd - l : kitty /Users/john.allen/.config/yabai/apply-labels
+# ctrl + alt + cmd - u : osascript -e 'tell application "Uebersicht" to refresh'
+cmd + alt + ctrl - d : open -a dismiss-all-macos-notifications.app
+alt + cmd - l        : /opt/homebrew/bin/mpc pause && open -a ScreenSaverEngine
+
+# control music (mpd via mpc)
+ctrl + cmd - p : /opt/homebrew/bin/mpc toggle
+# ctrl + cmd - h : /opt/homebrew/bin/mpc prev
+ctrl + cmd - k : /opt/homebrew/bin/mpc volume +6
+ctrl + cmd - j : /opt/homebrew/bin/mpc volume -4
+# ctrl + cmd - l : /opt/homebrew/bin/mpc next
+ctrl + cmd - b : bash ~/bin/bt-toggle
+
+# misc
+# shift + alt + cmd - r : bash ~/bin/pecan-wal-set
+# shift + cmd - s : yabai -m space --focus terminal; kitty --single-instance --directory ~/Dropbox/Notes/scratch /bin/bash -l -c '/opt/homebrew/bin/nvim scratch.md'
+
+# close focused window
+# alt - w : chunkc tiling::window --close
+
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus stack.next || yabai -m window --focus south
+alt - k : yabai -m window --focus stack.prev || yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# these are the default MacOS keybindings for navigating tabs:
+# shift + cmd - [
+# shift + cmd - 0x21 : yabai -m window --focus stack.prev
+# shift + cmd - ]
+# shift + cmd - 0x1E : yabai -m window --focus stack.next
+
+# send window to desktop
+# shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
+shift + ctrl - h : yabai -m window --space prev;      yabai -m space --focus prev
+shift + ctrl - l : yabai -m window --space next;      yabai -m space --focus next
+shift + ctrl - 1 : yabai -m window --space browser;   yabai -m space --focus browser
+shift + ctrl - 2 : yabai -m window --space chat;      yabai -m space --focus chat
+shift + ctrl - 3 : yabai -m window --space mail;      yabai -m space --focus mail
+shift + ctrl - 4 : yabai -m window --space messages;  yabai -m space --focus messages
+shift + ctrl - 8 : yabai -m window --space flex;      yabai -m space --focus flex
+shift + ctrl - 9 : yabai -m window --space scratch;   yabai -m space --focus scratch
+shift + ctrl - 0 : yabai -m window --space terminal;  yabai -m space --focus terminal
+
+# fast focus desktop ❤️🧡💛💚💙💜
+# cmd + alt - x : yabai -m space --focus recent
+ctrl - left  : yabai -m space --focus prev;     # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - right : yabai -m space --focus next;     # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 1     : yabai -m space --focus browser;  # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 2     : yabai -m space --focus chat;     # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 3     : yabai -m space --focus mail;     # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 4     : yabai -m space --focus messages; # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 8     : yabai -m space --focus flex;     # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 9     : yabai -m space --focus scratch;  # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 0     : yabai -m space --focus terminal; # /Users/john.allen/.config/yabai/focus-first-window
+
+# send window to monitor and follow focus
+# ctrl + cmd - 0x2B : yabai -m window --display prev; yabai -m display --focus 1
+# ctrl + cmd - 0x2F : yabai -m window --display next; yabai -m display --focus 2
+
+# adjust window size
+shift + cmd - h : yabai -m window --resize right:-300:0
+shift + cmd - j : yabai -m window --resize bottom:0:300
+shift + cmd - k : yabai -m window --resize bottom:0:-300
+shift + cmd - l : yabai -m window --resize right:300:0
+shift + cmd - 0 : yabai -m space --balance
+
+# adjust window padding (increase, decrease, reset)
+# shift + cmd - p : yabai -m space --padding rel:-30:-30:-30:-30
+# shift + cmd - o : yabai -m space --padding rel:30:30:30:30
+# shift + cmd - i : yabai -m space --padding abs:60:60:60:60
+
+# set insertion point for focused container
+# ctrl + alt - f : chunkc tiling::window --use-insertion-point cancel
+ctrl + alt - h : yabai -m window --insert west
+ctrl + alt - j : yabai -m window --insert south
+ctrl + alt - k : yabai -m window --insert north
+ctrl + alt - l : yabai -m window --insert east
+
+# rotate tree
+shift + cmd - r : yabai -m space --rotate 270
+
+# mirror tree y-axis
+# alt - y : chunkc tiling::desktop --mirror vertical
+
+# mirror tree x-axis
+# alt - x : chunkc tiling::desktop --mirror horizontal
+
+# toggle desktop offset
+# alt - a : chunkc tiling::desktop --toggle offset
+
+# toggle window fullscreen zoom
+ctrl + alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle window native fullscreen
+shift + cmd - f : yabai -m window --toggle native-fullscreen
+
+# toggle window parent zoom
+# alt - d : chunkc tiling::window --toggle parent
+
+# modify window split type
+# alt - h : yabai -m window --insert south
+# alt - v : yabai -m window --insert east
+alt - q : yabai -m window --toggle split
+
+# float / unfloat window
+# ctrl + alt + cmd - f : chunkc tiling::window --toggle float
+
+# toggle sticky, float and resize to picture-in-picture size
+# alt - s : chunkc tiling::window --toggle sticky;\
+#           chunkc tiling::window --warp-floating pip-right
+
+# float next window to be tiled
+# shift + alt - t : chunkc set window_float_next 2
+
+# change layout of desktop
+# cmd - b : yabai -m space --layout bsp
+cmd - m : /Users/john.allen/.config/yabai/toggle-monocle
+# hyper - f : yabai -m space --layout float
+#
+# ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_2

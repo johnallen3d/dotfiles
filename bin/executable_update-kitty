@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh \
+  | sh /dev/stdin installer=nightly
+
+# mkdir -p "${HOME}"/tmp/
+# cd "${HOME}"/tmp/
+# rm -rf kitty
+# git clone https://github.com/kovidgoyal/kitty
+# cd kitty/
+# make

@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+max_space_index=$($HOME/.config/yabai/max-space)
+scratch_space_index=$(expr $max_space_index - 1)
+
+yabai -m space 1 --label browser
+yabai -m space 2 --label chat
+yabai -m space 3 --label mail
+yabai -m space 4 --label messages
+
+if [ "$(yabai -m query --displays | jq -r "length")" == "2" ]; then
+	flex_space_index=$(expr $scratch_space_index - 1)
+	yabai -m space $flex_space_index --label flex
+fi
+
+yabai -m space $scratch_space_index --label scratch
+yabai -m space $max_space_index --label terminal
+
+echo "yabai labels applied"
