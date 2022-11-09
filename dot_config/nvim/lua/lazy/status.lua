@@ -37,6 +37,7 @@ noice.setup({
 		},
 	},
 	routes = {
+		-- prevent notification when writing a file
 		{
 			filter = {
 				event = "msg_show",
@@ -45,9 +46,18 @@ noice.setup({
 			},
 			opts = { skip = true },
 		},
+		-- notify when starting to record a macro
 		{
 			view = "notify",
 			filter = { event = "msg_showmode" },
+		},
+		-- prevent huge null-ls message when not in a git repo
+		{
+			filter = {
+				event = "notify",
+				min_height = 15,
+			},
+			view = "split",
 		},
 	},
 })
