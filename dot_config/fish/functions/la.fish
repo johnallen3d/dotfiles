@@ -2,7 +2,6 @@ function la
   if type -q lsd
     lsd -la
   else
-    ls -la
+    command ls -la
   end
 end
-
