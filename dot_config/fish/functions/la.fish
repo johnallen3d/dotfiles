@@ -1,7 +1,7 @@
 function la
   if type -q lsd
-    lsd -la
+    lsd -la $argv
   else
-    command ls -la
+    command ls -la $argv
   end
 end
