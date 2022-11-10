@@ -54,12 +54,6 @@ if not set -q abbrs_initialized
 
   abbr --add yt "youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
-  # abbr --add ls 'exa -1'
-  # abbr --add la 'exa -h1a --git'
-  abbr --add ls 'lsd -1'
-  abbr --add ll 'lsd -1a'
-  abbr --add la 'lsd -la'
-
   # abbr --add tree 'exa --tree'
   abbr --add tree 'lsd --tree'
   abbr --add .. 'cd ..'
