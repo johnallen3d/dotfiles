@@ -51,6 +51,7 @@ if status --is-interactive
     # use ruby version installed by pacman
     # add home/bin to path
     set -g fish_user_paths \
+      $HOME/.local/bin \
       $HOME/.gem/bin \
       $HOME/bin \
       $HOME/bin/workflow \
