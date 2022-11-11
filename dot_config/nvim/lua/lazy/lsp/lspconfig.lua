@@ -7,12 +7,14 @@ local servers = {
 	"bashls",
 	"dagger",
 	"dockerls",
+	"eslint",
 	"gopls",
 	"html",
 	"jsonls",
-	"sumneko_lua",
 	"pyright",
 	"solargraph",
+	"sumneko_lua",
+	"tsserver",
 	"yamlls",
 	-- -- DAP
 	-- "debugpy",
@@ -27,6 +29,7 @@ local servers = {
 	-- "stylua",
 	-- -- Linters
 	-- "codespell",
+	-- "eslint_d",
 	-- "flake8",
 	-- "markdownlint",
 	-- "shellcheck",
@@ -58,6 +61,8 @@ local sumneko_opts =
 lspconfig.bashls.setup(opts)
 lspconfig.dagger.setup(opts)
 lspconfig.dockerls.setup(opts)
+lspconfig.eslint.setup(opts)
+lspconfig.tsserver.setup(opts)
 -- lspconfig.golangci_lint_ls.setup(opts)
 lspconfig.gopls.setup(opts)
 lspconfig.jsonls.setup(opts)
