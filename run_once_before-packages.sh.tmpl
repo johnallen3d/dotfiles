@@ -10,4 +10,6 @@ apk add --no-cache starship
 # zoxide
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 {{ else if eq .chezmoi.os "darwin" -}}
+# homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 {{ end -}}
