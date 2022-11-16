@@ -116,7 +116,8 @@ local function lsp_keymaps()
 
 	-- map("n", "gs", saga_signaturehelp.signature_help, saga_opts)
 	-- map("n", "K", vim.lsp.buf.hover, opts)
-	-- map("n", "K", saga_hover.render_hover_doc, { silent = true })
+	map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
 	map("n", "gi", telescope.lsp_implementations, opts)
 	map("n", "<space>D", vim.lsp.buf.type_definition, opts)
 	map("n", "<space>rn", vim.lsp.buf.rename, opts)
