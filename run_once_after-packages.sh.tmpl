@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+{{ if eq .chezmoi.os "linux" -}}
+{{ else if eq .chezmoi.os "darwin" -}}
+cd $HOME
+bundle install
+brew bundle
+{{ end -}}
