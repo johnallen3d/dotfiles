@@ -116,6 +116,8 @@ is_day=$(echo $data | jq -r '.current.is_day')
 
 [ "$is_day" = "1" ] && icon=${weather_icons_day[$condition]} || icon=${weather_icons_night[$condition]}
 
+[ -z "$icon" ] && exit 0
+
 sketchybar -m \
   --set weather_logo icon="${icon}" \
   --set weather label="${temp}°F"
