@@ -17,6 +17,35 @@ local map = function(mode, lhs, rhs, opts)
 end
 
 --
+-- cargo-culted from folke
+local warn = function(msg, name)
+	vim.notify(msg, vim.log.levels.WARN, { title = name or "init.lua" })
+end
+
+local error = function(msg, name)
+	vim.notify(msg, vim.log.levels.ERROR, { title = name or "init.lua" })
+end
+
+local info = function(msg, name)
+	vim.notify(msg, vim.log.levels.INFO, { title = name or "init.lua" })
+end
+
+local toggle = function(option, silent)
+	local global_info = vim.api.nvim_get_option_info(option)
+	local scopes = { buf = "bo", win = "wo", global = "o" }
+	local scope = scopes[global_info.scope]
+	local options = vim[scope]
+	options[option] = not options[option]
+	if silent ~= true then
+		if options[option] then
+			info("enabled vim." .. scope .. "." .. option, "Toggle")
+		else
+			warn("disabled vim." .. scope .. "." .. option, "Toggle")
+		end
+	end
+end
+
+--
 -- general
 --
 local subshell = function(command, raw)
@@ -63,29 +92,6 @@ local rename_file = function()
 end
 
 --
--- colors
---
-local colorize = function()
-	cmd.packadd("colorizer")
-	cmd.ColorizerAttachToBuffer()
-end
-
---
--- packer
---
-local packer_compile = function()
-	cmd.write()
-	os.remove("~/.config/nvim/plugin/packer_compiled.lua")
-	cmd.source("~/.config/nvim/lua/plugins.lua")
-	cmd.PackerCompile()
-end
-
-local packer_sync = function()
-	packer_compile()
-	cmd.PackerSync()
-end
-
---
 -- GitHub
 --
 local github_browse_line = function()
@@ -122,7 +128,6 @@ end
 -- Mapping
 --
 return {
-	colorize = colorize,
 	file = {
 		current = current_file_name,
 		rename = rename_file,
@@ -133,12 +138,14 @@ return {
 		browse_line = github_browse_line,
 	},
 	map = map,
-	packer = {
-		compile = packer_compile,
-		sync = packer_sync,
+	notify = {
+		error = error,
+		info = info,
+		warn = warn,
 	},
 	ruby = {
 		toggle_focus = ruby_toggle_focus,
 	},
 	subshell = subshell,
+	toggle = toggle,
 }
