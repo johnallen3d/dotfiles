@@ -67,8 +67,8 @@ if not set -q abbrs_initialized
   abbr --add pass passgen
 
   # other
-  abbr --add python '/usr/local/bin/python3'
-  abbr --add pip '/usr/local/bin/pip3'
+  # abbr --add python '/usr/local/bin/python3'
+  # abbr --add pip '/usr/local/bin/pip3'
   abbr --add weather 'curl wttr.in'
   abbr --add files '/Users/johna/.cargo/bin/xplr'
 
