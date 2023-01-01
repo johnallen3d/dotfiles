@@ -92,7 +92,6 @@ yabai -m rule --add label="Firfox PIP" app="^Firefox\$" title="^(Picture-in-Pict
 yabai -m rule --add label="Stupid Zoom Bar" app="^zoom.us\$" title="^zoom share (statusbar|toolbar) window\$" manage=off
 
 # start up sketchybar
-killall sketchybar &>/dev/null
 brew services restart felixkratz/formulae/sketchybar
 
 echo "yabai configuration loaded.."
