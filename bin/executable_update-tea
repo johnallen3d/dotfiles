@@ -1,0 +1,21 @@
+#! /usr/bin/env bash
+
+sh <(curl https://tea.xyz)
+tea --sync
+
+# -- current tools
+# via: ln -s /usr/local/bin/tea /usr/local/bin/[tool]
+# cargo ⇒ /usr/local/bin/tea
+# fd ⇒ /usr/local/bin/tea
+# gem ⇒ /usr/local/bin/tea
+# gh ⇒ /usr/local/bin/tea
+# git ⇒ /usr/local/bin/tea
+# go ⇒ /usr/local/bin/tea
+# jq ⇒ /usr/local/bin/tea
+# lua ⇒ /usr/local/bin/tea
+# node ⇒ /usr/local/bin/tea
+# npm ⇒ /usr/local/bin/tea
+# nvim ⇒ /usr/local/bin/tea
+# rg ⇒ /usr/local/bin/tea
+# ruby ⇒ /usr/local/bin/tea
+# wget ⇒ /usr/local/bin/tea
