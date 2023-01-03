@@ -36,10 +36,18 @@ map("n", "<ESC>", "<cmd>nohlsearch<CR><ESC>")
 map("n", "j", "gj")
 map("n", "k", "gk")
 
+-- re-center cursor after jumps up/down
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
+-- re-center cursor after search movements up/down
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
+
 -- use the dot command on visual selections
 map("v", ".", "<cmd>norm.<CR>")
 
--- map p (lower) to P (upper) in visual mode to not stop on register
+-- map p (lower) to P (upper) in visual mode to not stomp on register
 map("v", "p", "P")
 map("v", "P", "p")
 
