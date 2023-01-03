@@ -49,6 +49,7 @@ brew "zoxide"
 
 cask "1password-cli"
 cask "disk-inventory-x"
+cask "font-hack-nerd-font"
 cask "istat-menus"
 cask "karabiner-elements"
 cask "kitty"
