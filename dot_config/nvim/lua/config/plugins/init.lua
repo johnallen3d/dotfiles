@@ -41,7 +41,7 @@ return {
 		name = "netrw",
 		config = true,
 	},
-	-- :'( { "ryvnf/readline.vim", event = "CmdlineEnter" }
+	{ "ryvnf/readline.vim", event = "CmdlineEnter" },
 	{ "godlygeek/tabular", cmd = "Tabularize" },
 	{ "folke/which-key.nvim", lazy = true },
 
