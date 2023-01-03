@@ -3,17 +3,15 @@ local M = {
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-calc",
-		"hrsh7th/cmp-cmdline",
-		"dmitmel/cmp-cmdline-history",
 		"hrsh7th/cmp-emoji",
 		"hrsh7th/cmp-nvim-lua",
 		"hrsh7th/cmp-path",
 		"f3fora/cmp-spell",
 		"lukas-reineke/cmp-rg",
 		"kristijanhusak/vim-dadbod-completion",
-		"saadparwaiz1/cmp_luasnip",
+
+		-- snippets
 		"L3MON4D3/LuaSnip",
 		{
 			"rafamadriz/friendly-snippets",
@@ -21,6 +19,14 @@ local M = {
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
 		},
+		"saadparwaiz1/cmp_luasnip",
+
+		-- command line
+		"hrsh7th/cmp-cmdline",
+		"dmitmel/cmp-cmdline-history",
+
+		-- search
+		"hrsh7th/cmp-buffer",
 	},
 }
 
@@ -85,7 +91,6 @@ M.config = function()
 		sources = {
 			{ name = "vim-dadbod-completion" },
 			{ name = "nvim_lsp" },
-			{ name = "nvim_lsp_signature_help" },
 			{ name = "luasnip" },
 			{ name = "path" },
 
@@ -94,8 +99,6 @@ M.config = function()
 			{ name = "calc" },
 			{ name = "emoji" },
 			{ name = "spell", keyword_length = 4 },
-			-- { name = 'look', keyword_length = 4,   } ,
-			-- { name = "buffer", keyword_length = 4 },
 			{ name = "rg", dup = 0 },
 		},
 
@@ -143,6 +146,7 @@ M.config = function()
 		sources = {
 			{ name = "cmdline" },
 			{ name = "cmdline_history" },
+			{ name = "path" },
 		},
 	})
 
