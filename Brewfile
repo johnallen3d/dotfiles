@@ -24,7 +24,6 @@ brew "coreutils"
 brew "cue-lang/tap/cue"
 brew "dagger/tap/dagger"
 brew "docker"
-brew "ffmpeg"
 brew "fish", args: ["HEAD"]
 brew "fontforge"
 brew "freetds"
