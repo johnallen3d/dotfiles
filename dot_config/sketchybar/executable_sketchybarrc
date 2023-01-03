@@ -1,4 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+# to avoid doing this👇
+# export PATH="/usr/local/bin:$PATH"
+# modify the plist file to be prefixed with `/usr/local/bin`
+# /opt/homebrew/Cellar/sketchybar/[current-version]/homebrew.mxcl.sketchybar.plist
 
 #
 # colors

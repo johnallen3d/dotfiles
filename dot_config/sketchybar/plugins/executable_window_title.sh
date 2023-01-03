@@ -1,8 +1,6 @@
 #!/bin/bash
 
-yabai=/opt/homebrew/bin/yabai
-
-WINDOW_TITLE=$($yabai -m query --windows --window | jq -r '.app')
+WINDOW_TITLE=$(yabai -m query --windows --window | jq -r '.app')
 
 # WINDOW_TITLE=$($yabai -m query --windows --window | jq -r '.title')
 
