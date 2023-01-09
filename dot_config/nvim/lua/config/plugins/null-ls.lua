@@ -43,6 +43,7 @@ M.setup = function(options)
 				extra_args = { "--dialect", "postgres" },
 				timeout = 10000,
 			}),
+			nls.builtins.formatting.standardrb,
 			nls.builtins.formatting.stylua.with({
 				extra_args = { "indent_type", "Tabs" },
 			}),
@@ -63,7 +64,8 @@ M.setup = function(options)
 					vim.fn.expand("$HOME/.config/markdownlint/config.yaml"),
 				},
 			}),
-			nls.builtins.diagnostics.rubocop,
+			-- throwing errors, not necessary when using -> solargraph-standardrb gem
+			-- nls.builtins.diagnostics.standardrb,
 			nls.builtins.diagnostics.shellcheck,
 			nls.builtins.diagnostics.sqlfluff.with({
 				extra_args = { "--dialect", "postgres" },
@@ -78,7 +80,7 @@ end
 
 function M.has_formatter(ft)
 	local sources = require("null-ls.sources")
-  local available = sources.get_available(ft, "NULL_LS_FORMATTING")
+	local available = sources.get_available(ft, "NULL_LS_FORMATTING")
 	return #available > 0
 end
 

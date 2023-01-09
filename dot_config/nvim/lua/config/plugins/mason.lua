@@ -17,6 +17,7 @@ return {
 			"jsonls",
 			"pyright",
 			"solargraph",
+			"sorbet",
 			"sumneko_lua",
 			"tsserver",
 			"yamlls",
@@ -28,7 +29,7 @@ return {
 			-- "golines",
 			-- "isort",
 			-- "prettier",
-			-- "rubocop",
+			-- "standardrb",
 			-- "shfmt",
 			-- "stylua",
 			-- -- Linters

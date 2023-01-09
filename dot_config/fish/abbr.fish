@@ -27,9 +27,9 @@ if not set -q abbrs_initialized
   abbr --add nekes 'cd ~/development/technekes'
   abbr --add src 'cd ~/development/technekes/src'
 
-  abbr --add irb 'docker-ruby'
-  abbr --add dr 'docker-ruby'
-  abbr --add pry 'docker-ruby'
+  # abbr --add irb 'docker-ruby'
+  # abbr --add dr 'docker-ruby'
+  # abbr --add pry 'docker-ruby'
 
   abbr --add vi nvim
   abbr --add vim nvim

@@ -10,7 +10,6 @@ tea --sync
 # ffmpeg ⇒ /usr/local/bin/tea
 # gem ⇒ /usr/local/bin/tea
 # gh ⇒ /usr/local/bin/tea
-# git ⇒ /usr/local/bin/tea
 # go ⇒ /usr/local/bin/tea
 # jq ⇒ /usr/local/bin/tea
 # lua ⇒ /usr/local/bin/tea
@@ -18,5 +17,7 @@ tea --sync
 # npm ⇒ /usr/local/bin/tea
 # nvim ⇒ /usr/local/bin/tea
 # rg ⇒ /usr/local/bin/tea
-# ruby ⇒ /usr/local/bin/tea
 # wget ⇒ /usr/local/bin/tea
+# -- problems
+# git ⇒ causing issues with lazy.nvim
+# ruby ⇒ not playing well with editors (Solargraph?)
