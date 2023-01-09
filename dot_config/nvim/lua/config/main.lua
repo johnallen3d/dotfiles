@@ -143,4 +143,7 @@ abbrev("ipdb", "import ipdb; ipdb.set_trace()")
 abbrev("ppry", "import code; code.interact(local=dict(globals(), **locals()))")
 
 -- Spelling
-vim.api.nvim_set_option("spellfile", "~/.config/nvim/spell/en.utf-8.add")
+vim.api.nvim_set_option(
+	"spellfile",
+	vim.fn.expand("$HOME/.config/nvim/spell/en.utf-8.add")
+)
