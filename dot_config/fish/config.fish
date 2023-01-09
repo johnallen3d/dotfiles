@@ -7,6 +7,9 @@ if status --is-interactive
   # no need for a greeting
   set fish_greeting
 
+  # use 1Password to authenticate `gh`
+  source ~/.config/op/plugins.sh
+
   # source variables
   source ~/.config/fish/variables.fish
 
