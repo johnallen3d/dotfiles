@@ -27,7 +27,7 @@ return {
 	},
 	{
 		"subnut/nvim-ghost.nvim",
-		lazy = true,
+		lazy = true, -- Lazy load nvim-ghost.nvim 👇
 		run = ":call nvim_ghost#installer#install()",
 	},
 	{
@@ -61,8 +61,4 @@ return {
 	{ "jjo/vim-cue", ft = "cue" },
 	{ "neoclide/jsonc.vim", ft = "jsonc" },
 	{ "ray-x/go.nvim", ft = "go" },
-
-	-- TODO
-	-- consider for annotation with go/python
-	-- { "danymat/neogen" },
 }
