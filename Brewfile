@@ -50,6 +50,7 @@ brew "xsv"
 brew "zoxide"
 
 cask "1password-cli"
+cask "discord"
 cask "disk-inventory-x"
 cask "font-hack-nerd-font"
 cask "istat-menus"
