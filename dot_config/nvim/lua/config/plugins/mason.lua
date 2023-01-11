@@ -17,7 +17,6 @@ return {
 			"jsonls",
 			"pyright",
 			"solargraph",
-			"sorbet",
 			"sumneko_lua",
 			"tsserver",
 			"yamlls",

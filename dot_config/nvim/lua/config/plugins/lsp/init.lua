@@ -16,7 +16,6 @@ return {
 			html = {},
 			pyright = {},
 			solargraph = {},
-			sorbet = {},
 			sumneko_lua = {
 				settings = {
 					Lua = {
