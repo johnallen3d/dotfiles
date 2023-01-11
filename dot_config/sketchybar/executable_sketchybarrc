@@ -11,18 +11,32 @@
 transparent_color="0x00000000"
 
 # catppuccin-mocha
-# bar_color="0xff1e1d2e"
-bar_color="${transparent_color}"
-default_label_color="0xffCDD6F4"
-default_icon_color="0xffCDD6F4"
-highlight_icon_color="0xff89b4fa"
-# bracket_border_color="0xff45475a"
+# default_label_color="0xffCDD6F4"
+# default_icon_color="0xffCDD6F4"
+# highlight_icon_color="0xff89b4fa"
+# bracket_border_color="${transparent_color}"
+# bracket_background_color="0xff313244"
+# current_app_background_color="0xff89b4fa"
+# current_app_color="0xff121219"
+# music_highlight="0xffEDC4E5"
+# time_highlight="0xffF5E3B5"
+# date_highlitht="0xffb4befe"
+# weather_highlight="0xffB3E1A7"
+# cpu_highlight="0xffa6adc8"
+
+# onedark-deep
+bracket_background_color="0xff1a212e"
+default_label_color="0xff93a4c3"
+default_icon_color="0xff93a4c3"
+highlight_icon_color="0xff8ebd6b"
 bracket_border_color="${transparent_color}"
-bracket_background_color="0xff313244"
-# right_bar_color="0xff313244"
-right_bar_color="0xff11111b"
-right_border_color="0xff585b70"
-danger_color="0xffF38BA8"
+current_app_background_color="0xff41a7fc"
+current_app_color="0xff0c0e15"
+music_highlight="0xff8bcd5b"
+cpu_highlight="0xff41a7fc"
+weather_highlight="0xffefbd5d"
+date_highlight="0xffc75ae8"
+time_highlight="0xff34bfd0"
 
 #
 # fonts
@@ -103,9 +117,9 @@ sketchybar \
 	--add item window_title_logo_display_1 left \
 	--set window_title_logo_display_1 associated_display=1 \
 	icon= \
-	icon.color=0xff121219 \
+	icon.color=$current_app_color \
 	label.drawing=off \
-	background.color=0xff89b4fa
+	background.color=$current_app_background_color
 
 sketchybar \
 	--add event window_focus \
@@ -174,9 +188,9 @@ sketchybar \
 	--add item window_title_logo_display_2 left \
 	--set window_title_logo_display_2 associated_display=2 \
 	icon= \
-	icon.color=0xff121219 \
+	icon.color=$current_app_color \
 	label.drawing=off \
-	background.color=0xff89b4fa
+	background.color=$current_app_background_color
 
 sketchybar \
 	--add event window_focus \
@@ -228,15 +242,15 @@ sketchybar \
 	icon= \
 	associated_display="${display_count}" \
 	label.drawing=off \
-	icon.color=0xff121219 \
-	background.color=0xffEDC4E5
+	icon.color=$current_app_color \
+	background.color=$music_highlight
 
 sketchybar \
 	--add item mpd $mpd_location \
 	--set mpd \
 	associated_display="${display_count}" \
 	icon.drawing=on \
-	icon.color=0xffEDC4E5 \
+	icon.color=$music_highlight \
 	update_freq=2 \
 	script="${plugins}/mpd.sh" \
 	click_script="mpc toggle" \
@@ -265,9 +279,9 @@ sketchybar \
 sketchybar \
 	--add item time_logo right \
 	--set time_logo icon= \
-	icon.color=0xff121219 \
+	icon.color=$current_app_color \
 	label.drawing=off \
-	background.color=0xffF5E3B5
+	background.color=$time_highlight
 
 sketchybar \
 	--add item date right \
@@ -280,9 +294,9 @@ sketchybar \
 sketchybar \
 	--add item date_logo right \
 	--set date_logo icon= \
-	icon.color=0xff121219 \
+	icon.color=$current_app_color \
 	label.drawing=off \
-	background.color=0xffb4befe
+	background.color=$date_highlight
 
 sketchybar \
 	--add item weather right \
@@ -297,9 +311,9 @@ sketchybar \
 	--add item weather_logo right \
 	--set weather_logo icon= \
 	icon.font="Hack Nerd Font:Regular:14.0" \
-	icon.color=0xff121219 \
+	icon.color=$current_app_color \
 	label.drawing=off \
-	background.color=0xffB3E1A7
+	background.color=$weather_highlight
 
 sketchybar \
 	--add item cpu right \
@@ -313,9 +327,9 @@ sketchybar \
 sketchybar \
 	--add item cpu_logo right \
 	--set cpu_logo icon= \
-	icon.color=0xff121219 \
+	icon.color=$current_app_color \
 	label.drawing=off \
-	background.color=0xffa6adc8
+	background.color=$cpu_highlight
 
 sketchybar --add bracket right_bar_bracket \
 	time \

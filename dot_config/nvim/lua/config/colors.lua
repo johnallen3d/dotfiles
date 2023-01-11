@@ -105,21 +105,24 @@ function M:catppuccin()
 end
 
 function M:onedark()
-	require("onedark").setup({
+	local onedark = require("onedark")
+
+	onedark.setup({
 		style = "deep",
-		toggle_style_key = "<nop>",
-		highlights = {
-			CmpCompletionWindowBorder = { fg = "$blue" },
-			LspFloatWinBorder = { fg = "$blue" },
-			TelescopeBorder = { fg = "$blue" },
-			TelescopePromptBorder = { fg = "$blue" },
-			TelescopeResultsBorder = { fg = "$blue" },
-			TelescopePreviewBorder = { fg = "$blue" },
-			TelescopePromptTitle = { fg = "$bg0", bg = "$green" },
-			TelescopeResultsTitle = { fg = "$bg0", bg = "$green" },
+		cmp_itemkind_reverse = true,
+		code_style = {
+			comments = "italic",
+			keywords = "bold,italic",
+			functions = "bold",
+			strings = "bold",
+			variables = "bold,italic",
+		},
+		lualine = {
+			transparent = true,
 		},
 	})
-	require("onedark").load()
+
+	onedark.load()
 end
 
 function M:tokyonight()
