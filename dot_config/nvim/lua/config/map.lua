@@ -76,6 +76,7 @@ local leader = {
 	["f"] = {
 		name = "+file",
 		f = { "<cmd>Telescope find_files theme=dropdown<CR>", "Find File" },
+		g = { "<cmd>Telescope git_files theme=dropdown<CR>", "(git) Find File" },
 		r = { "<cmd>Telescope oldfiles theme=dropdown<CR>", "Open Recent File" },
 		n = {
 			function()
