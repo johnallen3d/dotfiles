@@ -81,9 +81,9 @@ function M.setup(client, buffer)
 		-- 	"Signature Help",
 		-- 	mode = { "n", "i" },
 		-- },
-		["K"] = { "<cmd>Lspsaga hover_doc<CR>", "Hover" },
-		["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Next Diagnostic" },
-		["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Prev Diagnostic" },
+		["K"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev Diagnostic" },
+		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
 		["[e"] = {
 			"<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>",
 			"Next Error",

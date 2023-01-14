@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	config = function()
 		local noice = require("noice")
+		local navic = require("nvim-navic")
 
 		require("lualine").setup({
 			options = {
@@ -13,7 +14,22 @@ return {
 				theme = "onedark",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
-				disabled_filetypes = {},
+				disabled_filetypes = {
+					winbar = {
+						"help",
+						"startify",
+						"dashboard",
+						"packer",
+						"neogitstatus",
+						"NvimTree",
+						"Trouble",
+						"alpha",
+						"lir",
+						"Outline",
+						"spectre_panel",
+						"toggleterm",
+					},
+				},
 				always_divide_middle = true,
 				globalstatus = true,
 			},
@@ -25,7 +41,12 @@ return {
 						cond = noice.api.statusline.mode.has,
 					},
 				},
-				lualine_b = { "filename" },
+				lualine_b = {
+					{
+						"filename",
+						path = 1,
+					},
+				},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {
@@ -39,6 +60,14 @@ return {
 					},
 				},
 				lualine_z = { "location" },
+			},
+			winbar = {
+				lualine_a = { "filename" },
+				lualine_b = {},
+				lualine_c = { { navic.get_location, cond = navic.is_available } },
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
 			},
 		})
 	end,

@@ -27,7 +27,9 @@ M.setup = function(options)
 				},
 			}),
 			nls.builtins.formatting.cueimports, -- manage imports and formats
-			nls.builtins.formatting.golines,
+			nls.builtins.formatting.golines.with({
+				extra_args = { "--max-len", "80" },
+			}),
 			nls.builtins.formatting.isort,
 			nls.builtins.formatting.prettier.with({
 				disabled_filetypes = { "markdown" },

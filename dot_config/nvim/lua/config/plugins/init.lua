@@ -1,6 +1,5 @@
 return {
 	-- common dependencies
-	-- "nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"rcarriga/nvim-notify",
 	"MunifTanjim/nui.nvim",
@@ -47,8 +46,6 @@ return {
 
 	-- lsp
 	{ "onsails/lspkind-nvim", lazy = true },
-	-- "RishabhRD/popfix",
-	-- "RishabhRD/nvim-lsputils",
 	{ "jose-elias-alvarez/typescript.nvim", ft = "typescript" },
 	{
 		"smjonas/inc-rename.nvim",

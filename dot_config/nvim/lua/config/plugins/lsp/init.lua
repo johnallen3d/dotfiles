@@ -56,6 +56,10 @@ return {
 		local function on_attach(client, bufnr)
 			require("config.plugins.lsp.formatting").setup(client, bufnr)
 			require("config.plugins.lsp.keys").setup(client, bufnr)
+
+			if client.server_capabilities.documentSymbolProvider then
+				require("nvim-navic").attach(client, bufnr)
+			end
 		end
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
