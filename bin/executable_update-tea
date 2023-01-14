@@ -6,8 +6,10 @@ tea --sync
 # -- current tools
 # via: ln -s /usr/local/bin/tea /usr/local/bin/[tool]
 # cargo ⇒ /usr/local/bin/tea
+# cue ⇒ /usr/local/bin/tea
 # fd ⇒ /usr/local/bin/tea
 # ffmpeg ⇒ /usr/local/bin/tea
+# fzf ⇒ /usr/local/bin/tea
 # gem ⇒ /usr/local/bin/tea
 # gh ⇒ /usr/local/bin/tea
 # go ⇒ /usr/local/bin/tea
