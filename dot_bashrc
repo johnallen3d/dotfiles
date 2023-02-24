@@ -2,6 +2,4 @@
 
 export PATH=$HOME/bin:$PATH
 
-function command_not_found_handle {
-  tea -X $*
-}
+. "$HOME/.cargo/env"
