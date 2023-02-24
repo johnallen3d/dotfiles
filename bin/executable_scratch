@@ -1,8 +1,15 @@
 #! /usr/bin/env bash
 
 type="${1:-md}"
+path="$HOME/Dropbox/Notes/scratch"
+
+if [ "$type" = "todo" ]; then
+  kitty @ set-window-title " "
+  kitty @ set-tab-title "TODO"
+  nvim "$path/todo.md"
+else
+  nvim "$path/scratch.${type}"
+fi
 
 # kitty @ set-window-title " "
 # kitty @ set-tab-title "scratch.${type}"
-
-nvim "$HOME/Dropbox/Notes/scratch/scratch.${type}"
