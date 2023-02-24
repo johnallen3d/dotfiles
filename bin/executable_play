@@ -48,6 +48,6 @@ esac
 
 mpc clear
 mpc search album "$album" | mpc add
+brew services restart mpd
+sleep 1
 mpc play
-# sometimes mpd will not output audio after a clear 🤷
-killall mpd
