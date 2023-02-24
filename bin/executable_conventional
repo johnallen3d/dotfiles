@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-
 table="Type,Title,Description
 ---,---,---
 feat,Features,A new feature
