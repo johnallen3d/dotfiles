@@ -20,12 +20,12 @@ M.setup = function(options)
 					vim.fn.expand("$HOME/.config/cbfmt/cbfmt.toml"),
 				},
 			}),
-			nls.builtins.formatting.codespell.with({
-				extra_args = {
-					"--ignore-words",
-					vim.fn.expand("$HOME/.config/nvim/spell/en.utf-8.add"),
-				},
-			}),
+			-- nls.builtins.formatting.codespell.with({
+			-- 	extra_args = {
+			-- 		"--ignore-words",
+			-- 		vim.fn.expand("$HOME/.config/nvim/spell/en.utf-8.add"),
+			-- 	},
+			-- }),
 			nls.builtins.formatting.cueimports, -- manage imports and formats
 			nls.builtins.formatting.golines.with({
 				extra_args = { "--max-len", "80" },
@@ -40,6 +40,7 @@ M.setup = function(options)
 					vim.fn.expand("$HOME/.config/markdownlint/config.yaml"),
 				},
 			}),
+			nls.builtins.formatting.rustfmt,
 			nls.builtins.formatting.shfmt.with({ extra_args = { "indent", "2" } }),
 			nls.builtins.formatting.sqlfluff.with({
 				extra_args = { "--dialect", "postgres" },
@@ -57,7 +58,7 @@ M.setup = function(options)
 					vim.fn.expand("$HOME/.config/nvim/spell/en.utf-8.add"),
 				},
 			}),
-			nls.builtins.diagnostics.cue_fmt, -- not managed by Mason
+			-- nls.builtins.diagnostics.cue_fmt, -- not managed by Mason
 			nls.builtins.diagnostics.flake8,
 			nls.builtins.diagnostics.hadolint,
 			nls.builtins.diagnostics.markdownlint.with({
@@ -76,6 +77,9 @@ M.setup = function(options)
 			-- nls.builtins.diagnostics.write_good,
 
 			require("typescript.extensions.null-ls.code-actions"),
+			-- a bit buggy ATM
+			-- require("go.null_ls").gotest(),
+			-- require("go.null_ls").gotest_action(),
 		},
 	})
 end

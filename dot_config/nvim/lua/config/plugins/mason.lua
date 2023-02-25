@@ -17,7 +17,7 @@ return {
 			"jsonls",
 			"pyright",
 			"solargraph",
-			"sumneko_lua",
+			"lua_ls",
 			"tsserver",
 			"yamlls",
 			-- -- DAP

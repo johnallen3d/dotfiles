@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"rcarriga/nvim-notify",
 		"MunifTanjim/nui.nvim",
+		"hrsh7th/nvim-cmp",
 	},
 	config = {
 		presets = {

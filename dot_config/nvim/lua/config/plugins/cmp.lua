@@ -10,6 +10,7 @@ local M = {
 		"f3fora/cmp-spell",
 		"lukas-reineke/cmp-rg",
 		"kristijanhusak/vim-dadbod-completion",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 
 		-- snippets
 		"L3MON4D3/LuaSnip",
@@ -46,10 +47,6 @@ M.config = function()
 	end
 
 	cmp.setup({
-		completion = {
-			completeopt = "menu,menuone,noinsert",
-		},
-
 		mapping = {
 			["<C-e>"] = cmp.mapping.abort(),
 			["<Down>"] = cmp.mapping.abort(),
@@ -67,7 +64,7 @@ M.config = function()
 				{ "i" }
 			),
 
-			["<C-f>"] = cmp.mapping(cmp.mapping.confirm(), { "i", "c" }),
+			["<C-f>"] = cmp.mapping.confirm({ select = true }),
 
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if luasnip.expand_or_jumpable() then
@@ -89,8 +86,8 @@ M.config = function()
 		},
 
 		sources = {
-			{ name = "vim-dadbod-completion" },
 			{ name = "nvim_lsp" },
+			{ name = "nvim_lsp_signature_help" },
 			{ name = "luasnip" },
 			{ name = "path" },
 
@@ -100,6 +97,7 @@ M.config = function()
 			{ name = "emoji" },
 			{ name = "spell", keyword_length = 4 },
 			{ name = "rg", dup = 0 },
+			{ name = "vim-dadbod-completion" },
 		},
 
 		snippet = {

@@ -117,9 +117,6 @@ function M:onedark()
 			strings = "bold",
 			variables = "bold,italic",
 		},
-		lualine = {
-			transparent = true,
-		},
 	})
 
 	onedark.load()

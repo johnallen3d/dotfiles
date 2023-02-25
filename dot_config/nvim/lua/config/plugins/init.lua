@@ -1,8 +1,8 @@
 return {
 	-- common dependencies
-	"nvim-lua/plenary.nvim",
-	"rcarriga/nvim-notify",
-	"MunifTanjim/nui.nvim",
+	{ "nvim-lua/plenary.nvim", lazy = true },
+	{ "rcarriga/nvim-notify", lazy = true },
+	{ "MunifTanjim/nui.nvim", lazy = true },
 
 	-- ui/ux
 	{ "RRethy/vim-illuminate", event = "VeryLazy" },
@@ -18,6 +18,7 @@ return {
 		cmd = "ColorizerAttachToBuffer",
 	},
 	{ "nvim-zh/colorful-winsep.nvim", event = "VeryLazy", config = true },
+
 	-- productivity
 	{
 		"numToStr/Comment.nvim",
@@ -43,6 +44,7 @@ return {
 	{ "ryvnf/readline.vim", event = "CmdlineEnter" },
 	{ "godlygeek/tabular", cmd = "Tabularize" },
 	{ "folke/which-key.nvim", lazy = true },
+	-- { "andrewferrier/wrapping.nvim", config = true },
 
 	-- lsp
 	{ "onsails/lspkind-nvim", lazy = true },
@@ -52,10 +54,22 @@ return {
 		cmd = "IncRename",
 		config = true,
 	},
+	{
+		"folke/trouble.nvim",
+		event = "VeryLazy",
+		config = true,
+	},
 
 	-- syntax/lint
 	{ "mechatroner/rainbow_csv", ft = "csv" },
-	{ "jjo/vim-cue", ft = "cue" },
+	{
+		"jjo/vim-cue",
+		ft = "cue",
+		config = function()
+			vim.cmd("let g:cue_fmt_on_save = 0")
+		end,
+	},
 	{ "neoclide/jsonc.vim", ft = "jsonc" },
 	{ "ray-x/go.nvim", ft = "go" },
+	{ "simrat39/rust-tools.nvim", ft = "rust" },
 }

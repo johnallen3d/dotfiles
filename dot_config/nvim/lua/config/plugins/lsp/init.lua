@@ -9,14 +9,15 @@ return {
 
 		local servers = {
 			bashls = {},
-			dagger = {},
+			-- dagger = {},
 			dockerls = {},
 			eslint = {},
 			jsonls = {},
 			html = {},
 			pyright = {},
+			-- rust_analyzer = {}, -- setup via rust-tools
 			solargraph = {},
-			sumneko_lua = {
+			lua_ls = {
 				settings = {
 					Lua = {
 						misc = {
@@ -89,5 +90,34 @@ return {
 		require("config.plugins.null-ls").setup(options)
 
 		require("go").setup({ lsp_cfg = options })
+
+		require("rust-tools").setup({
+			server = {
+				-- cmd = {
+				-- 	-- prefer `rustup component add rust-analyzer` over tea/brew
+				-- 	--   tea installed version not completing things like `use std`
+				-- 	vim.fn.expand(
+				-- 		"$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer"
+				-- 	),
+				-- },
+				on_attach = on_attach,
+				settings = {
+					["rust-analyzer"] = {
+						cargo = { allFeatures = true },
+						checkOnSave = {
+							command = "clippy",
+							extraArgs = { "--no-deps" },
+						},
+					},
+				},
+			},
+			tools = {
+				inlay_hints = {
+					parameter_hints_prefix = " ",
+					other_hints_prefix = " ",
+					highlight = "Delimiter", -- light_grey vs grey (comment)
+				},
+			},
+		})
 	end,
 }

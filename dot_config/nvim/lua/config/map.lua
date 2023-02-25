@@ -102,12 +102,12 @@ local leader = {
 		name = "+search",
 		b = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Buffer" },
 		g = { "<cmd>Telescope live_grep theme=dropdown<CR>", "Grep" },
-		j = {
-			function()
-				require("sj").run()
-			end,
-			"Grep",
-		},
+		-- j = {
+		-- 	function()
+		-- 		require("sj").run()
+		-- 	end,
+		-- 	"Search Jump",
+		-- },
 		m = { "<cmd>Telescope noice theme=dropdown<CR>", "Messages" },
 	},
 	["t"] = {

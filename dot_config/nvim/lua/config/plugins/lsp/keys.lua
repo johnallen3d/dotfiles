@@ -7,6 +7,18 @@ function M.setup(client, buffer)
 
 	local keymap = {
 		buffer = buffer,
+		["K"] = {
+			-- {
+			-- 	cond = client.name == "rust_analyzer",
+			-- 	require("rust-tools").hover_actions.hover_actions,
+			-- 	"Hover",
+			-- },
+			{
+				cond = client.name ~= "rust_analyzer",
+				"<cmd>lua vim.lsp.buf.hover()<cr>",
+				"Hover",
+			},
+		},
 		["<leader>"] = {
 			c = {
 				name = "+code",
@@ -27,7 +39,7 @@ function M.setup(client, buffer)
 				a = {
 					{ vim.lsp.buf.code_action, "Code Action" },
 					{
-						"<cmd>lua vim.lsp.buf.code_action()<cr>",
+						vim.lsp.buf.code_action,
 						"Code Action",
 						mode = "v",
 					},
@@ -81,7 +93,6 @@ function M.setup(client, buffer)
 		-- 	"Signature Help",
 		-- 	mode = { "n", "i" },
 		-- },
-		["K"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
 		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev Diagnostic" },
 		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
 		["[e"] = {
