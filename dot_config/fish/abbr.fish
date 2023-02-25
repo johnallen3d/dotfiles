@@ -17,7 +17,8 @@ if not set -q abbrs_initialized
   abbr --add gcf 'git commit --fixup'
   abbr --add spp 'git stash && git pull && git stash pop'
   abbr --add db 'delete-branch'
-  abbr --add pr 'hub pull-request --push --browse'
+  # abbr --add pr 'hub pull-request --push --browse'
+  abbr --add bug git-bug
 
   # abbr --add jq 'jq -C "."'
   abbr --add jp 'jp "@"'
