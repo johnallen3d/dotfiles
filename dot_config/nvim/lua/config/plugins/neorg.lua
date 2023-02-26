@@ -14,9 +14,8 @@ return {
 					config = {
 						workspaces = {
 							notes = "~/Dropbox/Notes/neorg/",
-							programs = "~/Dropbox/Notes/tac/programs/",
-							journal = "~/Dropbox/Notes/journal/",
 						},
+						default_workspace = "notes"
 					},
 				},
 			},
