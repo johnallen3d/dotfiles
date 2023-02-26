@@ -1,6 +1,3 @@
--- return {}
-
--- can't get `:Neorg sync-parsers` to run regardless of c++ version on macOS 12
 return {
 	{
 		"nvim-neorg/neorg",
@@ -15,7 +12,7 @@ return {
 						workspaces = {
 							notes = "~/Dropbox/Notes/neorg/",
 						},
-						default_workspace = "notes"
+						default_workspace = "notes",
 					},
 				},
 			},
