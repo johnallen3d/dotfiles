@@ -41,29 +41,26 @@ if status --is-interactive
   switch (uname)
   case Darwin
     # prefer homebrew installed ruby
-    fish_add_path /opt/homebrew/opt/ruby/bin
-    #             THIS IS SLOW!!! vvv
-    # set -g fish_user_paths (gem env gemdir)/bin $fish_user_paths
+    fish_add_path "$HOME/bin"
+    fish_add_path "$HOME/.bin"
+    fish_add_path "$HOME/.local/bin"
+    # prefer homebrew installed ruby
+    fish_add_path "/opt/homebrew/opt/ruby/bin"
     # use ruby version installed by homebrew
-    set -g fish_user_paths "/opt/homebrew/lib/ruby/gems/3.2.0/bin" $fish_user_paths
+    fish_add_path "/opt/homebrew/lib/ruby/gems/3.2.0/bin"
     # rust/cargo
-    set -g fish_user_paths "$HOME/.cargo/bin/" $fish_user_paths
+    fish_add_path "$HOME/.cargo/bin"
     # c++ compatible version for neorg
     # set -g CC /usr/local/bin/gcc
   case Linux
-    set -x GEM_HOME $HOME/.gem/
-    # use ruby version installed by pacman
-    # add home/bin to path
-    set -g fish_user_paths \
-      $HOME/.local/bin \
-      $HOME/.gem/bin \
-      $HOME/bin \
-      $HOME/bin/workflow \
-      $HOME/.node_modules/bin \
-      $fish_user_paths
+    fish_add_path $HOME/.local/bin
+    fish_add_path $HOME/.gem/bin
+    fish_add_path $HOME/bin
+    fish_add_path $HOME/.node_modules/bin \
 
     # globally install node modules in $HOME directory
     set -x NPM_CONFIG_PREFIX $HOME/.node_modules
+    set -x GEM_HOME $HOME/.gem/
   end
 
   starship init fish | source
