@@ -83,7 +83,7 @@ opt("o", "hidden", true) -- allow backgrounding buffers without writing them, an
 opt("o", "splitbelow", true) -- new horizontal splits below current
 opt("o", "splitright", true) -- new vertical splits right of current
 opt("o", "wildoptions", "pum,tagfile") -- complete settings
-opt("o", "completeopt", "menuone,noinsert,noselect") -- set completeopt to have a better completion experience
+opt("o", "completeopt", "menu,menuone") -- set completeopt to have a better completion experience
 opt("o", "shiftround", true) -- when at 3 spaces and I hit >>, go to 4, not 5
 opt("o", "undodir", undodir) -- location to keep undo files
 opt("o", "colorcolumn", "81") -- show a marker at 80th character
