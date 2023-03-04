@@ -58,10 +58,6 @@ function M:catppuccin()
 			aerial = false,
 			vimwiki = false,
 			beacon = false,
-			navic = {
-				enabled = false,
-				custom_bg = "NONE",
-			},
 			overseer = false,
 			fidget = true,
 			treesitter_context = false,

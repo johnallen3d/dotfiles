@@ -17,7 +17,6 @@ return {
 		"norcalli/nvim-colorizer.lua",
 		cmd = "ColorizerAttachToBuffer",
 	},
-	{ "nvim-zh/colorful-winsep.nvim", event = "VeryLazy", config = true },
 
 	-- productivity
 	{

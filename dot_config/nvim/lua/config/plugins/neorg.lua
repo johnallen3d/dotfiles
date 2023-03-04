@@ -10,7 +10,8 @@ return {
 				["core.norg.dirman"] = { -- Manages Neorg workspaces
 					config = {
 						workspaces = {
-							notes = "~/Dropbox/Notes/neorg/",
+							notes = "~/Dropbox/Notes/neorg",
+							programs = "~/Dropbox/Notes/tac/programs",
 						},
 						default_workspace = "notes",
 					},

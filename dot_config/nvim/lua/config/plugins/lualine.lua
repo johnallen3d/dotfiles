@@ -4,7 +4,6 @@ return {}
 -- 	event = "VeryLazy",
 -- 	config = function()
 -- 		local noice = require("noice")
--- 		local navic = require("nvim-navic")
 
 -- 		require("lualine").setup({
 -- 			options = {
@@ -65,7 +64,7 @@ return {}
 -- 			winbar = {
 -- 				lualine_a = { "filename" },
 -- 				lualine_b = {},
--- 				lualine_c = { { navic.get_location, cond = navic.is_available } },
+-- 				lualine_c = {},
 -- 				lualine_x = {},
 -- 				lualine_y = {},
 -- 				lualine_z = {},
