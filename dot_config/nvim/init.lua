@@ -1,7 +1,3 @@
--- always show winbar, saga has a slight delay in loading
--- which causes the buffer to jump
-vim.opt.winbar = " "
-
 require("config.lazy")
 require("config.main")
 require("config.map")
