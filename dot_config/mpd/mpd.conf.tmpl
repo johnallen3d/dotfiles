@@ -1,7 +1,10 @@
 # vim:fileencoding=utf-8:ft=conf
 
+{{ if eq .chezmoi.fqdnHostname "Johns-MacBook-Pro.local" -}}
+music_directory         "/Users/john.allen/Music/from-pi"
+{{ else -}}
 music_directory         "~/Music/Music/Media.localized/Music"
-# music_directory         "$MUSIC_DIR"
+{{ end -}}
 playlist_directory      "~/.config/mpd/playlists"
 db_file                 "~/.config/mpd/database"
 log_file                "~/.config/mpd/log"
