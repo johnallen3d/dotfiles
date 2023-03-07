@@ -14,6 +14,7 @@ vim.opt.runtimepath:prepend(lazypath)
 
 -- make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 -- install/load plugins
 require("lazy").setup("config.plugins")
