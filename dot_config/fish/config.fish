@@ -40,7 +40,7 @@ if status --is-interactive
 
   switch (uname)
   case Darwin
-    # prefer homebrew installed ruby
+    fish_add_path "/usr/local/bin"
     fish_add_path "$HOME/bin"
     fish_add_path "$HOME/.bin"
     fish_add_path "$HOME/.local/bin"
