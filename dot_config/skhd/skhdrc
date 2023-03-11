@@ -65,15 +65,17 @@ shift + ctrl - 0 : yabai -m window --space terminal;  yabai -m space --focus ter
 
 # fast focus desktop ❤️🧡💛💚💙💜
 # cmd + alt - x : yabai -m space --focus recent
-ctrl - left  : yabai -m space --focus prev;     # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - right : yabai -m space --focus next;     # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 1     : yabai -m space --focus browser;  # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 2     : yabai -m space --focus chat;     # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 3     : yabai -m space --focus mail;     # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 4     : yabai -m space --focus messages; # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 8     : yabai -m space --focus flex;     # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 9     : yabai -m space --focus scratch;  # /Users/john.allen/.config/yabai/focus-first-window
-ctrl - 0     : yabai -m space --focus terminal; # /Users/john.allen/.config/yabai/focus-first-window
+ctrl - left  : yabai -m space --focus prev     # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - right : yabai -m space --focus next     # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 1     : yabai -m space --focus browser  # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 2     : yabai -m space --focus chat     # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 3     : yabai -m space --focus mail     # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 4     : yabai -m space --focus messages # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 8     : yabai -m space --focus flex     # ; /Users/john.allen/.config/yabai/focus-first-window
+ctrl - 9     : yabai -m space --focus scratch  # ; /Users/john.allen/.config/yabai/focus-first-window
+# for some reason jumping to Kitty (or maybe from Arc #9 to Kitty #0) causes Kitty not to gain focus. In fact when using two monitors
+# the top window on monitor 1 gains focus. Forcing a jump to display 1 before jumping to Kitty (eg. space 0)
+ctrl - 0     : yabai -m display --focus 1; yabai -m space --focus terminal # ; /Users/john.allen/.config/yabai/focus-first-window
 
 # send window to monitor and follow focus
 # ctrl + cmd - 0x2B : yabai -m window --display prev; yabai -m display --focus 1
