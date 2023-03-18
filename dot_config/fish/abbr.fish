@@ -33,7 +33,9 @@ abbr --add vim nvim
 abbr --add :e nvim
 
 # notes
-abbr --add notes 't notes && cd ~/Dropbox/Notes/vimwiki && nvim -c "packadd vimwiki | normal '',ww''"'
+
+# abbr --add notes 't notes && cd ~/Dropbox/Notes/vimwiki && nvim -c "packadd vimwiki | normal '',ww''"'
+abbr --add notes 't notes && nvim -c "Neorg workspace programs"'
 
 # this is a function now 👇
 # abbr --add diary 't diary && cd ~/Dropbox/Notes/vimwiki && nvim -c "packadd vimwiki | normal '',w,w''"'
