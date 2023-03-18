@@ -1,0 +1,65 @@
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:/opt/homebrew/opt/ruby/bin:$PATH"
+
+export EDITOR=zed --wait
+
+# prompt
+eval "$(starship init zsh)"
+
+# packages
+test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh --silent)
+
+# fish(y)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# navigation
+source /opt/homebrew/etc/profile.d/z.sh
+
+# fzf
+source $HOME/.config/fzf/key-bindings.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!doc/*"'
+
+# ripgrep
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
+
+# neovim
+alias vi=nvim
+alias vim=nvim
+alias :e=nvim
+alias :q=exit
+alias tree='et'
+
+# ls
+alias la="lsd -la"
+alias ll="lsd -1"
+alias ls="lsd -1"
+
+# git
+alias gst='git status --short'
+alias gc='git commit -v'
+alias gb='git bv'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gl='git pull'
+alias gco='git checkout'
+alias gm='git merge --ff-only'
+alias gcf='git commit --fixup'
+alias spp='git stash && git pull && git stash pop'
+alias db='delete-branch'
+alias bug=git-bug
+
+# general
+alias files='xplr'
+alias icat='kitty +kitten icat'
+alias music=ncmpcpp
+alias pi='kitty +kitten ssh pi@pi.local'
+alias recent='exa --header -la --sort oldest | head -n 25'
+alias uuid="uuidgen | tr -d '\\n' | tr '[:upper:]' '[:lower:]' | pbcopy; pbpaste; echo"
+alias weather='curl wttr.in'
+
+# password
+alias passgen='dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 | rev | cut -b 2- | rev'
+alias password=passgen
+alias pass=passgen
+
+# muscle-memory
+alias j=z
