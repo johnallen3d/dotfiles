@@ -16,15 +16,11 @@ yabai -m config focus_follows_mouse off
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
 yabai -m config window_opacity off
-# yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow on
+yabai -m config window_shadow off
 yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.97
+yabai -m config normal_window_opacity 1.0
 yabai -m config split_ratio 0.50
 yabai -m config auto_balance off
-# yabai -m config mouse_modifier               fn
-# yabai -m config mouse_action1                move
-# yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout bsp
@@ -37,11 +33,11 @@ yabai -m config right_padding 18
 yabai -m config window_gap 12
 
 # borders
-yabai -m config window_border off
-# yabai -m config window_border_width 8
-# yabai -m config active_window_border_color 0xff5E81AC
-# # yabai -m config normal_window_border_color 0xff3B4252
-# yabai -m config normal_window_border_color 0xff4c566a
+yabai -m config window_border on
+yabai -m config window_border_width 4
+yabai -m config window_border_blur off
+yabai -m config active_window_border_color 0xff54b0fd
+yabai -m config normal_window_border_color 0xff1a212e
 
 # signals
 yabai \
@@ -71,7 +67,7 @@ yabai \
 #   action="yabai -m window --focus \$($HOME/.config/yabai/first-window-id)"
 
 # set up labels
-$HOME/.config/yabai/apply-labels
+"$HOME/.config/yabai/apply-labels"
 
 # application to space rules
 # yabai -m rule --add app="^Safari$" space="browser"
@@ -79,7 +75,7 @@ yabai -m rule --add app="^Slack$" space="chat"
 yabai -m rule --add app="^Rambox.*" space="mail"
 yabai -m rule --add app="^Messages$" space="messages"
 yabai -m rule --add app="^Discord$" space="messages"
-# yabai -m rule --add app="^Chrome$" space="scratch"
+yabai -m rule --add app="^Code$" space="flex"
 yabai -m rule --add app="^kitty$" space="terminal"
 
 # floating non-standard windows
@@ -88,12 +84,17 @@ yabai -m rule --add label="Finder" app="^Finder\$" title="(Co(py|nnect)|Move|Inf
 yabai -m rule --add label="Firfox PIP" app="^Firefox\$" title="^(Picture-in-Picture)\$" manage=on
 # this 👇 isn't working
 # yabai -m rule --add label="Little Arc" app="^Arc$" title="^Little\sArc.*" manage=off
-yabai -m rule --add label="Little Arc" app="^Arc$" title="^Space.*" manage=off
+# yabai -m rule --add label="Little Arc" app="^Arc$" title="^Space.*" manage=off
 yabai -m rule --add label="Pixelmator" app="^Pixelmator\$" manage=off
 yabai -m rule --add label="Safari" app="^Safari\$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)\$" manage=off
 yabai -m rule --add label="Stupid Zoom Bar" app="^zoom.us\$" title="^zoom share (statusbar|toolbar) window\$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences\$" manage=off
 yabai -m rule --add label="mpv" app="^mpv\$" sticky=off layer=normal manage=on
+
+# Arc Browser specific
+yabai -m rule --add app="^Arc$" title="^$" mouse_follows_focus=off
+# focus window after active space changes
+yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 
 # start up sketchybar
 brew services restart felixkratz/formulae/sketchybar
