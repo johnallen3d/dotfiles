@@ -21,6 +21,15 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!doc/*"'
 # ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
 
+# use 1Password to authenticate `gh`
+source $HOME/.config/op/plugins.sh
+
+# load zoxide (autojump alt)
+eval "$(zoxide init zsh)"
+
+# use nvim for man
+export MANPAGER="nvim +Man!"
+
 # neovim
 alias vi=nvim
 alias vim=nvim
