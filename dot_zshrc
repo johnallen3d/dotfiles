@@ -51,6 +51,7 @@ alias bug=git-bug
 alias files='xplr'
 alias icat='kitty +kitten icat'
 alias music=ncmpcpp
+alias notes='t notes && nvim -c "Neorg workspace programs"'
 alias pi='kitty +kitten ssh pi@pi.local'
 alias recent='exa --header -la --sort oldest | head -n 25'
 alias uuid="uuidgen | tr -d '\\n' | tr '[:upper:]' '[:lower:]' | pbcopy; pbpaste; echo"
