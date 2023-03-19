@@ -1,15 +1,17 @@
-if not set -q EDITOR
-  set -x EDITOR nvim
-  set -x VISUAL nvim
-  set -x GIT_EDITOR nvim
+# set -x EDITOR nvim
+# set -x VISUAL nvim
+# set -x GIT_EDITOR nvim
 
-  # disable homebrew github api https://github.com/Homebrew/brew/issues/93
-  set -x HOMEBREW_NO_GITHUB_API 1
+set -x EDITOR zed --wait
+set -x VISUAL zed --wait
+set -x GIT_EDITOR zed --wait
 
-  set -x NIB_CRYPT_BUCKET_NAME tk-secrets
+# disable homebrew github api https://github.com/Homebrew/brew/issues/93
+set -x HOMEBREW_NO_GITHUB_API 1
 
-  set -x MUSIC_DIR ~/Music/iTunes/iTunes Music/Music/
+set -x NIB_CRYPT_BUCKET_NAME tk-secrets
 
-  # better pager in pgcli https://www.pgcli.com/pager
-  set -x LESS -XFR
-end
+set -x MUSIC_DIR ~/Music/iTunes/iTunes Music/Music/
+
+# better pager in pgcli https://www.pgcli.com/pager
+set -x LESS -XFR
