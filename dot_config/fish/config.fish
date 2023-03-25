@@ -65,6 +65,5 @@ if status --is-interactive
 
   starship init fish | source
 
-  # tea magic is causing conflict with rustup installed rust components (e.g. rustr-src)
   test -d "$HOME/.tea" && "$HOME/.tea/tea.xyz/v*/bin/tea" --magic=fish --silent | source
 end
