@@ -32,6 +32,9 @@ abbr --add vi nvim
 abbr --add vim nvim
 abbr --add :e nvim
 
+# muscle memory
+abbr --add j z
+
 # notes
 
 # abbr --add notes 't notes && cd ~/Dropbox/Notes/vimwiki && nvim -c "packadd vimwiki | normal '',ww''"'
