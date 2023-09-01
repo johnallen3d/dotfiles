@@ -88,11 +88,21 @@ opt("o", "shiftround", true) -- when at 3 spaces and I hit >>, go to 4, not 5
 opt("o", "undodir", undodir) -- location to keep undo files
 opt("o", "colorcolumn", "81") -- show a marker at 80th character
 opt("o", "synmaxcol", 800) -- don't try to highlight long lines
-opt("o", "foldenable", false) -- disable folding
+opt("o", "foldenable", true) -- enable folding
+opt("o", "foldlevelstart", 99) -- expand all folds by default
 opt("o", "updatecount", 0) -- disable swap files
 opt("o", "errorbells", false) -- disable error bells
 opt("o", "visualbell", false) -- disable error bells
 opt("o", "splitkeep", "screen") -- don't jump around on horizontal splits
+
+-- Treesitter folding
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- Telescope bug: https://github.com/nvim-telescope/telescope.nvim/issues/699#issuecomment-1159637962
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "*" },
+	command = "normal zx",
+})
 
 -- Window
 opt("w", "wrap", false) -- do not wrap lines
