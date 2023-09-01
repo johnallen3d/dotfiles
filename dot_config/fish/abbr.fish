@@ -39,6 +39,7 @@ abbr --add j z
 
 # abbr --add notes 't notes && cd ~/Dropbox/Notes/vimwiki && nvim -c "packadd vimwiki | normal '',ww''"'
 abbr --add notes 't notes && nvim -c "Neorg workspace programs"'
+abbr --add journal 't journal && nvim -c "Neorg workspace journal" -c "Neorg journal today"'
 
 # this is a function now 👇
 # abbr --add diary 't diary && cd ~/Dropbox/Notes/vimwiki && nvim -c "packadd vimwiki | normal '',w,w''"'
@@ -58,7 +59,7 @@ abbr --add yt "youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4
 
 # abbr --add tree 'exa --tree'
 # abbr --add tree 'lsd --tree'
-abbr --add tree 'et'
+abbr --add tree 'erd'
 
 abbr --add .. 'cd ..'
 
@@ -75,6 +76,8 @@ abbr --add pass passgen
 # abbr --add pip '/usr/local/bin/pip3'
 abbr --add weather 'curl wttr.in'
 abbr --add files '/Users/johna/.cargo/bin/xplr'
+
+abbr --add chat 'cd ~/dev/src/playground/gpt4all/chat && ./gpt4all-lora-quantized-OSX-m1'
 
 # LINUX
 # switch (uname)
