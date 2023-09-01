@@ -82,7 +82,7 @@ local leader = {
 			function()
 				require("util").file.rename()
 			end,
-			"Rename curretn file",
+			"Rename current file",
 		},
 	},
 	["h"] = {
