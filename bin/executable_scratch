@@ -1,14 +1,18 @@
 #! /usr/bin/env bash
 
-type="${1:-md}"
+type="${1}"
 path="$HOME/Dropbox/Notes/scratch"
 
 if [ "$type" = "todo" ]; then
   kitty @ set-window-title " "
   kitty @ set-tab-title "TODO"
   nvim "$path/todo.md"
-else
+# elif type is not blank
+elif [ -n "$type" ]; then
   nvim "$path/scratch.${type}"
+else
+  id=$(date '+%Y-%m-%d-%H-%M-%S')
+  nvim "$path/scratch.${id}.md"
 fi
 
 # kitty @ set-window-title " "
