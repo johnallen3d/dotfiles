@@ -1,10 +1,6 @@
-# set -x EDITOR nvim
-# set -x VISUAL nvim
-# set -x GIT_EDITOR nvim
-
-set -x EDITOR zed --wait
-set -x VISUAL zed --wait
-set -x GIT_EDITOR zed --wait
+set -x EDITOR nvim
+set -x VISUAL nvim
+set -x GIT_EDITOR nvim
 
 # disable homebrew github api https://github.com/Homebrew/brew/issues/93
 set -x HOMEBREW_NO_GITHUB_API 1
