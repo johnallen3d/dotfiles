@@ -44,6 +44,7 @@ return {
 	{ "godlygeek/tabular", cmd = "Tabularize" },
 	{ "folke/which-key.nvim", lazy = true },
 	-- { "andrewferrier/wrapping.nvim", config = true },
+	-- { "github/copilot.vim" },
 
 	-- lsp
 	{ "onsails/lspkind-nvim", lazy = true },

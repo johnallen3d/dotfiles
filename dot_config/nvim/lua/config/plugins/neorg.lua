@@ -1,26 +1,32 @@
-return {
-	{
-		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-		opts = {
-			load = {
-				["core.defaults"] = {}, -- Loads default behaviour
-				["core.norg.concealer"] = { -- Adds pretty icons to your documents
-					config = {
-						icon_preset = "diamond",
-					},
-				},
-				["core.norg.dirman"] = { -- Manages Neorg workspaces
-					config = {
-						workspaces = {
-							notes = "~/Dropbox/Notes/neorg",
-							programs = "~/Dropbox/Notes/tac/programs",
-						},
-						default_workspace = "notes",
-					},
-				},
-			},
-		},
-	},
-}
+return {}
+-- return {
+-- 	{
+-- 		"nvim-neorg/neorg",
+-- 		build = ":Neorg sync-parsers",
+-- 		dependencies = { { "nvim-lua/plenary.nvim" } },
+-- 		opts = {
+-- 			load = {
+-- 				["core.concealer"] = {
+-- 					config = {
+-- 						icon_preset = "diamond",
+-- 					},
+-- 				},
+-- 				["core.defaults"] = {},
+-- 				["core.dirman"] = { -- Manages Neorg workspaces
+-- 					config = {
+-- 						workspaces = {
+-- 							notes = "~/Dropbox/Notes/neorg",
+-- 							programs = "~/Dropbox/Notes/tac/programs",
+-- 							journal = "~/Dropbox/Notes/journal",
+-- 						},
+-- 						default_workspace = "notes",
+-- 					},
+-- 				},
+-- 				["core.export"] = {},
+-- 				["core.summary"] = {},
+-- 				-- ["core.tempus"] = {}, dates
+-- 				["core.integrations.treesitter"] = {},
+-- 			},
+-- 		},
+-- 	},
+-- }

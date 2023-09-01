@@ -4,6 +4,7 @@ local M = {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-calc",
+		-- "hrsh7th/cmp-copilot",
 		"hrsh7th/cmp-emoji",
 		"hrsh7th/cmp-nvim-lua",
 		"hrsh7th/cmp-path",
@@ -11,6 +12,15 @@ local M = {
 		"lukas-reineke/cmp-rg",
 		"kristijanhusak/vim-dadbod-completion",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
+
+		{
+			"zbirenbaum/copilot-cmp",
+			dependencies = "copilot.lua",
+			config = function()
+				local copilot_cmp = require("copilot_cmp")
+				copilot_cmp.setup()
+			end,
+		},
 
 		-- snippets
 		"L3MON4D3/LuaSnip",
@@ -88,6 +98,7 @@ M.config = function()
 		sources = {
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lsp_signature_help" },
+			{ name = "copilot" },
 			{ name = "luasnip" },
 			{ name = "path" },
 
@@ -123,9 +134,16 @@ M.config = function()
 					mode = "symbol_text",
 					maxwidth = 50,
 				})(entry, vim_item)
+
 				local strings = vim.split(kind.kind, "%s", { trimempty = true })
-				kind.kind = " " .. strings[1] .. " "
-				kind.menu = "    (" .. strings[2] .. ")"
+
+				if strings[1] ~= "Copilot" then
+					kind.kind = " " .. strings[1] .. " "
+					kind.menu = "    (" .. strings[2] .. ")"
+				else
+					kind.kind = " " .. vim.fn.nr2char(0xe708) .. " "
+					kind.menu = "    (" .. "copilot" .. ")"
+				end
 
 				return kind
 			end,

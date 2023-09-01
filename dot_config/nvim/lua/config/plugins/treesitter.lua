@@ -4,7 +4,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.install").compilers = { "gcc-12" }
+			require("nvim-treesitter.install").compilers = { "gcc-13" }
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"bash",
@@ -25,8 +25,9 @@ return {
 					"regex",
 					"ruby",
 					"rust",
-					"scala",
+					-- "scala",
 					"sql",
+					"terraform",
 					"toml",
 					"typescript",
 					"vim",

@@ -57,6 +57,12 @@ return {
 		local function on_attach(client, bufnr)
 			require("config.plugins.lsp.formatting").setup(client, bufnr)
 			require("config.plugins.lsp.keys").setup(client, bufnr)
+
+			-- attach cmp source whenever copilot attaches
+			-- fixes lazy-loading issues with the copilot cmp source
+			if client.name == "copilot" then
+				require("copilot_cmp")._on_insert_enter()
+			end
 		end
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -89,13 +95,15 @@ return {
 
 		require("rust-tools").setup({
 			server = {
-				-- cmd = {
-				-- 	-- prefer `rustup component add rust-analyzer` over tea/brew
-				-- 	--   tea installed version not completing things like `use std`
-				-- 	vim.fn.expand(
-				-- 		"$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer"
-				-- 	),
-				-- },
+				cmd = {
+					-- prefer `rustup component add rust-analyzer` over tea/brew
+					--   tea installed version not completing things like `use std`
+					-- vim.fn.expand(
+					-- 	"$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer"
+					-- ),
+					-- vim.fn.expand("$HOME/.cargo/bin/rust-analyzer"),
+					vim.fn.expand("$HOME/.local/share/nvim/mason/bin/rust-analyzer"),
+				},
 				on_attach = on_attach,
 				settings = {
 					["rust-analyzer"] = {
