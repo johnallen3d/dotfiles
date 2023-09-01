@@ -51,8 +51,8 @@ vim.g.loaded_node_provider = 0
 
 -- netrw setup
 vim.g.netrw_banner = 0
-vim.g.netrw_list_hide = "^./$,^../$"
-vim.g.netrw_hide = 1
+-- see legacy.vim for netrw_list_hide
+-- vim.g.netrw_list_hide = "^./$,^../$"
 
 -- filetype detection
 cmd.filetype("on") -- detect and load settings for file type

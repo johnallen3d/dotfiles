@@ -12,3 +12,7 @@ endif
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" can't quite get the regex right for this in lua, hides directories and files
+" that are only two characters long (matching on "..")
+let g:netrw_list_hide = ',^\.\.\=/\=$'
