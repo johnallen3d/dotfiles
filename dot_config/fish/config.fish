@@ -65,5 +65,5 @@ if status --is-interactive
 
   starship init fish | source
 
-  test -d "$HOME/.tea" && "$HOME/.tea/tea.xyz/v*/bin/tea" --magic=fish --silent | source
+  # test -d "$HOME/.tea" && "$HOME/.tea/tea.xyz/v*/bin/tea" --magic=fish --silent | source
 end
