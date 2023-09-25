@@ -11,3 +11,6 @@ set -x MUSIC_DIR ~/Music/iTunes/iTunes Music/Music/
 
 # better pager in pgcli https://www.pgcli.com/pager
 set -x LESS -XFR
+
+# expiremental
+set -x NVIM_APPNAME lazy-vim
