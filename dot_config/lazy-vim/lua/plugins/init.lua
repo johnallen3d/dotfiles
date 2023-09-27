@@ -1,5 +1,14 @@
 return {
 	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = function(_, opts)
+			if type(opts.ensure_installed) == "table" then
+				vim.list_extend(opts.ensure_installed, { "sql" })
+			end
+		end,
+	},
+
+	{
 		"prichrd/netrw.nvim",
 		event = "VeryLazy",
 		name = "netrw",
@@ -109,6 +118,34 @@ return {
 				}),
 				sources = {
 					{ name = "buffer" },
+				},
+			})
+		end,
+	},
+
+	{
+		"kndndrj/nvim-dbee",
+		ft = "sql",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		build = function()
+			-- Install tries to automatically detect the install method.
+			-- if it fails, try calling it with one of these parameters:
+			--    "curl", "wget", "bitsadmin", "go"
+			require("dbee").install()
+		end,
+		config = function()
+			require("dbee").setup({
+				sources = {
+					require("dbee.sources").MemorySource:new({
+						{
+							id = "duck-in-memory",
+							name = "duck-in-memory",
+							type = "duck",
+							url = "",
+						},
+					}),
 				},
 			})
 		end,
