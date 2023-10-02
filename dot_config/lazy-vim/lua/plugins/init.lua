@@ -16,6 +16,7 @@ return {
 	},
 
 	{ "ryvnf/readline.vim", event = "CmdlineEnter" },
+	{ "David-Kunz/gen.nvim", cmd = "Gen" },
 
 	{
 		"simrat39/symbols-outline.nvim",
