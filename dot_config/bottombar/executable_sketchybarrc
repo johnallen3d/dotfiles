@@ -72,7 +72,7 @@ bottombar \
 	--set mpd \
 	icon.drawing=on \
 	icon.color=$music_highlight \
-	update_freq=2 \
+	update_freq=1 \
 	script="$plugins/mpd.sh" \
 	click_script="mpc toggle" \
 	background.color=$transparent_color
@@ -87,3 +87,5 @@ bottombar \
 	background.border_width=3 \
 	background.corner_radius=8 \
 	background.height=32
+
+echo "bottombar config loaded"
