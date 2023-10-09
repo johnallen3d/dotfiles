@@ -1,5 +1,6 @@
 #! /usr/bin/env fish
 
+abbr --add dot chezmoi
 # git/hub
 # abbr --add gr 'git rebase -i @{u}'
 abbr --add gst 'git status --short'
@@ -12,7 +13,7 @@ abbr --add gco 'git checkout'
 abbr --add gm 'git merge --ff-only'
 abbr --add gcf 'git commit --fixup'
 abbr --add spp 'git stash && git pull && git stash pop'
-abbr --add db 'delete-branch'
+abbr --add db delete-branch
 # abbr --add pr 'hub pull-request --push --browse'
 abbr --add bug git-bug
 
@@ -59,7 +60,7 @@ abbr --add yt "youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4
 
 # abbr --add tree 'exa --tree'
 # abbr --add tree 'lsd --tree'
-abbr --add tree 'erd'
+abbr --add tree erd
 
 abbr --add .. 'cd ..'
 
