@@ -19,6 +19,11 @@ return {
 	{ "David-Kunz/gen.nvim", cmd = "Gen" },
 
 	{
+		"sourcegraph/sg.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+
+	{
 		"simrat39/symbols-outline.nvim",
 		cmd = "SymbolsOutline",
 		keys = {
