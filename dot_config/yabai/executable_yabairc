@@ -25,7 +25,7 @@ yabai -m config auto_balance off
 # general space settings
 yabai -m config layout bsp
 #               external_bar [<main|all|off>:<top_padding>:<bottom_padding>]
-yabai -m config external_bar all:36:0
+yabai -m config external_bar all:36:36
 yabai -m config top_padding 18
 yabai -m config bottom_padding 18
 yabai -m config left_padding 18
@@ -99,6 +99,9 @@ yabai -m rule --add label="mpv" app="^mpv\$" sticky=off layer=normal manage=on
 
 # start up sketchybar
 # brew services restart felixkratz/formulae/sketchybar
-killall sketchybar && LANG="en_US.UTF-8" /opt/homebrew/opt/sketchybar/bin/sketchybar &
+killall sketchybar
+LANG="en_US.UTF-8" /opt/homebrew/opt/sketchybar/bin/sketchybar &
+killall bottombar
+LANG="en_US.UTF-8" /Users/john.allen/bin/bottombar &
 
 echo "yabai configuration loaded.."

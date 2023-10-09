@@ -235,51 +235,51 @@ sketchybar \
 	background.height=32
 
 ###################### FLOAT ###################
-if [ "${display_count}" = "1" ]; then
-	mpd_location="left"
+# if [ "${display_count}" = "1" ]; then
+# 	mpd_location="left"
 
-	sketchybar \
-		--add item mpd_spacer $mpd_location \
-		--set mpd_spacer \
-		icon= \
-		associated_display="${display_count}" \
-		icon.drawing=off \
-		label="" \
-		background.color=$transparent_color
-else
-	mpd_location="center"
-fi
+# 	sketchybar \
+# 		--add item mpd_spacer $mpd_location \
+# 		--set mpd_spacer \
+# 		icon= \
+# 		associated_display="${display_count}" \
+# 		icon.drawing=off \
+# 		label="" \
+# 		background.color=$transparent_color
+# else
+# 	mpd_location="center"
+# fi
 
-sketchybar \
-	--add item mpd_logo $mpd_location \
-	--set mpd_logo \
-	icon= \
-	associated_display="${display_count}" \
-	label.drawing=off \
-	icon.color=$current_app_color \
-	background.color=$music_highlight
+# sketchybar \
+# 	--add item mpd_logo $mpd_location \
+# 	--set mpd_logo \
+# 	icon= \
+# 	associated_display="${display_count}" \
+# 	label.drawing=off \
+# 	icon.color=$current_app_color \
+# 	background.color=$music_highlight
 
-sketchybar \
-	--add item mpd $mpd_location \
-	--set mpd \
-	associated_display="${display_count}" \
-	icon.drawing=on \
-	icon.color=$music_highlight \
-	update_freq=2 \
-	script="~/.config/sketchybar/plugins/mpd.sh" \
-	click_script="mpc toggle" \
-	background.color=$transparent_color
+# sketchybar \
+# 	--add item mpd $mpd_location \
+# 	--set mpd \
+# 	associated_display="${display_count}" \
+# 	icon.drawing=on \
+# 	icon.color=$music_highlight \
+# 	update_freq=2 \
+# 	script="${plugins}/mpd.sh" \
+# 	click_script="mpc toggle" \
+# 	background.color=$transparent_color
 
-sketchybar \
-	--add bracket mpd_bracket \
-	mpd_logo \
-	mpd \
-	--set mpd_bracket \
-	background.color=$bracket_background_color \
-	background.border_color=$bracket_border_color \
-	background.border_width=3 \
-	background.corner_radius=8 \
-	background.height=32
+# sketchybar \
+# 	--add bracket mpd_bracket \
+# 	mpd_logo \
+# 	mpd \
+# 	--set mpd_bracket \
+# 	background.color=$bracket_background_color \
+# 	background.border_color=$bracket_border_color \
+# 	background.border_width=3 \
+# 	background.corner_radius=8 \
+# 	background.height=32
 
 ######################SHARED ###################
 sketchybar \
